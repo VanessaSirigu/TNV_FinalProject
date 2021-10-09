@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../services/data.service';
 import { Router } from '@angular/router';
 import { MovieData } from '../../models/data.model';
+import { MovieRatingService } from '../../services/movie-rating.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,7 +11,7 @@ import { MovieData } from '../../models/data.model';
 })
 export class DashboardComponent implements OnInit {
 
-  
+
   constructor( private dataService: DataService, private router : Router) { }
 
   ngOnInit(): void {
@@ -18,12 +19,16 @@ export class DashboardComponent implements OnInit {
   }
 
   public movies: MovieData [];
+
   moviesDataLoader=false;
 
   getEntries(){
     this.dataService.getData().subscribe( (response : any) => {
       this.movies = response;
       this.moviesDataLoader=true;
+
+
+
 
     })
   }
@@ -32,6 +37,6 @@ export class DashboardComponent implements OnInit {
     this.router.navigateByUrl('/details/' + id);
   }
 
-  
+
 
 }

@@ -1,0 +1,24 @@
+<div class="container p-5" >
+  <h1 class="text-center mb-5">
+    Movie ratings
+  </h1>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">movie rating</th>
+        <th scope="col">movie id </th>
+        <th scope="col">user id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of rating ">
+        <td>{{entry.movie_rating}}</td>
+        <td>{{entry.movie_id}}</td>
+        <td>{{entry.user_id }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-loading-page *ngIf="rating==null" ></app-loading-page>
