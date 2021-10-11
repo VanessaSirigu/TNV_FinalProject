@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardComponent } from './routes/dashboard/dashboard.component';
 import { DataService } from './services/data.service';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AddComponent } from './routes/add/add.component';
 import { DetailsComponent } from './routes/details/details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -20,6 +20,7 @@ import { GenrePipePipe } from './pipes/genrePipe/genre-pipe.pipe';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
+import { UsersManagerPageComponent } from './routes/users-manager-page/users-manager-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
     WelcomePageComponent,
     SortByDateComponent,
     MoviesApiComponent,
+    UsersManagerPageComponent,
   ],
   imports: [
     BrowserModule,

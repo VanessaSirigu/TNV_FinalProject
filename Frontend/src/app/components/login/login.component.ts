@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl, NgForm } from '@angular/forms';
+import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
 
 export interface UserInterface{
-  username: string, 
+  username: string,
   password: string
 }
 
@@ -14,12 +15,11 @@ export interface UserInterface{
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private usersService : UsersManagerApiservice) { }
 
   //variabili per l'input
   usernameInput: string;
-  passwordInput: string;  
-
+  passwordInput: string;
   //utenti
   root: UserInterface={
     username: "root",
@@ -32,7 +32,6 @@ export class LoginComponent implements OnInit {
 
   //array di UserInterface
   users: UserInterface[]=[this.root, this.pippo];
-
   ngOnInit(): void {
   }
 
@@ -53,5 +52,4 @@ export class LoginComponent implements OnInit {
     }
     return false;
   }
-
 }
