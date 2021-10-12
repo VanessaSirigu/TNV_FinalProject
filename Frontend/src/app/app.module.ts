@@ -23,6 +23,7 @@ import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.componen
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
 import { AddUserComponent } from './routes/users/add-user/add-user.component';
 import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
+import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { UserDetailsComponent } from './routes/users/user-details/user-details.c
     UsersManagerPageComponent,
     AddUserComponent,
     UserDetailsComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

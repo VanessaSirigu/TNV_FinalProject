@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsersApiInterface, ResultUsers } from '../models/apiUsers.model';
 import { UserInterface } from '../components/login/login.component';
+import { ResultInterface } from '../models/apiMovie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -45,8 +46,8 @@ export class UsersManagerApiservice {
 
   /***************************** UPDATE ******************************/
   //modifica l'utente corrispondente all'id_user passato come parametro
-  updateUser(){
-    //return this.http.put<UsersApiInterface>(this.baseURL+"/{id}");
+  editUser (user : ResultUsers) {
+   return this.http.put<UsersApiInterface>(this.baseURL+"/"+user.id, user);
   }
 
   /***************************** DELETE ******************************/

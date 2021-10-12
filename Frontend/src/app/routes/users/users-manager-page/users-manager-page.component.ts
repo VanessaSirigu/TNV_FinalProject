@@ -23,11 +23,9 @@ export class UsersManagerPageComponent implements OnInit {
     this.usersService.allUsers().subscribe(
       response => {
         //se è andato tutto bene, allora:
-        console.log("ho ottenuto i dati!")
+        console.log("ho ottenuto i seguenti dati:")
         this.users = response;
-        console.log("i dati ottenuti sono: ", this.users);
-        this.results= this.users.results;
-        console.log("results: ", this.results)
+        console.log(this.users);
         //console.log("I dati stringify: " + JSON.stringify(this.movies))
       },
       error => console.log(error)
