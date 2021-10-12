@@ -11,6 +11,7 @@ import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.componen
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
 import { UsersManagerApiservice } from './services/usersManagerApi.service';
 import { UsersManagerPageComponent } from './routes/users-manager-page/users-manager-page.component';
+import { AddUserComponent } from './routes/add-user/add-user.component';
 
 
 
@@ -25,8 +26,8 @@ const routes: Routes = [
   { path: "filterByGenre", component: FilterByGenreComponent},
   { path: "sortByDate", component:SortByDateComponent},
   { path: "moviesApi", component: MoviesApiComponent},
-  { path: "usersManager", component : UsersManagerPageComponent}
-
+  { path: "usersManager", component : UsersManagerPageComponent},
+  { path: "addUser", component : AddUserComponent}
 ];
 
 @NgModule({

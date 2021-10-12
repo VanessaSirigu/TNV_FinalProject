@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersApiInterface, ResultUsers } from '../../models/apiUsers.model';
 import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users-manager-page',
@@ -12,7 +13,7 @@ export class UsersManagerPageComponent implements OnInit {
   users : UsersApiInterface;
   results : ResultUsers[];
 
-  constructor(private usersService : UsersManagerApiservice) { }
+  constructor(private usersService : UsersManagerApiservice, private router : Router) { }
 
   ngOnInit(): void {
     this.getAllUsersOnComponent();
@@ -31,6 +32,10 @@ export class UsersManagerPageComponent implements OnInit {
       },
       error => console.log(error)
     )
+  }
+
+  goToUserDetails(id){
+    this.router.navigateByUrl('/userDetails/' + id);
   }
 
 }

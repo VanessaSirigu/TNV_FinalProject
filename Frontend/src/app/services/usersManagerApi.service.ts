@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsersApiInterface } from '../models/apiUsers.model';
+import { ResultUsers } from '../models/apiUsers.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class UsersManagerApiservice {
   private baseURL = 'http://localhost:8080/users';
 
   //aggiunge un nuovo utente
-  addUser(){
-      return this.http.get<UsersApiInterface>(this.baseURL+"/");
+  addUser = (user: UsersApiInterface) => {
+      return this.http.post<any>(this.baseURL+"/", user);
   }
 
   //recupera l'utente corrispondente all'id passato come parametro

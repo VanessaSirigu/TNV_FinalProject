@@ -1,7 +1,5 @@
 export interface UsersApiInterface{
-  //
   results: ResultUsers []
-
 }
 
 export interface ResultUsers{
