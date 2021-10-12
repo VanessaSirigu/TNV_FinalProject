@@ -1,3 +1,4 @@
+import { UsersManagerPageComponent } from './routes/users/users-manager-page/users-manager-page.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +21,8 @@ import { GenrePipePipe } from './pipes/genrePipe/genre-pipe.pipe';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
-import { UsersManagerPageComponent } from './routes/users-manager-page/users-manager-page.component';
-import { AddUserComponent } from './routes/add-user/add-user.component';
+import { AddUserComponent } from './routes/users/add-user/add-user.component';
+import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AddUserComponent } from './routes/add-user/add-user.component';
     MoviesApiComponent,
     UsersManagerPageComponent,
     AddUserComponent,
+    UserDetailsComponent,
   ],
   imports: [
     BrowserModule,

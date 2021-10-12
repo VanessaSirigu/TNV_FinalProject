@@ -15,14 +15,17 @@ export class UsersManagerApiservice {
 
   private baseURL = 'http://localhost:8080/users';
 
+
+  /***************************** CREATE ******************************/
   //aggiunge un nuovo utente
   addUser = (user: UsersApiInterface) => {
-      return this.http.post<any>(this.baseURL+"/", user);
+    return this.http.post<any>(this.baseURL+"/", user);
   }
 
+  /***************************** READ ******************************/
   //recupera l'utente corrispondente all'id passato come parametro
-  getUserById(){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/{id}");
+  getUserById(id){
+    return this.http.get<UsersApiInterface>(this.baseURL+"/"+id);
   }
 
   //recupera l'utente corrispondente all'username passato come parametro
@@ -40,15 +43,16 @@ export class UsersManagerApiservice {
     return this.http.get<UsersApiInterface>(this.baseURL+"/");
   }
 
-
+  /***************************** UPDATE ******************************/
   //modifica l'utente corrispondente all'id_user passato come parametro
   updateUser(){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/{id}");
+    //return this.http.put<UsersApiInterface>(this.baseURL+"/{id}");
   }
 
+  /***************************** DELETE ******************************/
   //cancella l'utente corrispondente all'id_user passato come parametro
   deleteUser(){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/{id}");
+    return this.http.delete<UsersApiInterface>(this.baseURL+"/{id}");
   }
 
 }

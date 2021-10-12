@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
-import { ResultUsers, UsersApiInterface } from '../../models/apiUsers.model';
+import { UsersManagerApiservice } from '../../../services/usersManagerApi.service';
+import { ResultUsers, UsersApiInterface } from '../../../models/apiUsers.model';
 
 @Component({
   selector: 'app-add-user',

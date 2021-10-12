@@ -10,9 +10,9 @@ import { WelcomePageComponent } from './routes/welcome-page/welcome-page.compone
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
 import { UsersManagerApiservice } from './services/usersManagerApi.service';
-import { UsersManagerPageComponent } from './routes/users-manager-page/users-manager-page.component';
-import { AddUserComponent } from './routes/add-user/add-user.component';
-
+import { UsersManagerPageComponent } from './routes/users/users-manager-page/users-manager-page.component';
+import { AddUserComponent } from './routes/users/add-user/add-user.component';
+import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 
 
 const routes: Routes = [
@@ -27,7 +27,8 @@ const routes: Routes = [
   { path: "sortByDate", component:SortByDateComponent},
   { path: "moviesApi", component: MoviesApiComponent},
   { path: "usersManager", component : UsersManagerPageComponent},
-  { path: "addUser", component : AddUserComponent}
+  { path: "addUser", component : AddUserComponent},
+  { path: "userDetails/:id", component : UserDetailsComponent}
 ];
 
 @NgModule({

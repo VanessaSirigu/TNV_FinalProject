@@ -1,6 +1,6 @@
+import { UsersManagerApiservice } from './../../../services/usersManagerApi.service';
+import { UsersApiInterface, ResultUsers } from './../../../models/apiUsers.model';
 import { Component, OnInit } from '@angular/core';
-import { UsersApiInterface, ResultUsers } from '../../models/apiUsers.model';
-import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
 import { Router } from '@angular/router';
 
 @Component({
