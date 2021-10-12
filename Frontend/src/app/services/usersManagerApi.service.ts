@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsersApiInterface } from '../models/apiUsers.model';
-import { ResultUsers } from '../models/apiUsers.model';
+import { UsersApiInterface, ResultUsers } from '../models/apiUsers.model';
+import { UserInterface } from '../components/login/login.component';
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +51,8 @@ export class UsersManagerApiservice {
 
   /***************************** DELETE ******************************/
   //cancella l'utente corrispondente all'id_user passato come parametro
-  deleteUser(){
-    return this.http.delete<UsersApiInterface>(this.baseURL+"/{id}");
+  deleteUser(id){
+    return this.http.delete<UsersApiInterface>(this.baseURL+"/"+id);
   }
 
 }

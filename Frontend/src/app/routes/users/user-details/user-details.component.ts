@@ -29,15 +29,14 @@ export class UserDetailsComponent implements OnInit {
   }
 
 
-  delete(){
-    this.usersService.deleteUser()
+  deleteUser(id){
+    this.usersService.deleteUser(id)
     .subscribe(data => {
       this.router.navigate(['/usersManager']);
     }, (err) => {
       console.log(err);
       this.router.navigate(['/usersManager']);
     });
-    //this.router.navigate(['/usersManager']);
 
   }
 
