@@ -11,6 +11,24 @@
 
   </div>
 
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <form class="d-flex" >
+        <input [(ngModel)]="usernameInput" [ngModelOptions]="{standalone: true}" class="form-control me-2" type="search" placeholder="Search by username" aria-label="Search">
+        <button class="btn btn-outline-success" (click)="getUserByUsernameOnComponent()" type="submit">Exactly!</button>
+        <button class="btn btn-outline-success" (click)="getUserContainingUsernameOnComponent()" type="submit">Maybe...</button>
+        <button class="btn" (click)="getAllUsersOnComponent()" type="submit">All</button>
+      </form>
+    </div>
+  </nav>
+  <tbody *ngIf="resultFull">
+    <tr class="pointer">
+      <th> This user? </th>
+      <td>{{resultFull.username}}</td>
+      <td>{{resultFull.email}}</td>
+      <td>{{resultFull.id}}</td>
+    </tr>
+  </tbody>
   <table class="table">
     <thead class="thead-dark">
       <tr>
@@ -20,14 +38,15 @@
         <th scope="col">user_id</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody *ngIf="users">
       <tr class="pointer" *ngFor="let entry of users ; let i = index" (click)="goToUserDetails(entry.id)">
-        <th scope="row"> {{i + 1}}</th>
+        <th> {{i + 1}}</th>
         <td>{{entry.username}}</td>
         <td>{{entry.email}}</td>
         <td>{{entry.id}}</td>
       </tr>
     </tbody>
+
   </table>
 </div>
 

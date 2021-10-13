@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, JsonpClientBackend } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UsersApiInterface, ResultUsers } from '../models/apiUsers.model';
-import { UserInterface } from '../components/login/login.component';
-import { ResultInterface } from '../models/apiMovie.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +9,7 @@ export class UsersManagerApiservice {
 
   public username: String;
   public password: String;
+  public users: UsersApiInterface
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +19,7 @@ export class UsersManagerApiservice {
   /***************************** CREATE ******************************/
   //aggiunge un nuovo utente
   addUser = (user: UsersApiInterface) => {
-    return this.http.post<any>(this.baseURL+"/", user);
+    return this.http.post<UsersApiInterface>(this.baseURL+"/", user);
   }
 
   /***************************** READ ******************************/
@@ -30,13 +29,13 @@ export class UsersManagerApiservice {
   }
 
   //recupera l'utente corrispondente all'username passato come parametro
-  getUserByUsername(){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/username/{username}");
+  getUserByUsername(username){
+    return this.http.get<ResultUsers>(this.baseURL+"/username/"+username);
   }
 
   //recupera un utente dal suo username parziale
-  getUserContainingUsername(){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/username/like/{partialUsername}");
+  getUserContainingUsername(username){
+    return this.http.get<UsersApiInterface>(this.baseURL+"/username/like/"+username);
   }
 
   //recupera tutti gli user presenti

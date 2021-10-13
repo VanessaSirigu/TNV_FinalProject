@@ -32,10 +32,10 @@ export class EditUserComponent implements OnInit {
     console.log(this.userEntry);
     this.usersService.editUser(this.userEntry).subscribe (response => {
       console.log(response);
-      this.router.navigate(['/userDetails', this.userEntry.id])
+      this.router.navigate(['/usersManager'])
     }), err => {
       console.log(err);
     }
-    this.router.navigate(['/userDetails', this.userEntry.id])
+    this.router.navigate(['/usersManager'])
   }
 }
