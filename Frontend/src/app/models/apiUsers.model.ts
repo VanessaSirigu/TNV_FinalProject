@@ -1,11 +1,12 @@
 export interface UsersApiInterface{
-  results: ResultUsers []
+  results: UserInterface []
 }
 
-export interface ResultUsers{
+export interface UserInterface{
   id: number;
   username: string;
   password: string;
   email: string;
   enabled: number;
+  status: string;
 }

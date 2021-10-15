@@ -1,7 +1,8 @@
 import { UsersManagerApiservice } from './../../../services/usersManagerApi.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UsersApiInterface, ResultUsers } from '../../../models/apiUsers.model';
+import { UsersApiInterface } from '../../../models/apiUsers.model';
+import { UserInterface } from '../../../models/apiUsers.model';
 
 @Component({
   selector: 'app-edit-user',
@@ -12,8 +13,9 @@ export class EditUserComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private usersService: UsersManagerApiservice, private router : Router) { }
 
-  userEntry: ResultUsers;
+  userEntry: UserInterface;
   users: UsersApiInterface
+  editing = false;
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
@@ -24,18 +26,14 @@ export class EditUserComponent implements OnInit {
   fetchEntry(id){
     this.usersService.getUserById(id).subscribe( (res: any ) => {
       this.userEntry = res;
-      console.log(this.userEntry)
     })
   }
 
   onSubmit(id){
-    console.log(this.userEntry);
     this.usersService.editUser(this.userEntry).subscribe (response => {
-      console.log(response);
-      this.router.navigate(['/usersManager'])
-    }), err => {
-      console.log(err);
-    }
+      this.editing = true;
+    }),
+    err => {console.log(err);}
     this.router.navigate(['/usersManager'])
   }
 }

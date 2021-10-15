@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersManagerApiservice } from '../../../services/usersManagerApi.service';
-import { ResultUsers, UsersApiInterface } from '../../../models/apiUsers.model';
+import { UsersApiInterface } from '../../../models/apiUsers.model';
+import { runInThisContext } from 'vm';
+import { UserInterface } from '../../../models/apiUsers.model';
 
 @Component({
   selector: 'app-add-user',
@@ -16,23 +18,18 @@ export class AddUserComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  userEntry : UsersApiInterface;
+  userEntry : UserInterface;
 
   onSubmit(form : NgForm){
 
     this.userEntry = form.form.value;
-    console.log(form)
-    console.log(this.userEntry);
 
     if(this.userEntry!=null){
-      this.usersService.addUser(this.userEntry).subscribe(response => {
-        console.log(response);
-        this.router.navigate(['/usersManager']);
-      },
-      (err) => {
-        //fai qualcosa
-      })
-    }
+        this.usersService.addUser(this.userEntry).subscribe(response => {
+          this.router.navigate(['/usersManager']);
+        },
+      (err) => {}
+      )};
   }
 
 }

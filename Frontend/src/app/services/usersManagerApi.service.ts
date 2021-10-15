@@ -1,6 +1,6 @@
-import { HttpClient, JsonpClientBackend } from '@angular/common/http';
+import { HttpClient, JsonpClientBackend, HttpHeaders, HttpInterceptor, HttpRequest, HttpHandler, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { UsersApiInterface, ResultUsers } from '../models/apiUsers.model';
+import { UsersApiInterface, UserInterface } from '../models/apiUsers.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +15,15 @@ export class UsersManagerApiservice {
 
   private baseURL = 'http://localhost:8080/users';
 
+  /***************************** LOGIN ******************************/
+  doLogin (username, password) {
+    return this.http.get<any>('http://localhost:8080');
+  }
 
   /***************************** CREATE ******************************/
   //aggiunge un nuovo utente
-  addUser = (user: UsersApiInterface) => {
-    return this.http.post<UsersApiInterface>(this.baseURL+"/", user);
+  addUser = (user: UserInterface) => {
+    return this.http.post<UserInterface>(this.baseURL+"/", user,  { responseType: 'text' as 'json'});
   }
 
   /***************************** READ ******************************/
@@ -30,7 +34,7 @@ export class UsersManagerApiservice {
 
   //recupera l'utente corrispondente all'username passato come parametro
   getUserByUsername(username){
-    return this.http.get<ResultUsers>(this.baseURL+"/username/"+username);
+    return this.http.get<UserInterface>(this.baseURL+"/username/"+username);
   }
 
   //recupera un utente dal suo username parziale
@@ -45,8 +49,8 @@ export class UsersManagerApiservice {
 
   /***************************** UPDATE ******************************/
   //modifica l'utente corrispondente all'id_user passato come parametro
-  editUser (user : ResultUsers) {
-   return this.http.put<UsersApiInterface>(this.baseURL+"/"+user.id, user);
+  editUser (user : UserInterface) {
+   return this.http.put<UserInterface>(this.baseURL+"/"+user.id, user, { responseType: 'text' as 'json'});
   }
 
   /***************************** DELETE ******************************/

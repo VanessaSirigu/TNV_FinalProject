@@ -1,9 +1,9 @@
 import { UsersManagerApiservice } from './../../../services/usersManagerApi.service';
-import { UsersApiInterface, ResultUsers } from './../../../models/apiUsers.model';
+import { UsersApiInterface } from './../../../models/apiUsers.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm, FormControl } from '@angular/forms';
-import { ResultInterface } from '../../../models/apiMovie.model';
+import { UserInterface } from './../../../models/apiUsers.model';
 
 @Component({
   selector: 'app-users-manager-page',
@@ -13,8 +13,8 @@ import { ResultInterface } from '../../../models/apiMovie.model';
 export class UsersManagerPageComponent implements OnInit {
 
   users : UsersApiInterface;
-  results : ResultUsers[];
-  resultFull : ResultUsers;
+  results : UserInterface[];
+  resultFull : UserInterface;
   usernameInput : string;
 
   constructor(private usersService : UsersManagerApiservice, private router : Router) { }
@@ -26,9 +26,7 @@ export class UsersManagerPageComponent implements OnInit {
   getAllUsersOnComponent(){
     this.usersService.allUsers().subscribe(
       response => {
-        console.log("ho ottenuto i seguenti dati:")
         this.users = response;
-        console.log(this.users);
         this.resultFull = null;
       },
       error => console.log(error)
@@ -43,7 +41,6 @@ export class UsersManagerPageComponent implements OnInit {
     this.usersService.getUserByUsername(this.usernameInput).subscribe(
       response => {
         this.resultFull = response;
-        console.log(this.resultFull);
       },
       error => console.log(error)
     )
@@ -53,7 +50,7 @@ export class UsersManagerPageComponent implements OnInit {
     this.usersService.getUserContainingUsername(this.usernameInput).subscribe(
       response => {
         this.users = response;
-        console.log(this.users);
+        this.resultFull = null;
       },
       error => console.log(error)
     )
