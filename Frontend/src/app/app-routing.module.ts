@@ -14,6 +14,7 @@ import { UsersManagerPageComponent } from './routes/users/users-manager-page/use
 import { AddUserComponent } from './routes/users/add-user/add-user.component';
 import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
+import { TvSeriesApiComponent } from './routes/tv-series-api/tv-series-api.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
   { path: "usersManager", component : UsersManagerPageComponent},
   { path: "addUser", component : AddUserComponent},
   { path: "userDetails/:id", component : UserDetailsComponent},
-  { path: "userDetails/edit/:id", component : EditUserComponent}
+  { path: "userDetails/edit/:id", component : EditUserComponent},
+  { path: "tvSeries", component : TvSeriesApiComponent}
 ];
 
 @NgModule({

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersApiInterface } from 'src/app/models/apiUsers.model';
 import { UsersManagerApiservice } from '../../../services/usersManagerApi.service';
-import { ResultUsers } from '../../../models/apiUsers.model';
+import { UserInterface } from 'src/app/models/apiUsers.model';
 
 @Component({
   selector: 'app-user-details',
@@ -14,7 +14,7 @@ export class UserDetailsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private usersService: UsersManagerApiservice,
     private router : Router) { }
 
-    users: ResultUsers;
+    users: UserInterface;
     id: number;
 
   ngOnInit(): void {

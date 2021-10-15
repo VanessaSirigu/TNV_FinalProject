@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsersManagerApiservice } from '../../../services/usersManagerApi.service';
-import { UsersApiInterface } from '../../../models/apiUsers.model';
-import { runInThisContext } from 'vm';
 import { UserInterface } from '../../../models/apiUsers.model';
 
 @Component({
