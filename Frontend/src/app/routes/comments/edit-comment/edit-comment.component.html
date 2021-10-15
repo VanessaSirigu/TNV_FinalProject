@@ -1,0 +1,28 @@
+<div *ngIf="commentEntry != null" class="container">
+
+    <div class="row p-3 shadow">
+        <button class="btn btn-primary mr-5" [routerLink]="['/commentsManager']">Back</button>
+        <h3 class="text-center">Edit comment</h3>
+    </div>
+  
+    <form class="pt-5" (ngSubmit)="onSubmit(commentEntry.Id)" #form="ngForm">
+        <div class="form-group row">
+            <label for="userid" class="col-sm-2 col-form-label">User ID</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="userid" required
+                    [(ngModel)]="commentEntry.UserId" name="userid">
+            </div>
+        </div>
+  
+        <div class="form-group row">
+            <label for="movieid" class="col-sm-2 col-form-label">MovieId</label>
+            <div class="col-sm-10">
+                <input type="movieid" class="form-control" id="movieid" required
+                    [(ngModel)]="commentEntry.MovieId" name="movieid">
+            </div>
+        </div>
+  
+        <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
+  
+    </form>
+  </div>

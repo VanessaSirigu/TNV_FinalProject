@@ -20,6 +20,11 @@ import { GenrePipePipe } from './pipes/genrePipe/genre-pipe.pipe';
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
+import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
+import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
+//import { GetCommentsByUseridComponent } from './routes/comments/get-comments-by-userid/get-comments-by-userid.component';
+import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
+import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +43,11 @@ import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
     WelcomePageComponent,
     SortByDateComponent,
     MoviesApiComponent,
+    AddCommentComponent,
+    EditCommentComponent,
+//    GetCommentsByUseridComponent,
+    CommentDetailsComponent,
+    CommentsManagerPageComponent,
   ],
   imports: [
     BrowserModule,

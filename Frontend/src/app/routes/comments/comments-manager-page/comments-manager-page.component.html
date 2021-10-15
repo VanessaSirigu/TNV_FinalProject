@@ -1,0 +1,35 @@
+<div class="container p-5" *ngIf="comments">
+    <h1 class="text-center mb-5">
+      The Net Fish
+    </h1>
+  
+    <div class="text-right">
+  
+      <button type="button"  style="font-size: 30px" class="btn btn-default" aria-label="Left Align"  [routerLink]='["/addComment"]'>
+        <span class="fas fa-plus" aria-hidden="true"></span>
+        </button>
+  
+    </div>
+  
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">User ID</th>
+          <th scope="col">Movie ID</th>
+          <th scope="col">Body</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of comments ; let i = index" (click)="goToCommentDetails(entry.Id)">
+          <th scope="row"> {{i + 1}}</th>
+          <td>{{entry.UserId}}</td>
+          <td>{{entry.MovieId}}</td>
+          <td>{{entry.Body}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  <app-loading-page *ngIf="comments==null" ></app-loading-page>
+  

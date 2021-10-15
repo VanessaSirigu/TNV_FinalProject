@@ -9,6 +9,10 @@ import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
+import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
+import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
+import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
+import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
 
 
 const routes: Routes = [
@@ -21,7 +25,11 @@ const routes: Routes = [
   { path: "login", component: LoginPageComponent},
   { path: "filterByGenre", component: FilterByGenreComponent},
   { path: "sortByDate", component:SortByDateComponent},
-  { path: "moviesApi", component: MoviesApiComponent}
+  { path: "moviesApi", component: MoviesApiComponent},
+  { path: "commentsManager", component: CommentsManagerPageComponent },
+  { path: "addComment", component: AddCommentComponent },
+  { path: "commentDetails/:id", component: CommentDetailsComponent },
+  { path: "commentDetails/edit/:id", component: EditCommentComponent }
 ];
 
 @NgModule({
