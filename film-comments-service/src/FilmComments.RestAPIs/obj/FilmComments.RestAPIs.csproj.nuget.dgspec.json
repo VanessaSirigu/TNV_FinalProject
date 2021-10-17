@@ -1,0 +1,200 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj": {}
+  },
+  "projects": {
+    "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
+        "projectName": "FilmComments.Core",
+        "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj",
+        "packagesPath": "/home/dario/.nuget/packages/",
+        "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/dario/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+        "projectName": "FilmComments.DB",
+        "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+        "packagesPath": "/home/dario/.nuget/packages/",
+        "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/dario/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+                "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
+        "projectName": "FilmComments.RestAPIs",
+        "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
+        "packagesPath": "/home/dario/.nuget/packages/",
+        "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/dario/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+                "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
+              },
+              "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {
+                "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.401/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
