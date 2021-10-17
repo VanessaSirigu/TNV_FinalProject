@@ -23,9 +23,9 @@
       <tbody>
         <tr class="pointer" *ngFor="let entry of comments ; let i = index" (click)="goToCommentDetails(entry.Id)">
           <th scope="row"> {{i + 1}}</th>
-          <td>{{entry.UserId}}</td>
-          <td>{{entry.MovieId}}</td>
-          <td>{{entry.Body}}</td>
+          <td>{{entry.userId}}</td>
+          <td>{{entry.movieId}}</td>
+          <td>{{entry.body}}</td>
         </tr>
       </tbody>
     </table>

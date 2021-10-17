@@ -20,13 +20,14 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.fetchEntry()
-    
+    console.log(this.dataEntry)
   }
 
   fetchEntry(){
     this.dataService.getEntry(this.id).subscribe( (res: any ) => {
       this.dataEntry = res;
       this.ratedOption= this.dataEntry.rated === true ? 'yes' : 'no';
+      console.log(this.dataEntry)
     })
   }
 

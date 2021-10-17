@@ -10,14 +10,15 @@ import { CommentsResultsInterface } from 'src/app/models/apiComment.model';
 })
 export class EditCommentComponent implements OnInit {
 
-  constructor(private route : ActivatedRoute, private commentsService : CommentsApiService, private router : Router) {  }
+    constructor(private route : ActivatedRoute, private commentsService : CommentsApiService, private router : Router) {  }
 
   commentEntry : CommentsResultsInterface;
   comments: CommentsApiService;
-
+ 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.fetchEntry(id);
+    console.log("Qui siamo dentro ngOnInit: ", this.commentEntry)
   }
 
   fetchEntry(id){
@@ -28,13 +29,13 @@ export class EditCommentComponent implements OnInit {
   }
 
   onSubmit(id){
-    console.log(this.commentEntry);
+    console.log("Qui siamo in onSubmit: ", this.commentEntry);
     this.commentsService.editComment(this.commentEntry).subscribe (response => {
       console.log(response);
-      this.router.navigate(['/commentDetails', this.commentEntry.Id])
+      this.router.navigate(['/commentDetails', this.commentEntry.id])
     }), err => {
       console.log(err);
     }
-    this.router.navigate(['/commentDetails', this.commentEntry.Id])
+    this.router.navigate(['/commentDetails', this.commentEntry.id])
   }
 }

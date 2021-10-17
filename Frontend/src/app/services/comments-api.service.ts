@@ -27,6 +27,12 @@ export class CommentsApiService {
   getAllCommentsByUserId(userId : number){
      return this.http.get<any>(this.baseUrl + "?user-id=" + userId);
   }
+  
+  // Richiama tutti i commenti che hanno un determinato movieId
+  getAllCommentsByMovieId(movieId : number){
+    return this.http.get<any>(this.baseUrl + "/" + movieId);
+ }
+
 
   // Richiama tutti i commenti
   allComments(){
@@ -40,7 +46,8 @@ export class CommentsApiService {
   //***************** UPDATE *****************
   //modifica il commento corrispondente all'id del commento passato come parametro
   editComment (comment : CommentsResultsInterface) {
-    return this.http.put<CommentApiInterface>(this.baseUrl+"/"+comment.Id, comment);
+    console.log(comment.id)
+    return this.http.put<CommentsResultsInterface>(this.baseUrl+"/"+comment.id, comment, {responseType: 'text' as 'json'});
    }
  
   //***************** DELETE ******************

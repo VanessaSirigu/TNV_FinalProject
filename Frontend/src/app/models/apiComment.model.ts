@@ -4,8 +4,8 @@ export interface CommentApiInterface {
 }
 
 export interface CommentsResultsInterface {
-    Id : number;
-    UserId : number;
-    MovieId : number;
-    Body : string;
+    id : number;
+    userId : number;
+    movieId : number;
+    body : string;
 }

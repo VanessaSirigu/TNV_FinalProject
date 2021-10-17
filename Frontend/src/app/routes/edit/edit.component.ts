@@ -22,13 +22,14 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.fetchEntry(id);
+    console.log("Qui siamo su ngOnInit: ", this.dataEntry)
   }
 
   fetchEntry(id){
     this.dataService.getEntry(id).subscribe( (res: any ) => {
       this.dataEntry = res;
       
-      console.log(this.dataEntry)
+      console.log("Qui siamo su fetchEntry: ", this.dataEntry)
       if(this.dataEntry.rated){
         this.ratedOptionSelected="yes";
       }
@@ -38,7 +39,7 @@ export class EditComponent implements OnInit {
   }
  
   onSubmit(){
-    console.log(this.dataEntry);
+    console.log("Qui siamo in onSubmit: ", this.dataEntry);
     if(this.ratedOptionSelected =='yes'){
       this.dataEntry.rated=true;
     }else{
@@ -47,7 +48,7 @@ export class EditComponent implements OnInit {
 
     this.dataService.editEntry(this.dataEntry)
     .subscribe(response => {
-      console.log(response);
+      console.log("Qui siamo in this.dataService.editEntry sopra: ", response);
       this.router.navigate(['/details', this.dataEntry.id])
     }), err => {
       console.log(err);

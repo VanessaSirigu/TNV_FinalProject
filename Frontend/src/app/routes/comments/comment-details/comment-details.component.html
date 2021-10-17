@@ -7,16 +7,15 @@
   
     <div class="mt-5 p-4">
         <ul class="list-group">
-            <li class="list-group-item">Id : {{ comments.Id}}</li>
-            <li class="list-group-item">User ID : {{comments.UserId}}</li>
-            <li class="list-group-item">Movie ID: {{comments.MovieId}}</li>
-            <li class="list-group-item">Body: {{comments.Body}}</li>
+            <li class="list-group-item">Id : {{ comments.id}}</li>
+            <li class="list-group-item">User ID : {{comments.userId}}</li>
+            <li class="list-group-item">Movie ID: {{comments.movieId}}</li>
+            <li class="list-group-item">Body: {{comments.body}}</li>
           </ul>
     </div>
   
    <div class="row">
-        <button class="btn btn-danger ml-5" (click)='deleteComment(comments.Id)'>Delete</button>
-        <button class="btn btn-primary ml-3" [routerLink]="['/commentDetails/edit/'+ comments.Id]">Edit</button>
+        <button class="btn btn-danger ml-5" (click)='deleteComment(comments.id)'>Delete</button>
+        <button class="btn btn-primary ml-3" [routerLink]="['/commentDetails/edit/'+ comments.id]">Edit</button>
     </div>
   </div>
-  

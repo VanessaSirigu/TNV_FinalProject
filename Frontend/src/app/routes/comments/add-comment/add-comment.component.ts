@@ -16,10 +16,10 @@ export class AddCommentComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  commentEntry : CommentApiInterface; 
+  commentEntry : CommentApiInterface;
 
   onSubmit(form : NgForm){
-    
+
     this.commentEntry = form.form.value;
     console.log(form);
     console.log(this.commentEntry);
