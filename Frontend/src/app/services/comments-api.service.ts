@@ -46,7 +46,6 @@ export class CommentsApiService {
   //***************** UPDATE *****************
   //modifica il commento corrispondente all'id del commento passato come parametro
   editComment (comment : CommentsResultsInterface) {
-    console.log(comment.id)
     return this.http.put<CommentsResultsInterface>(this.baseUrl+"/"+comment.id, comment, {responseType: 'text' as 'json'});
    }
  
