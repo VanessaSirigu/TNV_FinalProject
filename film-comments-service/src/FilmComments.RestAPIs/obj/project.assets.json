@@ -1089,11 +1089,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
+      "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
       "projectName": "FilmComments.RestAPIs",
-      "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
+      "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.RestAPIs/FilmComments.RestAPIs.csproj",
       "packagesPath": "/home/dario/.nuget/packages/",
-      "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/obj/",
+      "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.RestAPIs/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/dario/.nuget/NuGet/NuGet.Config"
@@ -1108,11 +1108,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
-              "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
+            "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+              "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
             },
-            "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {
-              "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj"
+            "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj": {
+              "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj"
             }
           }
         }

@@ -10,3 +10,15 @@
 /home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/ref/FilmComments.Core.dll
 /home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.pdb
 /home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.csproj.AssemblyReference.cache
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/bin/Debug/net5.0/FilmComments.Core.deps.json
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/bin/Debug/net5.0/FilmComments.Core.dll
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/bin/Debug/net5.0/ref/FilmComments.Core.dll
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/bin/Debug/net5.0/FilmComments.Core.pdb
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.csproj.AssemblyReference.cache
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.GeneratedMSBuildEditorConfig.editorconfig
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.AssemblyInfoInputs.cache
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.AssemblyInfo.cs
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.csproj.CoreCompileInputs.cache
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.dll
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/ref/FilmComments.Core.dll
+/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/obj/Debug/net5.0/FilmComments.Core.pdb

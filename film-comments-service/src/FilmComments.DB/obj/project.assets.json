@@ -811,11 +811,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+      "projectUniqueName": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
       "projectName": "FilmComments.DB",
-      "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+      "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
       "packagesPath": "/home/dario/.nuget/packages/",
-      "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/obj/",
+      "outputPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.DB/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/dario/.nuget/NuGet/NuGet.Config"
@@ -830,8 +830,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
-              "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
+            "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj": {
+              "projectPath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.Core/FilmComments.Core.csproj"
             }
           }
         }

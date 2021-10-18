@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = FilmComments.RestAPIs
-build_property.ProjectDir = /home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.RestAPIs/
+build_property.ProjectDir = /home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.RestAPIs/

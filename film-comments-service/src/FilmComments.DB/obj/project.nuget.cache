@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jqJPzYJo7P15eFopNngJo66JaJ3zak+I1tz0LAUB2kCvCoSsXKKaenN3F2WS3Hn5Ck2iiIvu+9LXsQRQ0zNYiw==",
+  "dgSpecHash": "VeUMFKCpgnTN0ziGmSdWnlOitxlVcBLghzWGcsZtvU7Um3dSmwJJKyN6UiRq6d8WdG3oTYgNhsPL6SmncoA5mw==",
   "success": true,
-  "projectFilePath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
+  "projectFilePath": "/home/dario/VisualStudioProject/ProveTecnicheDiGitHub/TNV_FinalProject/film-comments-service/src/FilmComments.DB/FilmComments.DB.csproj",
   "expectedPackageFiles": [
     "/home/dario/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
     "/home/dario/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
