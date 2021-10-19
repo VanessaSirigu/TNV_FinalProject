@@ -15,6 +15,13 @@ import { UserDetailsComponent } from './routes/users/user-details/user-details.c
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
 import { TvSeriesApiComponent } from './routes/tv-series-api/dashboard-series/tv-series-api.component';
 
+import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { AddMovieRatingComponent } from './routes/add-movie-rating/add-movie-rating.component';
+import { RatingDetailsComponent } from './routes/rating-details/rating-details.component';
+import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-rating.component';
+import { DettagliComponent } from './routes/dettagli/dettagli.component';
+import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
+import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -31,7 +38,14 @@ const routes: Routes = [
   { path: "addUser", component : AddUserComponent},
   { path: "userDetails/:id", component : UserDetailsComponent},
   { path: "userDetails/edit/:id", component : EditUserComponent},
-  { path: "tvSeries", component : TvSeriesApiComponent}
+  { path: "tvSeries", component : TvSeriesApiComponent},
+  { path: "movieRating",component: MovieRatingComponent},
+  { path: "addMovieRating",component:AddMovieRatingComponent},
+  { path: "ratingDetails/:id",component:RatingDetailsComponent},
+  { path: "editMovieRating/:id",component:EditMovieRatingComponent},
+  { path: "dettagli/:id", component:DettagliComponent},
+  { path: "detailMovieApi/:id",component:DetailsMovieApiComponent},
+  { path: "addRatingApi/:id",component:AddRatingApiComponent}
 ];
 
 @NgModule({

@@ -7,13 +7,18 @@ import { MovieApiInterface } from '../models/apiMovie.model';
 })
 export class MoviesApiService {
 
-    private baseURL = 'https://api.themoviedb.org/4/';
-    private apiKey = "7b18cdb21655956f46b6cd26e3654eaf";
+    private baseURL = 'https://api.themoviedb.org/';
+    private apiKey = "1e6e5ef39021170bbc2343b6c8c353e8";
 
     constructor( private http : HttpClient) { }
 
     getMarvelList(){
-        return this.http.get<MovieApiInterface>(this.baseURL+"list/1?api_key="+this.apiKey);
+        return this.http.get<MovieApiInterface>(this.baseURL+"4/list/1?api_key="+this.apiKey);
+    }
+    getMarvelListByMovieId(id){
+      return this.http.get<any>(this.baseURL+"3/movie/"+id+"?api_key="+this.apiKey+"&language=en-US")
+      //https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
+
     }
 
 }

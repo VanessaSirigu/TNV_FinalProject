@@ -13,7 +13,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of results">
+        <tr class="pointer" *ngFor="let entry of results" (click)="goToDetails(entry.id)"   >
           <td> {{entry.title}}</td>
           <td>{{entry.original_language}}</td>
           <td>{{entry.popularity}}</td>
@@ -22,5 +22,5 @@
       </tbody>
     </table>
   </div>
-  
+
   <app-loading-page *ngIf="results==null" ></app-loading-page>

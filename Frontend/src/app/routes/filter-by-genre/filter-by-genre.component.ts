@@ -16,6 +16,7 @@ export class FilterByGenreComponent implements OnInit {
 
   genre:string;
   movies: MovieData [];
+
   genresArray = ['Horror','Adventure','Comedy','Fantasy','Crime','Romance'];
 
   ngOnInit(): void {

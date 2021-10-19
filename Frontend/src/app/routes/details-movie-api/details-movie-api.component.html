@@ -1,0 +1,30 @@
+<div *ngIf="result != null " class="container">
+
+  <div class="row p-4 my-2 mx-1 border shadow">
+      <button class="btn btn-primary mr-5"[routerLink]="['/dashboard']">Back</button>
+      <h3>Details</h3>
+  </div>
+  <button class="btn btn-primary ml-3" [routerLink]="['/addRatingApi/'+id]">Rating</button>
+
+  <div class="mt-5 p-4"  >
+      <ul class="list-group">
+          <li class="list-group-item">Adult : {{result.adult}}</li>
+          <li class="list-group-item">Backdrop_path : {{result.backdrop_path}}</li>
+          <li class="list-group-item">Id: {{result.id}}</li>
+          <li class="list-group-item">Media_type : {{result.media_type}}</li>
+          <li class="list-group-item">Original_language : {{result.original_language}}</li>
+          <li class="list-group-item">Overview: {{result.overview}}</li>
+          <li class="list-group-item">Popularity : {{result.popularity}}</li>
+          <li class="list-group-item">Release_date : {{result.release_date}}</li>
+          <li class="list-group-item">Title: {{result.title}}</li>
+          <li class="list-group-item">Video: {{result.video}}</li>
+        </ul>
+        <div class="row">
+         <!-- <button class="btn btn-danger ml-5" (click)='delete()'>Delete</button>-->
+         <!-- <button class="btn btn-primary ml-3" [routerLink]="['/editMovieRating/'+ result.id]">Rating</button>-->
+      </div>
+  </div>
+
+
+</div>
+

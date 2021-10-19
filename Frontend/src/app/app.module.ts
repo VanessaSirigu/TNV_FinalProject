@@ -26,6 +26,15 @@ import { UserDetailsComponent } from './routes/users/user-details/user-details.c
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
 import { TvSeriesApiComponent } from './routes/tv-series-api/dashboard-series/tv-series-api.component';
 import { AuthHeaderInterceptor } from './interceptor/auth-header.interceptor';
+import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { RatingPipePipe } from './pipes/rating-pipe.pipe';
+import { IdUserPipe } from './pipes/ratingPipe/id-user.pipe';
+import { AddMovieRatingComponent } from './routes/add-movie-rating/add-movie-rating.component';
+import { RatingDetailsComponent } from './routes/rating-details/rating-details.component';
+import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-rating.component';
+import { DettagliComponent } from './routes/dettagli/dettagli.component';
+import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
+import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +58,15 @@ import { AuthHeaderInterceptor } from './interceptor/auth-header.interceptor';
     UserDetailsComponent,
     EditUserComponent,
     TvSeriesApiComponent,
+    MovieRatingComponent,
+    RatingPipePipe,
+    IdUserPipe,
+    AddMovieRatingComponent,
+    RatingDetailsComponent,
+    EditMovieRatingComponent,
+    DettagliComponent,
+    DetailsMovieApiComponent,
+    AddRatingApiComponent,
   ],
   imports: [
     BrowserModule,

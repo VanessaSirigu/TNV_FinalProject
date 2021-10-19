@@ -1,0 +1,21 @@
+<div *ngIf="data != null " class="container">
+
+  <div class="row p-4 my-2 mx-1 border shadow">
+      <button class="btn btn-primary mr-5"[routerLink]="['/dashboard']">Back</button>
+      <h3>Details</h3>
+  </div>
+
+  <div class="mt-5 p-4">
+      <ul class="list-group" >
+          <li class="list-group-item">Movie rating : {{data.movie_rating}}</li>
+          <li class="list-group-item">Movie id : {{data.movie_id}}</li>
+          <li class="list-group-item">User id: {{data.user_id}}</li>
+        </ul>
+        <div class="row">
+          <!--<button class="btn btn-danger ml-5" (click)='delete()'>Delete</button>-->
+          <button class="btn btn-primary ml-3" [routerLink]="['/editMovieRating/'+ id]">Edit</button>
+      </div>
+  </div>
+
+
+</div>
