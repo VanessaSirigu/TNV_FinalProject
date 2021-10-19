@@ -8,7 +8,7 @@ import { MovieApiInterface } from '../models/apiMovie.model';
 export class MoviesApiService {
 
     private baseURL = 'https://api.themoviedb.org/4/';
-    private apiKey = "MYKEY";
+    private apiKey = "7b18cdb21655956f46b6cd26e3654eaf";
 
     constructor( private http : HttpClient) { }
 
