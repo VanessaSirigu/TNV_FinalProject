@@ -1,11 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
-
-// export interface UserInterface{
-//   username: string,
-//   password: string
-// }
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,23 +9,29 @@ import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private router: Router, private usersService : UsersManagerApiservice) { }
-
   //variabili per l'input
   usernameInput: string;
   passwordInput: string;
-  message: any;
+  invalidLogin = false
 
-  ngOnInit(): void {
+  constructor(private router: Router,
+    private authService: AuthService) { }
+
+  ngOnInit() {
   }
 
-  doLoginOnComponent() {
-    let resp = this.usersService.doLogin(this.usernameInput, this.passwordInput);
-    console.log(this.usernameInput, this.passwordInput);
-    resp.subscribe (data => {
-      this.message = data;
-        console.log(data);
-      })
+  checkLogin() {
+    //console.log("checkLogin "+this.usernameInput + " " + this.passwordInput);
+    (this.authService.doLogin(this.usernameInput, this.passwordInput).subscribe(
+      data => {
+        this.invalidLogin = false
+        this.router.navigate(['/dashboard'])
+        },
+      error => {
+        this.invalidLogin = true
+      }
+    )
+    );
   }
 
 }

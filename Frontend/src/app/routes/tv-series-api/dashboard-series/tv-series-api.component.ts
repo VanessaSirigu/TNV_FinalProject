@@ -1,7 +1,7 @@
-import { TvSeriesApiInterface } from './../../models/apiTvSeries';
+import { TvSeriesApiInterface } from '../../../models/apiTvSeries';
 import { Component, OnInit } from '@angular/core';
-import { TvSeriesApiService } from '../../services/tv-series-api.service';
-import { OneTvShowInterface } from '../../models/apiTvSeries';
+import { TvSeriesApiService } from '../../../services/tv-series-api.service';
+import { OneTvShowInterface } from '../../../models/apiTvSeries';
 
 @Component({
   selector: 'app-tv-series-api',

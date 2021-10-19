@@ -9,12 +9,11 @@ import { FilterByGenreComponent } from './routes/filter-by-genre/filter-by-genre
 import { WelcomePageComponent } from './routes/welcome-page/welcome-page.component';
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
-import { UsersManagerApiservice } from './services/usersManagerApi.service';
 import { UsersManagerPageComponent } from './routes/users/users-manager-page/users-manager-page.component';
 import { AddUserComponent } from './routes/users/add-user/add-user.component';
 import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
-import { TvSeriesApiComponent } from './routes/tv-series-api/tv-series-api.component';
+import { TvSeriesApiComponent } from './routes/tv-series-api/dashboard-series/tv-series-api.component';
 
 
 const routes: Routes = [

@@ -15,10 +15,10 @@ export class UsersManagerApiservice {
 
   private baseURL = 'http://localhost:8080/users';
 
-  /***************************** LOGIN ******************************/
-  doLogin (username, password) {
-    return this.http.get<any>('http://localhost:8080');
-  }
+  // /***************************** LOGIN ******************************/
+  // doLogin (username, password) {
+  //   return this.http.get<any>('http://localhost:8080');
+  // }
 
   /***************************** CREATE ******************************/
   //aggiunge un nuovo utente

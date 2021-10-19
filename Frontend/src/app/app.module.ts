@@ -24,7 +24,8 @@ import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
 import { AddUserComponent } from './routes/users/add-user/add-user.component';
 import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
-import { TvSeriesApiComponent } from './routes/tv-series-api/tv-series-api.component';
+import { TvSeriesApiComponent } from './routes/tv-series-api/dashboard-series/tv-series-api.component';
+import { AuthHeaderInterceptor } from './interceptor/auth-header.interceptor';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,9 @@ import { TvSeriesApiComponent } from './routes/tv-series-api/tv-series-api.compo
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService],
+  providers: [DataService ],
+
+   // {provide : HTTP_INTERCEPTORS, useClass : AuthHeaderInterceptor, multi : true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
