@@ -10,7 +10,7 @@ import { MovieData } from 'src/app/models/data.model';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private dataService: DataService, 
+  constructor(private route: ActivatedRoute, private dataService: DataService,
     private router : Router) { }
 
   dataEntry: MovieData;
@@ -20,12 +20,13 @@ export class DetailsComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.fetchEntry()
-    
+
   }
 
   fetchEntry(){
     this.dataService.getEntry(this.id).subscribe( (res: any ) => {
       this.dataEntry = res;
+      console.log("data entry",this.dataEntry);
       this.ratedOption= this.dataEntry.rated === true ? 'yes' : 'no';
     })
   }

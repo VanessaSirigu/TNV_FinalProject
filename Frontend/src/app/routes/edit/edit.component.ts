@@ -22,21 +22,23 @@ export class EditComponent implements OnInit {
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.fetchEntry(id);
+    console.log("this id",this.fetchEntry(id));
+
   }
 
   fetchEntry(id){
     this.dataService.getEntry(id).subscribe( (res: any ) => {
       this.dataEntry = res;
-      
-      console.log(this.dataEntry)
+
+      console.log("this dataEntri",this.dataEntry)
       if(this.dataEntry.rated){
         this.ratedOptionSelected="yes";
       }
       else this.ratedOptionSelected="no"
     })
-    
+
   }
- 
+
   onSubmit(){
     console.log(this.dataEntry);
     if(this.ratedOptionSelected =='yes'){

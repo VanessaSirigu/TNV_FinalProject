@@ -1,3 +1,11 @@
+<div class="container p-5" *ngIf="data">
+   <div class="text-right">
+    <button type="button"  style="font-size: 30px" class="btn btn-default" aria-label="Left Align" [routerLink]='["/addMovieRating"]'>
+      <span class="fas fa-plus" aria-hidden="true"></span>
+      </button>
+  </div>
+
+
 <div class="container p-5" >
   <h1 class="text-center mb-5">
     Movie ratings
@@ -6,13 +14,15 @@
   <table class="table">
     <thead class="thead-dark">
       <tr>
+        <th scope="col">#</th>
         <th scope="col">movie rating</th>
         <th scope="col">movie id </th>
         <th scope="col">user id</th>
       </tr>
     </thead>
     <tbody>
-      <tr class="pointer" *ngFor="let entry of rating ">
+      <tr class="pointer" *ngFor="let entry of data ; let i = index" (click)="goToDetails(entry.movie_id)"  > <!--|ratingPipe:idMovieFilter-->
+        <th scope="row"> {{i + 1}}</th>
         <td>{{entry.movie_rating}}</td>
         <td>{{entry.movie_id}}</td>
         <td>{{entry.user_id }}</td>
@@ -21,4 +31,5 @@
   </table>
 </div>
 
-<app-loading-page *ngIf="rating==null" ></app-loading-page>
+
+<app-loading-page *ngIf="data==null" ></app-loading-page>

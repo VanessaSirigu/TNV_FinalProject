@@ -21,6 +21,14 @@ import { WelcomePageComponent } from './routes/welcome-page/welcome-page.compone
 import { SortByDateComponent } from './routes/sort-by-date/sort-by-date.component';
 import { MoviesApiComponent } from './routes/movies-api/movies-api.component';
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
+import { RatingPipePipe } from './pipes/rating-pipe.pipe';
+import { IdUserPipe } from './pipes/ratingPipe/id-user.pipe';
+import { AddMovieRatingComponent } from './routes/add-movie-rating/add-movie-rating.component';
+import { RatingDetailsComponent } from './routes/rating-details/rating-details.component';
+import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-rating.component';
+import { DettagliComponent } from './routes/dettagli/dettagli.component';
+import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
+import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +48,14 @@ import { MovieRatingComponent } from './components/movie-rating/movie-rating.com
     SortByDateComponent,
     MoviesApiComponent,
     MovieRatingComponent,
+    RatingPipePipe,
+    IdUserPipe,
+    AddMovieRatingComponent,
+    RatingDetailsComponent,
+    EditMovieRatingComponent,
+    DettagliComponent,
+    DetailsMovieApiComponent,
+    AddRatingApiComponent,
   ],
   imports: [
     BrowserModule,

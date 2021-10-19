@@ -27,9 +27,6 @@ export class DashboardComponent implements OnInit {
       this.movies = response;
       this.moviesDataLoader=true;
 
-
-
-
     })
   }
 

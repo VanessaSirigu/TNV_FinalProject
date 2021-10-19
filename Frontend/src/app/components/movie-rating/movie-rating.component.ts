@@ -1,7 +1,9 @@
-
 import { Component, OnInit } from '@angular/core';
 import { MovieRatingService } from 'src/app/services/movie-rating.service';
-import { MovieRatingInterface,DataInterface } from 'src/app/models/movieRating.model';
+import { MovieRatingInterface,DataInterface} from 'src/app/models/movieRating.model';
+import { Router } from '@angular/router';
+
+
 
 
 @Component({
@@ -12,25 +14,30 @@ import { MovieRatingInterface,DataInterface } from 'src/app/models/movieRating.m
 export class MovieRatingComponent implements OnInit {
 
   movieRatings: MovieRatingInterface;
-  rating : DataInterface[];
+  data : DataInterface[];
+  id:number;
+  idMovieFilter :number;
+  idUserFilter :number;
 
-  constructor(private MovieRatingService:MovieRatingService){}
+
+
+
+
+  constructor(private movieRatingService:MovieRatingService, private router:Router){}
 
   ngOnInit(){
       this.showAllMovieRating();
     }
 
-
-
     showAllMovieRating(){
 
-      this.MovieRatingService.getMovieRating().subscribe(
+      this.movieRatingService.getMovieRating().subscribe(
         responce =>{
         console.log("ho ottenuto tutti i dati")
         this.movieRatings = responce;
         console.log("i dati ottenuti sono: ",this.movieRatings);
-        this.rating= this.movieRatings.data;
-        console.log("rating: ",this.rating)
+        this.data= this.movieRatings.data;
+        console.log("rating: ",this.movieRatings.data)
        // let obj = JSON.stringify(this.movieRatings);
 
         //console.log(obj);
@@ -39,4 +46,14 @@ export class MovieRatingComponent implements OnInit {
       error => console.log(error)
       )
     }
+
+    goToDetails(id){
+      this.router.navigateByUrl('/dettagli/' + id);
+
+
+    }
+
+
 }
+
+
