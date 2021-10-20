@@ -35,6 +35,10 @@ import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-
 import { DettagliComponent } from './routes/dettagli/dettagli.component';
 import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
 import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
+import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
+import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
+import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
+import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +71,11 @@ import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.co
     DettagliComponent,
     DetailsMovieApiComponent,
     AddRatingApiComponent,
+    AddCommentComponent,
+    EditCommentComponent,
+    CommentDetailsComponent,
+    CommentsManagerPageComponent,
+
   ],
   imports: [
     BrowserModule,
