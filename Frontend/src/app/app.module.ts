@@ -85,9 +85,8 @@ import { CommentsManagerPageComponent } from './routes/comments/comments-manager
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService ],
-
-   // {provide : HTTP_INTERCEPTORS, useClass : AuthHeaderInterceptor, multi : true }],
+  providers: [DataService,
+  {provide : HTTP_INTERCEPTORS, useClass : AuthHeaderInterceptor, multi : true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

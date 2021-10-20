@@ -45,7 +45,8 @@ const routes: Routes = [
   { path: "editMovieRating/:id",component:EditMovieRatingComponent},
   { path: "dettagli/:id", component:DettagliComponent},
   { path: "detailMovieApi/:id",component:DetailsMovieApiComponent},
-  { path: "addRatingApi/:id",component:AddRatingApiComponent}
+  { path: "addRatingApi/:id",component:AddRatingApiComponent},
+  { path: "tvSeries", component : TvSeriesApiComponent},
 ];
 
 @NgModule({
