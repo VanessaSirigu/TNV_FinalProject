@@ -32,8 +32,8 @@ export class EditUserComponent implements OnInit {
   onSubmit(id){
     this.usersService.editUser(this.userEntry).subscribe (response => {
       this.editing = true;
+      this.router.navigate(['/usersManager'])
     }),
     err => {console.log(err);}
-    this.router.navigate(['/usersManager'])
   }
 }

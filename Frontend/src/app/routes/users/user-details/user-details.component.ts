@@ -35,7 +35,6 @@ export class UserDetailsComponent implements OnInit {
       this.router.navigate(['/usersManager']);
     }, (err) => {
       console.log(err);
-      this.router.navigate(['/usersManager']);
     });
 
   }
