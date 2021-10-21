@@ -34,7 +34,10 @@ export class UsersManagerApiservice {
 
   //recupera l'utente corrispondente all'username passato come parametro
   getUserByUsername(username){
-    return this.http.get<UserInterface>(this.baseURL+"/username/"+username);
+    const headers = new HttpHeaders({
+      Authorization: 'Basic ' +
+        btoa("admin" + ":" + "admin")});
+    return this.http.get<UserInterface>(this.baseURL+"/username/" +username, { headers });
   }
 
   //recupera un utente dal suo username parziale

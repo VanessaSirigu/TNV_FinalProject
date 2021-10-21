@@ -28,7 +28,7 @@
           </span>
         </li>
         <span>
-          <button type="submit" (click)="checkLogin()" class="submit">
+          <button type="submit" (click)="verifyByUsername()" class="submit">
             Let's go!
           </button>
         </span>
@@ -37,6 +37,12 @@
             Go away!
           </button>
         </span>
+        <span *ngIf="loginError">
+           <p>Nop! That's wrong!</p>
+        </span>
+        <span *ngIf="validLogin">
+          <p>Yes! Correct</p>
+       </span>
       </ul>
     </form>
   </div>

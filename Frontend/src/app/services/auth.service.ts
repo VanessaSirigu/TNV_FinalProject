@@ -13,12 +13,12 @@ export class AuthService {
   private baseURL = 'http://localhost:8080/users/';
 
   /***************************** LOGIN ******************************/
-  doLogin (username, password) {
+ /* doLogin (username, password) {
     console.log("doLogin service: " + username + password);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<any>(this.baseURL+"validateLogin", {headers});
   }
-
+*/
   authenticate(username : string,  password : string) {
     console.log("authenticate 1 " + username, password);
     const headers = new HttpHeaders({
