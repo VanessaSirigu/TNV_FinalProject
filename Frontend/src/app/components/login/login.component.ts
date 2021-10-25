@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
 import { UserInterface, UsersApiInterface } from '../../models/apiUsers.model';
-
 
 @Component({
   selector: 'app-login',
@@ -15,52 +13,47 @@ export class LoginComponent implements OnInit {
   //variabili per l'input
   usernameInput: string;
   passwordInput: string;
-  username : string;
-  password : string;
+
+  //variabili di controllo login
   loginError : boolean;
   validLogin : boolean;
-  users : UsersApiInterface;
+
   results : UserInterface;
 
-  constructor(private router: Router,
-    private authService: AuthService, private usersService : UsersManagerApiservice) { }
+  constructor(private router: Router, private usersService : UsersManagerApiservice) { }
 
   ngOnInit() {
   }
-/*
-  checkLogin() {
-    this.authService.authenticate(this.usernameInput, this.passwordInput).subscribe(
-      data => {
-        this.invalidLogin = false
-        this.router.navigate(['/dashboard'])
-        },
-      error => {
-        this.invalidLogin = true
-      });
-  }
-*/
+
+  //Metodo per la verifica dei dati inseriti nel form di login
   verifyByUsername(){
     this.loginError = false;
     this.validLogin = false;
-
-    console.log (this.usernameInput)
+    //cerca l'utente nel db verificando username e password
     this.usersService.getUserByUsername(this.usernameInput).subscribe (
       response => {
-
-        console.log (this.usernameInput)
         this.results = response
-        console.log (this.results)
-        if (this.results == null){
-          console.log("Autenticazione non riuscita.")
-          this.loginError = true;
-        } else {
+        if (this.results != null && this.results.password==this.passwordInput){
           this.validLogin = true;
+          //se l'utente è stato trovato, viene dato accesso alle risorse
+          this.doLogin();
+          this.usersService.getUserById(this.results.id);
+          this.router.navigate(['/usersManager']);
+        } else {
+          this.loginError = true;
         }
       },
     error => error
     )
   }
 
-
+  /*Viene dato l'accesso ai dati grazie alle credenziali dell'utenza di servizio admin
+  richiamata nel service*/
+  doLogin() {
+    let resp = this.usersService.login(this.usernameInput, this.passwordInput);
+    resp.subscribe (data => {
+      console.log("doLogin" + data)
+    })
+  }
 
 }

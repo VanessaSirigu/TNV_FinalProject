@@ -12,7 +12,6 @@ export class TvSeriesApiComponent implements OnInit {
 
   series : TvSeriesApiInterface;
   oneSeries : OneTvShowInterface [];
-  pathImg : string;
 
   constructor(private apiService : TvSeriesApiService) { }
 
@@ -23,24 +22,10 @@ export class TvSeriesApiComponent implements OnInit {
   getTvSeriesOnComponent(){
     this.apiService.getSerieTvList().subscribe(
       response => {
-        console.log("ho ottenuto i dati!")
         this.series = response;
-      //  this.pathImg = getImageOnComponent()
         this.oneSeries= this.series.results;
-        // this.series =
-        console.log("i dati ottenuti sono: ", this.oneSeries);
       },
       error => console.log(error)
     )}
 
-    // getImageOnComponent() {
-    //   this.apiService.getImage().subscribe(
-    //     response => {
-
-    //       this.pathImg = response;
-    //       this.oneSeries= this.series.results;
-    //       console.log("i dati ottenuti sono: ", this.oneSeries);
-    //   },
-    //   error => console.log("errore")
-    //   )}
 }

@@ -1,0 +1,38 @@
+.container-p5 {
+max-width: 95%;
+}
+
+a {
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 35px;
+  color: rgb(159, 199, 205);
+  text-align: left;
+  vertical-align: bottom;
+}
+
+table, .btn-default {
+  color: rgb(159, 199, 205);
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 22px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+img {
+  height : 220px;
+}
+
+#title {
+  text-align: left;
+  padding-left: 0%;
+}
+
+table {
+  border-bottom: 2px solid rgb(159, 199, 205);
+  /* border-top: 2px solid rgb(159, 199, 205); */
+}
+
+td, td {
+  vertical-align: bottom;
+  border-top: none;
+}

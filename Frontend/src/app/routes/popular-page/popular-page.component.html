@@ -1,0 +1,35 @@
+<body>
+  <div class="container p-5">
+    <span>
+      <h1 class="text-center mb-5">Popular Movies</h1>
+    </span>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th scope="col">Title</th>
+          <th scope="col">Overview</th>
+          <th scope="col">Popularity</th>
+          <th scope="col">Votes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of movies">
+          <td>
+            <img
+              src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}"
+            />
+          </td>
+          <td id="title">{{ entry.title }}</td>
+          <td id="overwiev">{{ entry.overview }}</td>
+          <td id="popularity">{{ entry.popularity }}</td>
+          <td id="votes">{{ entry.vote_count }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <app-loading-page *ngIf="movies == null"></app-loading-page>
+
+</body>

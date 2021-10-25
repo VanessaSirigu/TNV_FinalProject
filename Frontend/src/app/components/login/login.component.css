@@ -5,16 +5,17 @@ label {
     width: 92px;
     margin-left: 0%;
   }
-  
+
   /*lista*/
   ul {
     padding-top: 10px;
     padding: 40px;
     list-style: none;
   }
-  
+
   /*form username + psw + bottoni*/
   .form-group {
+    height: 250px;
     width: max-content;
     padding-bottom: 20px;
     padding-right: 35px;
@@ -25,7 +26,7 @@ label {
     border-style: solid;
     border-color:  rgb(159, 199, 205, 0.7);
   }
-  
+
   /*riga input*/
   .input-line {
     width: 190px;
@@ -33,15 +34,15 @@ label {
     border-style: solid;
     border-color:  rgb(159, 199, 205, 0.7);
   }
-  
+
   /*label + riga input*/
   .credential-block {
     justify-content: stretch;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     vertical-align: auto;
   }
-  
-  /*bottone submit*/
+
+  /*botton submit*/
   .submit {
     float: right;
     width: 70px;
@@ -51,3 +52,11 @@ label {
     box-sizing: content-box;
     background-color: rgba(240, 197, 116, 0.4);
   }
+
+.fa-times {
+  color: red;
+}
+
+.fa-check-circle {
+  color: green;
+}

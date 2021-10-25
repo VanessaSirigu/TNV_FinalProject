@@ -1,0 +1,62 @@
+<body>
+<div id="container" *ngIf="movies">
+  <app-chart></app-chart>
+
+  <div class="text-right">
+    <button
+     type="button"style="font-size: 30px" class="btn btn-default" aria-label="Left Align"
+      [routerLink]="['/add']"
+    >
+      <span class="fas fa-plus" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th></th>
+        <th id="title" scope="col">Movie</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        class="pointer"
+        *ngFor="let entry of movies; let i = index"
+        (click)="goToDetails(entry.id)"
+      >
+        <td></td>
+        <td id="title">{{ entry.name }}</td>
+      </tr>
+
+      <tr
+        class="pointer"
+        *ngFor="let entry of rating; let i = index"
+        (click)="goToDetails(entry.id)"
+      >
+      <td></td>
+        <td>{{ entry.movie_rating }}</td>
+      </tr>
+
+      <tr
+        class="pointer"
+        *ngFor="let entry of comment; let i = index"
+        (click)="goToDetails(entry.id)">
+        <td>{{ entry.body }}</td>
+      </tr>
+
+      <tr
+        class="pointer"
+        *ngFor="let entry of rating; let i = index"
+        (click)="goToDetails(entry.id)"
+      >
+      <td></td>
+        <td>{{ entry.movie_rating }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-loading-page *ngIf="movies == null"></app-loading-page>
+</body>

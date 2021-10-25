@@ -1,3 +1,5 @@
+import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
+import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './routes/dashboard/dashboard.component'
@@ -22,6 +24,11 @@ import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-
 import { DettagliComponent } from './routes/dettagli/dettagli.component';
 import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
 import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
+import { MyDashboardComponent } from './routes/my-dashboard/my-dashboard.component';
+import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
+import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
+import { HomeComponent } from './routes/home/home.component';
+import { PopularPageComponent } from './routes/popular-page/popular-page.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -47,6 +54,13 @@ const routes: Routes = [
   { path: "detailMovieApi/:id",component:DetailsMovieApiComponent},
   { path: "addRatingApi/:id",component:AddRatingApiComponent},
   { path: "tvSeries", component : TvSeriesApiComponent},
+  { path: "myBoard", component : MyDashboardComponent},
+  { path: "commentsManager", component : CommentsManagerPageComponent},
+  { path: "commentDetails/:id", component : CommentDetailsComponent},
+  { path: "addComment", component : AddCommentComponent},
+  { path: "editComment/:id", component : EditCommentComponent},
+  { path: "home", component : HomeComponent},
+  { path: "popMovies", component : PopularPageComponent},
 ];
 
 @NgModule({

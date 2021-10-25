@@ -1,0 +1,19 @@
+<div class="container p-5">
+  <table class="table">
+    <tbody>
+      <td>
+        <a id="pageLink" href="/tvSeries">
+          Popular Tv Shows
+        </a>
+      </td>
+      <td *ngFor="let entry of oneSeries | slice: 0:3; let i = index">
+        <tr>
+          <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+        </tr>
+        <tr id="title" scope="row">#{{i + 1}}   {{entry.name}}</tr>
+      </td>
+    </tbody>
+  </table>
+
+<app-loading-page *ngIf="series == null"></app-loading-page>
+</div>

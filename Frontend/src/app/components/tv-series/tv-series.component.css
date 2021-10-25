@@ -1,0 +1,46 @@
+#pageLink {
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 35px;
+  color: rgb(159, 199, 205);
+  justify-items: left;
+  vertical-align: bottom;
+}
+
+#label {
+    border-bottom: rgb(240, 197, 116);
+    border-width: 2px;
+    border-bottom-style: solid;
+}
+
+table, .btn-default {
+  color: rgb(159, 199, 205);
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 22px;
+  text-align: center;
+  border-top: none;
+
+}
+
+img {
+  height : 180px;
+}
+
+#title {
+  text-align: left;
+}
+
+table {
+  border-bottom: 2px solid rgb(159, 199, 205);
+  /* border-top: 2px solid rgb(159, 199, 205); */
+  border-top: none;
+}
+
+td {
+  vertical-align: bottom;
+  border-top: none;
+}
+
+tr {
+  justify-content: left;
+  border-top: none;
+}

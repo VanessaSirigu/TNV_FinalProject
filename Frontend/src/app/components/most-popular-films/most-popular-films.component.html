@@ -1,0 +1,19 @@
+<div class="container p-5">
+    <table class="table">
+      <tbody>
+        <td>
+          <a href="/popMovies">
+            Popular Movies
+          </a>
+        </td>
+        <td *ngFor="let entry of movies | slice: 0:3; let i = index">
+          <tr>
+            <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+          </tr>
+          <tr id="title" scope="row">#{{i + 1}}   {{entry.title}}</tr>
+        </td>
+      </tbody>
+    </table>
+
+  <app-loading-page *ngIf="popMovies == null"></app-loading-page>
+</div>

@@ -15,51 +15,57 @@ export class UsersManagerApiservice {
 
   private baseURL = 'http://localhost:8080/users';
 
-  // /***************************** LOGIN ******************************/
-  // doLogin (username, password) {
-  //   return this.http.get<any>('http://localhost:8080');
-  // }
+  /***************************** LOGIN ******************************/
+  login (username : string, password : string) {
+    console.log("login service: " + username + password);
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.get<any>(this.baseURL+"/validateLogin", {headers, responseType: 'text' as 'json'});
+  }
 
   /***************************** CREATE ******************************/
   //aggiunge un nuovo utente
   addUser = (user: UserInterface) => {
-    return this.http.post<UserInterface>(this.baseURL+"/", user,  { responseType: 'text' as 'json'});
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.post<UserInterface>(this.baseURL+"/", user,  { headers, responseType: 'text' as 'json'});
   }
 
   /***************************** READ ******************************/
   //recupera l'utente corrispondente all'id passato come parametro
   getUserById(id){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/"+id);
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.get<UsersApiInterface>(this.baseURL+"/"+id, {headers});
   }
 
   //recupera l'utente corrispondente all'username passato come parametro
   getUserByUsername(username){
-    const headers = new HttpHeaders({
-      Authorization: 'Basic ' +
-        btoa("admin" + ":" + "admin")});
+    const headers = new HttpHeaders({Authorization: 'Basic ' + btoa("admin:admin")});
     return this.http.get<UserInterface>(this.baseURL+"/username/" +username, { headers });
   }
 
   //recupera un utente dal suo username parziale
   getUserContainingUsername(username){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/username/like/"+username);
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.get<UsersApiInterface>(this.baseURL+"/username/like/"+username, {headers});
   }
 
   //recupera tutti gli user presenti
   allUsers(){
-    return this.http.get<UsersApiInterface>(this.baseURL+"/");
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.get<UsersApiInterface>(this.baseURL+"/", {headers});
   }
 
   /***************************** UPDATE ******************************/
   //modifica l'utente corrispondente all'id_user passato come parametro
   editUser (user : UserInterface) {
-   return this.http.put<UserInterface>(this.baseURL+"/"+user.id, user, { responseType: 'text' as 'json'});
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+   return this.http.put<UserInterface>(this.baseURL+"/"+user.id, user, {headers, responseType: 'text' as 'json'});
   }
 
   /***************************** DELETE ******************************/
   //cancella l'utente corrispondente all'id_user passato come parametro
   deleteUser(id){
-    return this.http.delete<UsersApiInterface>(this.baseURL+"/"+id);
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.delete<UsersApiInterface>(this.baseURL+"/"+id, {headers});
   }
 
 }

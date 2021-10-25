@@ -1,0 +1,14 @@
+body {
+  background-color: rgb(52, 58, 64);
+  height: 100%;
+}
+
+#profilePicture {
+  content : url("../../../assets/img/profilePicture6.png");
+  display: block;
+  max-width:150px;
+  max-height:95px;
+  width: auto;
+  height: auto;
+  margin-top: 50px;
+}

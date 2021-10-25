@@ -9,6 +9,7 @@ export interface MovieApiInterface{
 }
 
 export interface ResultInterface{
+    poster_path: string;
     adult: boolean,
     backdrop_path: string,
     id: number,

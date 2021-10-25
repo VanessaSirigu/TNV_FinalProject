@@ -17,6 +17,7 @@ export class DettagliComponent implements OnInit {
     movieRating:MovieRatingInterface;
     id: number;
     data:DataInterface[];
+    movieData:DataInterface;
 
 
 
@@ -30,7 +31,7 @@ export class DettagliComponent implements OnInit {
     this.movieRatingService.getMovieRatingsByMovieId(this.id).subscribe( (res: any ) => {
       this.movieRating = res;
       console.log("movieRating",this.movieRating);
-      this.data=this.movieRating.data;
+      this.data = this.movieRating.data;
       console.log("data",this.data);
 
     })

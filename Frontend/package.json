@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start":"ng serve",
+    "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -23,8 +23,10 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
     "bootstrap": "^4.4.0",
+    "chart.js": "^2.9.3",
     "font-awesome": "^4.7.0",
     "nan": "2.3",
+    "ng2-charts": "^2.2.3",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

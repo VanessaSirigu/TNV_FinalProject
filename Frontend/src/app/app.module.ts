@@ -25,7 +25,6 @@ import { AddUserComponent } from './routes/users/add-user/add-user.component';
 import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
 import { TvSeriesApiComponent } from './routes/tv-series-api/dashboard-series/tv-series-api.component';
-import { AuthHeaderInterceptor } from './interceptor/auth-header.interceptor';
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 import { RatingPipePipe } from './pipes/rating-pipe.pipe';
 import { IdUserPipe } from './pipes/ratingPipe/id-user.pipe';
@@ -39,6 +38,16 @@ import { AddCommentComponent } from './routes/comments/add-comment/add-comment.c
 import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
 import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
 import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
+import { MyDashboardComponent } from './routes/my-dashboard/my-dashboard.component';
+import { MyDashComponentComponent } from './components/my-dash-component/my-dash-component.component';
+ import { ChartComponent } from './components/chart/chart.component';
+ import { ChartsModule } from 'ng2-charts';
+import { HomeComponent } from './routes/home/home.component';
+import { MostPopularFilmsComponent } from './components/most-popular-films/most-popular-films.component';
+import { LatestMovieComponent } from './components/latest-movie/latest-movie.component';
+import { CommunityComponent } from './components/community/community.component';
+import { PopularPageComponent } from './routes/popular-page/popular-page.component';
+import { TvSeriesComponent } from './components/tv-series/tv-series.component';
 
 @NgModule({
   declarations: [
@@ -75,18 +84,26 @@ import { CommentsManagerPageComponent } from './routes/comments/comments-manager
     EditCommentComponent,
     CommentDetailsComponent,
     CommentsManagerPageComponent,
-
+    MyDashboardComponent,
+    MyDashComponentComponent,
+    ChartComponent,
+    HomeComponent,
+    MostPopularFilmsComponent,
+    LatestMovieComponent,
+    CommunityComponent,
+    PopularPageComponent,
+    TvSeriesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
+    ChartsModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [DataService,
-  {provide : HTTP_INTERCEPTORS, useClass : AuthHeaderInterceptor, multi : true }],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
