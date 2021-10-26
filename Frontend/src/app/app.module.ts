@@ -76,6 +76,7 @@ import { CommentsManagerPageComponent } from './routes/comments/comments-manager
     CommentDetailsComponent,
     CommentsManagerPageComponent,
 
+
   ],
   imports: [
     BrowserModule,

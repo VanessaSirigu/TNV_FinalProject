@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+//import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from '../../services/auth.service';
 import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
 import { UserInterface, UsersApiInterface } from '../../models/apiUsers.model';
+import { SharedService } from '../../services/shared.service';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class LoginComponent implements OnInit {
   //variabili per l'input
   usernameInput: string;
   passwordInput: string;
+  user : string;
   username : string;
   password : string;
   loginError : boolean;
@@ -23,7 +25,8 @@ export class LoginComponent implements OnInit {
   results : UserInterface;
 
   constructor(private router: Router,
-    private authService: AuthService, private usersService : UsersManagerApiservice) { }
+    private usersService : UsersManagerApiservice,
+    private shared : SharedService) { }
 
   ngOnInit() {
   }
@@ -39,28 +42,37 @@ export class LoginComponent implements OnInit {
       });
   }
 */
-  verifyByUsername(){
-    this.loginError = false;
-    this.validLogin = false;
+verifyByUsername(){
+  this.loginError = false;
+  this.validLogin = false;
+  //cerca l'utente nel db verificando username e password
+  this.usersService.getUserByUsername(this.usernameInput).subscribe (
+    response => {
+      this.results = response
+      if (this.results != null && this.results.password==this.passwordInput){
+        this.validLogin = true;
+        //se l'utente è stato trovato, viene dato accesso alle risorse
+        this.doLogin();
+        this.usersService.getUserById(this.results.id);
+        this.user=this.results.username;
+        this.shared.sendData(this.user)
+        this.router.navigate(['/moviesApi'])
 
-    console.log (this.usernameInput)
-    this.usersService.getUserByUsername(this.usernameInput).subscribe (
-      response => {
-
-        console.log (this.usernameInput)
-        this.results = response
-        console.log (this.results)
-        if (this.results == null){
-          console.log("Autenticazione non riuscita.")
-          this.loginError = true;
-        } else {
-          this.validLogin = true;
-        }
-      },
-    error => error
-    )
-  }
-
-
-
+      } else {
+        this.loginError = true;
+      }
+    },
+  error => error
+  )
 }
+
+/*Viene dato l'accesso ai dati grazie alle credenziali dell'utenza di servizio admin
+richiamata nel service*/
+  doLogin() {
+    let resp = this.usersService.login(this.usernameInput, this.passwordInput);
+    resp.subscribe(data => {
+      console.log(data)
+    })
+  }
+}
+

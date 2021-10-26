@@ -19,6 +19,11 @@ export class UsersManagerApiservice {
   // doLogin (username, password) {
   //   return this.http.get<any>('http://localhost:8080');
   // }
+  login (username : string, password : string) {
+    console.log("login service: " + username + password);
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa("admin:admin")});
+    return this.http.get<any>(this.baseURL+"/validateLogin", {headers, responseType: 'text' as 'json'});
+  }
 
   /***************************** CREATE ******************************/
   //aggiunge un nuovo utente

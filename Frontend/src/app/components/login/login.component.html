@@ -1,48 +1,48 @@
 <div class="container form-group">
-    <form>
-      <ul>
-        <li class="credential-block">
-          <label for="name">Username</label>
-          <span>
-            <input
-              type="text"
-              id="username"
-              name="usernameInput"
-              class="input-line"
-              required
-              [(ngModel)]="usernameInput"
-            />
-          </span>
-        </li>
-        <li class="credential-block">
-          <label for="name">Password</label>
-          <span>
-            <input
-              type="password"
-              id="password"
-              name="passwordInput"
-              class="input-line"
-              required
-              [(ngModel)]="passwordInput"
-            />
-          </span>
-        </li>
+  <form>
+    <ul>
+      <li class="credential-block">
+        <label for="name">Username</label>
         <span>
-          <button type="submit" (click)="verifyByUsername()" class="submit">
-            Let's go!
-          </button>
+          <input
+            type="text"
+            id="username"
+            name="usernameInput"
+            class="input-line"
+            required
+            [(ngModel)]="usernameInput"
+          />
         </span>
+      </li>
+      <li class="credential-block">
+        <label for="name">Password</label>
         <span>
-          <button type="submit" class="submit">
-            Go away!
-          </button>
+          <input
+            type="password"
+            id="password"
+            name="passwordInput"
+            class="input-line"
+            required
+            [(ngModel)]="passwordInput"
+          />
         </span>
-        <span *ngIf="loginError">
-           <p>Nop! That's wrong!</p>
-        </span>
-        <span *ngIf="validLogin">
-          <p>Yes! Correct</p>
-       </span>
-      </ul>
-    </form>
-  </div>
+      </li>
+      <span>
+        <button type="submit" (click)="verifyByUsername()" class="submit">
+          Let's go!
+        </button>
+      </span>
+      <span>
+        <button type="submit" class="submit">
+          Go away!
+        </button>
+      </span>
+      <span *ngIf="loginError">
+         <p>Nop! That's wrong!</p>
+      </span>
+      <span *ngIf="validLogin">
+        <p>Yes! Correct</p>
+     </span>
+    </ul>
+  </form>
+</div>

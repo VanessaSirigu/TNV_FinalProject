@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { UserInterface } from '../models/apiUsers.model';
@@ -12,13 +12,13 @@ export class AuthService {
 
   private baseURL = 'http://localhost:8080/users/';
 
-  /***************************** LOGIN ******************************/
- /* doLogin (username, password) {
+  ***************************** LOGIN ******************************
+  doLogin (username, password) {
     console.log("doLogin service: " + username + password);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<any>(this.baseURL+"validateLogin", {headers});
   }
-*/
+
   authenticate(username : string,  password : string) {
     console.log("authenticate 1 " + username, password);
     const headers = new HttpHeaders({
@@ -49,3 +49,4 @@ export class AuthService {
 
 
 
+*/
