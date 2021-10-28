@@ -2,8 +2,10 @@
     <div class="bg-dark">
       <div class="container">
         <div id ="logo">
+          <a [routerLink]='["/home"]'>
           TheNet
           <i class="fas fa-fish"></i>
+        </a>
         </div>
         <div>
           <ul id="menuDX" class="nav col-lg-auto my-2 my-md-0 justify-content-end">
@@ -27,7 +29,7 @@
               </a>
             </li>
             <li>
-              <a href="#" class="nav-link">
+              <a [routerLink]='["/myBoard"]' class="nav-link">
                 <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
                 Watchlist
               </a>

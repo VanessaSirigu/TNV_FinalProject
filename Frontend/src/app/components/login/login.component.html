@@ -1,48 +1,48 @@
-<div class="container form-group">
-  <form>
-    <ul>
-      <li class="credential-block">
-        <label for="name">Username</label>
+<html>
+
+<body>
+  <div class="container form-group">
+    <form>
+      <ul>
+        <li class="credential-block">
+          <label for="name">Username</label>
+          <span>
+            <input type="text" id="username" name="usernameInput" class="input-line" required
+              [(ngModel)]="usernameInput" />
+          </span>
+        </li>
+        <li class="credential-block">
+          <label for="name">Password</label>
+          <span>
+            <input type="password" id="password" name="passwordInput" class="input-line" required
+              [(ngModel)]="passwordInput" />
+          </span>
+        </li>
         <span>
-          <input
-            type="text"
-            id="username"
-            name="usernameInput"
-            class="input-line"
-            required
-            [(ngModel)]="usernameInput"
-          />
+          <button type="submit" (click)="verifyByUsername()" class="submit">
+            Login
+            <i class="fas fa-times fa-3x" *ngIf="loginError"></i>
+          </button>
         </span>
-      </li>
-      <li class="credential-block">
-        <label for="name">Password</label>
-        <span>
-          <input
-            type="password"
-            id="password"
-            name="passwordInput"
-            class="input-line"
-            required
-            [(ngModel)]="passwordInput"
-          />
-        </span>
-      </li>
-      <span>
-        <button type="submit" (click)="verifyByUsername()" class="submit">
-          Let's go!
-          <i class="fas fa-times fa-3x" *ngIf="loginError"></i>
-        </button>
-      </span>
+        <div>
+          <div></div>
+          <span>
+            <button type="submit" (click)="doLogout()" class="submit">Logout</button>
+          </span>
+          <span *ngIf="validLogin">
+            <i class="far fa-check-circle fa-3x"></i>
+          </span>
+        </div>
+      </ul>
       <div>
-        <div></div>
-        <span>
-          <!--<button type="submit" class="submit">See ya!</button>-->
-          <!-- <span *ngIf="loginError"> -->
-        </span>
-        <span *ngIf="validLogin">
-          <i class="far fa-check-circle fa-3x"></i>
-        </span>
+        <a [routerLink]='["/registration"]'>
+          <p>
+          Register Now
+        </p>
+      </a>
       </div>
-    </ul>
-  </form>
-</div>
+    </form>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<body class="container">
+  <div>
+    <div>
+      <span>
+        <h3>Create your account here</h3>
+      </span>
+
+      <div class="form-group">
+        <form (ngSubmit)="createUser(form)" #form="ngForm">
+
+          <div class="form-row">
+            <label for="username"></label>
+            <input type="text" method="POST" required ngModel name="name" id="name" placeholder="First Name">
+          </div>
+
+          <div class="form-row">
+            <label for="username"></label>
+            <input type="text" method="POST" required ngModel name="surname" id="surname" placeholder="Surname">        
+                                         
+          </div>
+
+          <div class="form-row">
+            <input type="text" method="POST" required ngModel name="email" id="email" placeholder="E-mail">
+              <p *ngIf="!emailOk">Invalid Email!</p>
+          </div>
+
+          <div class="form-row">
+            <label for="username"></label>
+            <input type="text" method="POST" required ngModel name="username" id="username" placeholder="Username">
+          </div>
+
+          <div class="form-row">
+            <label for="password"></label>
+            <input type="password" method="POST" required ngModel name="password" id="password" placeholder="Password">
+          </div>
+
+          <div class="form-row">
+            <label for="confirmPassword"></label>
+            <input type="password" method="POST" required ngModel name="confirmPassword" id="confirmPassword"
+              placeholder="Confirm Password">
+            <div class="form-row">
+              <p *ngIf="!passwordOk">Entered Password is not matching! Try Again</p>
+            </div>
+            <span id='message'></span>
+          </div>
+
+          <div class="col-12 mb-3">
+            <div class="form-check">
+              <input type="checkbox" name="terms" id="terms" value="1" required>
+              <a href="#" [routerLink]="['/terms-and-conditions']"> I Agree Terms & Coditions</a>
+              <div>
+                <p *ngIf="!termsOk">Devi accettare i termini e le condizioni</p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <button type="submit" name="submit" id="submit" [disabled]="!form.valid">Register</button>
+          </div>
+
+          <p id="already">Have already an account? <a href="#!" [routerLink]="['/login']"><u>Login here!</u></a></p>                
+           
+        </form>
+                               
+      </div>
+    </div>                   
+  </div>
+</body>
+
+<script>
+  $(document).ready(function () {
+
+    // Imposta lo stato iniziale
+    $('#textbox2').val($(this).is(':checked'));
+
+    // default = uncheck, checked -> false;
+    $('#checkbox1').click(function () {
+      $('#textbox2').val($(this).is(':checked'));
+    });
+  });
+</script>

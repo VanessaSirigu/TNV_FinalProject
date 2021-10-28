@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
-import { UserInterface, UsersApiInterface } from '../../models/apiUsers.model';
+import { UserInterface } from '../../models/apiUsers.model';
+import { SharedService } from '../../services/shared.service';
 
 @Component({
   selector: 'app-login',
@@ -19,8 +20,11 @@ export class LoginComponent implements OnInit {
   validLogin : boolean;
 
   results : UserInterface;
+  user : string;
+  userid : number;
 
-  constructor(private router: Router, private usersService : UsersManagerApiservice) { }
+  constructor(private router: Router, private usersService : UsersManagerApiservice,
+    private shared : SharedService) { }
 
   ngOnInit() {
   }
@@ -35,10 +39,15 @@ export class LoginComponent implements OnInit {
         this.results = response
         if (this.results != null && this.results.password==this.passwordInput){
           this.validLogin = true;
-          //se l'utente è stato trovato, viene dato accesso alle risorse
+          //se la verifica ha successo, l'utente viene autenticato
           this.doLogin();
+          //Assegna alla stringa user l'username dell'utente loggato
           this.usersService.getUserById(this.results.id);
-          this.router.navigate(['/usersManager']);
+          this.user=this.results.username;
+          this.shared.sendData(this.user)
+          localStorage.setItem('userId', this.results.id.toString());
+          localStorage.setItem('username', this.results.username);
+          this.router.navigate(['/myBoard']);
         } else {
           this.loginError = true;
         }
@@ -52,8 +61,14 @@ export class LoginComponent implements OnInit {
   doLogin() {
     let resp = this.usersService.login(this.usernameInput, this.passwordInput);
     resp.subscribe (data => {
-      console.log("doLogin" + data)
+      console.log("doLogin " + data)
     })
+  }
+
+  doLogout() {
+    localStorage.removeItem('userId');
+    localStorage.removeItem('username');
+    window.location.reload()
   }
 
 }

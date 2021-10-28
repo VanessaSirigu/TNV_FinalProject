@@ -48,6 +48,9 @@ import { LatestMovieComponent } from './components/latest-movie/latest-movie.com
 import { CommunityComponent } from './components/community/community.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
 import { TvSeriesComponent } from './components/tv-series/tv-series.component';
+import { CommonModule } from '@angular/common';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
 
 @NgModule({
   declarations: [
@@ -92,10 +95,13 @@ import { TvSeriesComponent } from './components/tv-series/tv-series.component';
     LatestMovieComponent,
     CommunityComponent,
     PopularPageComponent,
-    TvSeriesComponent
+    TvSeriesComponent,
+    RegistrationComponent,
+    RegistrationPageComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     NgbModule,
     ChartsModule,

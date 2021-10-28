@@ -1,7 +1,6 @@
 /* scritte a sinistra */
 a {
     color: #6c757d!important;
-    padding: 0 0 5px 0;
   }
 
   /* elementi della lista (menu orizzontale) */
@@ -12,18 +11,14 @@ a {
     display: inline;
     float: left;
     padding: 8px;
-    padding-inline: 15px;
   }
 
   /* intero blocco footer */
   footer {
-    margin: 0%;
     width: 100%;
     position: sticky;
-    bottom: 0;
     background-color: #343a40!important;
     height: 45px;
-    vertical-align: middle;
     align-items: center;
   }
 
@@ -35,4 +30,15 @@ a {
     text-align: right;
     margin-right: 35px;
     /* margin-top: 10px; */
+  }
+
+  #bloccoScritte {
+    width: 100%;
+    position: sticky;
+    background-color: #343a40!important;
+    height: 45px;
+  }
+
+  body {
+    min-height: 100%;
   }

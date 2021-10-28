@@ -29,6 +29,12 @@ import { CommentsManagerPageComponent } from './routes/comments/comments-manager
 import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
+import { CommunityComponent } from './routes/community/community.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { RegistrationService } from './services/registration.service';
+import { RegistrationComponent } from './components/registration/registration.component';
+import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -61,6 +67,8 @@ const routes: Routes = [
   { path: "editComment/:id", component : EditCommentComponent},
   { path: "home", component : HomeComponent},
   { path: "popMovies", component : PopularPageComponent},
+  { path: "community", component : CommunityComponent},
+  { path: "registration", component : RegistrationPageComponent},
 ];
 
 @NgModule({

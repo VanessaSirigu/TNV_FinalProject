@@ -1,0 +1,88 @@
+h3 {
+  font-family: 'DK Lemon Yellow Sun';
+  color: rgb(159, 199, 205);
+  font-weight: bold;
+  border-bottom-style: solid;
+  padding-bottom: 10px;
+  margin: auto;
+  width: max-content;
+  padding-top: 50px;
+  margin-bottom: 30px;
+}
+
+.container {
+padding-bottom: 5%;
+}
+
+body {
+  background-color: rgb(52, 58, 64);
+  width: 100%;
+  min-height: 100%;
+  margin-bottom: -1.2%;
+}
+
+#submit {
+  float: right;
+  margin-right: 50px;
+  width: 70px;
+  font-family: "DK Lemon Yellow Sun";
+  border-radius: 5px;
+  box-sizing: content-box;
+  background-color: rgba(240, 197, 116);
+  color: rgb(52, 58, 64);
+}
+
+p {
+  color:  rgba(240, 197, 116);
+}
+
+a {
+  color:  rgb(159, 199, 205);
+}
+
+a, p {
+  justify-content: center;
+  margin: auto;
+}
+
+.form-group {
+  padding-top: 30px;
+  height: max-content;
+  width: 60%;
+  background-color: rgb(52, 58, 64,0.6);
+  border-radius: 15px;
+  border-style: solid;
+  border-color:  rgb(159, 199, 205);
+  border-width: 3px;
+  margin: auto;
+  padding-bottom: 20px;
+}
+
+div, span {
+  margin: auto;
+  align-content: justify;
+}
+
+.form-row {
+  justify-content: center;
+  width: 50%;
+  padding-top: 15px;
+  margin: auto;
+}
+
+.form-check {
+  justify-content: center;
+  width: 50%;
+  padding-top: 15px;
+  margin: auto;
+}
+
+#already {
+  margin-left: 20px;
+}
+
+input {
+  background-color: rgba(88, 88, 88, 0.2);
+  color: rgb(159, 199, 205);
+  border-radius: 5px;
+}

@@ -1,9 +1,13 @@
 /*etichetta credenziali*/
 label {
-    font-size: 18px;
+    font-size: 22px;
     font-family: "DK Lemon Yellow Sun";
     width: 92px;
+    height: 32px;
     margin-left: 0%;
+    margin-bottom: 0%;
+    vertical-align: bottom;
+    text-align: left;
   }
 
   /*lista*/
@@ -17,14 +21,13 @@ label {
   .form-group {
     height: 250px;
     width: max-content;
-    padding-bottom: 20px;
     padding-right: 35px;
-    margin-top: 10px;
-    margin-bottom: 45px;
-    background-color: rgb(159, 199, 205, 0.4);
-    border-radius: 5px;
+    margin-top: 40px;
+    background-color: rgb(52, 58, 64,0.6);
+    border-radius: 15px;
     border-style: solid;
-    border-color:  rgb(159, 199, 205, 0.7);
+    border-color:  rgb(159, 199, 205);
+    border-width: 3px;
   }
 
   /*riga input*/
@@ -40,6 +43,7 @@ label {
     justify-content: stretch;
     padding-bottom: 20px;
     vertical-align: auto;
+    color:  rgb(159, 199, 205);
   }
 
   /*botton submit*/
@@ -50,7 +54,7 @@ label {
     font-family: "DK Lemon Yellow Sun";
     border-radius: 5px;
     box-sizing: content-box;
-    background-color: rgba(240, 197, 116, 0.4);
+    background-color: rgba(240, 197, 116);
   }
 
 .fa-times {
@@ -59,4 +63,17 @@ label {
 
 .fa-check-circle {
   color: green;
+}
+
+body, html {
+  background-color: rgb(52, 58, 64);
+  height: 370px;
+  margin-bottom: -1.2%
+}
+
+p, a {
+  color: rgba(240, 197, 116);
+  font-family: "DK Lemon Yellow Sun";
+  text-align: right;
+  margin-right: 45px;
 }
