@@ -1,0 +1,22 @@
+<body>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th></th>
+          <th id="title" scope="col">Movie</th>
+          <th id="rating" scope="col">Rating</th>
+          <th id="userId" scope="col">User</th>
+          <!-- <th id="comment" scope="col">Comment</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="pointer" *ngFor="let entry of data ; let i = index" (click)="goToDetails(entry.movie_id)">
+          <td>
+              {{titles[i]}}
+          </td>
+          <td>
+            <li> {{entry.movie_rating}} </li>
+          </td>
+          <td>{{entry.user_id}}</td>
+          <td></td>
+        </tr>

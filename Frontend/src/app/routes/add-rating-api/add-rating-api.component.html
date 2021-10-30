@@ -1,41 +1,34 @@
-<div class="container p-5">
-  <div class="row">
-      <button class="btn btn-primary mr-5" [routerLink]="['/movieRating/']">Back</button>
-      <h3 class="text-center">New Movie Rating</h3>
+<form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
+
+  <div id="starsAndButton" *ngIf="!bool">
+  <div style="font-size: xx-large; color: rgba(240, 197, 116);">
+    <ngb-rating [max]="5" [(rate)]="movie_rating"></ngb-rating>
   </div>
-
- <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
-
-
-
-      <div class="form-group row">
-        <label for="name" class="col-sm-2 col-form-label">Movie id</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="movie_id" required
-                [ngModel]="id" name="movie_id">
-        </div>
-      </div>
-
-      <div class="form-group row">
-          <label for="director" class="col-sm-2 col-form-label">User Id</label>
-          <div class="col-sm-10">
-              <input type="text" class="form-control" id="user_id" required ngModel name="user_id">
-          </div>
-      </div>
-
-      <div class="form-group row">
-          <label for="rated" class="col-sm-2 col-form-label">Movie Rated</label>
-          <div class="col-sm-10">
-              <select class="form-control" id="movie_rating" required ngModel
-                  name="movie_rating">
-                  <option [value]="rated" *ngFor="let rated of ratedOptions">
-                      {{rated}}
-                  </option>
-              </select>
-          </div>
-        </div>
-      <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
-
-  </form>
+  <div style="display: none">
+    <pre> <b>{{movie_rating}}</b></pre>
+  </div>
+  <button type="submit" class="submit" [disabled]="!form.valid">Vote now!</button>
 </div>
 
+  <div class="form-group row" style="display: none">
+    <label for="name" class="col-sm-2 col-form-label">Movie id</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="movie_id" required [ngModel]="id" name="movie_id">
+    </div>
+  </div>
+
+  <div class="form-group row" style="display: none">
+    <label for="director" class="col-sm-2 col-form-label">User Id</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="user_id" required [ngModel]="userId" name="user_id">
+    </div>
+  </div>
+
+  <div class="form-group row" style="display: none">
+    <label for="rated" class="col-sm-2 col-form-label">Movie Rated</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="movie_rating" required [ngModel]=(movie_rating) name="movie_rating">
+    </div>
+  </div>
+
+</form>

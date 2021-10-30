@@ -1,8 +1,13 @@
 import { CommentsApiService } from './../../../services/comments-api.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommentApiInterface } from 'src/app/models/apiComment.model';
+import { SharedService } from 'src/app/services/shared.service';
+import { MoviesApiService } from 'src/app/services/moviesapi.service';
+import { UsersManagerApiservice } from 'src/app/services/usersManagerApi.service';
+import { ResultInterface } from 'src/app/models/apiMovie.model';
+import { UserInterface } from 'src/app/models/apiUsers.model';
 
 @Component({
   selector: 'app-add-comment',
@@ -11,26 +16,49 @@ import { CommentApiInterface } from 'src/app/models/apiComment.model';
 })
 export class AddCommentComponent implements OnInit {
 
-  constructor(private commentsService : CommentsApiService, private router : Router) { }
+    constructor(private commentsService : CommentsApiService,
+      private router:Router,
+      private route:ActivatedRoute,
+      private moviesApiService:MoviesApiService,
+      private usersApiService:UsersManagerApiservice,
+      private shared: SharedService) { }
 
-  ngOnInit(): void {
-  }
-
+  id:number;
+  result:ResultInterface;
+  userName:string;
+  userLog:UserInterface;
+  userId:number;
   commentEntry : CommentApiInterface;
 
+    ngOnInit(): void {
+      this.id = this.route.snapshot.params['id'];
+      this.fetchEntry()
+      this.userName = localStorage.getItem('username')
+      this.getUser();
+    }
+
+    fetchEntry(){
+      this.moviesApiService.getMovieByMovieId(this.id).subscribe( (res: any ) => {
+        this.result = res;
+      })
+    }
+
   onSubmit(form : NgForm){
-
     this.commentEntry = form.form.value;
-    console.log(form);
-    console.log(this.commentEntry);
-
     if(this.commentEntry!=null){
       this.commentsService.addComment(this.commentEntry).subscribe(response =>{
-        console.log(response);
-        this.router.navigate(['/commentsManager']);
+        window.location.reload();
       },
         error => console.log(error)
       )
     }
   }
+
+  getUser(){
+    this.usersApiService.getUserByUsername(this.userName).subscribe((res:any)=>{
+      this.userLog=res;
+      this.userId=this.userLog.id;
+    })
+  }
+
 }

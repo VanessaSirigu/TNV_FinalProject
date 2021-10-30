@@ -12,13 +12,11 @@ export class MoviesApiService {
 
     constructor( private http : HttpClient) { }
 
-    getMarvelList(){
+    getMovieList(){
         return this.http.get<MovieApiInterface>(this.baseURL+"4/list/1?api_key="+this.apiKey);
     }
-    getMarvelListByMovieId(id){
-      return this.http.get<any>(this.baseURL+"3/movie/"+id+"?api_key="+this.apiKey+"&language=en-US")
-      //https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>&language=en-US
-
+    getMovieByMovieId(id){
+      return this.http.get<any>(this.baseURL+"3/movie/"+id+"?api_key="+this.apiKey);
     }
 
 }

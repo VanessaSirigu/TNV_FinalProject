@@ -8,7 +8,9 @@
         </td>
         <td *ngFor="let entry of movies | slice: 0:3; let i = index">
           <tr>
+            <a href="/detailMovieApi/{{entry.id}}">
             <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+           </a>
           </tr>
           <tr id="title" scope="row">#{{i + 1}}   {{entry.title}}</tr>
         </td>

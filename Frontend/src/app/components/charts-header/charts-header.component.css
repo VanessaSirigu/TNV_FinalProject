@@ -1,0 +1,22 @@
+#chartsLine {
+  justify-content: center;
+}
+
+#pieChart {
+  float: left;
+  width:100%;
+  display: block;
+}
+
+#barChart {
+  float: left;
+  width:100%;
+  display: block;
+}
+
+body {
+  background-image: url('../../../assets/img/header-jetBlack.jpg');
+  opacity: 0.8;
+  width:100%;
+  height: auto;
+}

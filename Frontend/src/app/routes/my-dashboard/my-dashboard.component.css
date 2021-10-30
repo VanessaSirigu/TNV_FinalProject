@@ -1,14 +1,17 @@
-body {
+body, .container {
   background-color: rgb(52, 58, 64);
-  height: 100%;
+  min-height: 100%;
+  margin-bottom: -1.2%;
+  padding-top: 50px;
 }
 
 #profilePicture {
-  content : url("../../../assets/img/profilePicture6.png");
+  content: url("../../../assets/img/profilePicture6.png");
   display: block;
-  max-width:150px;
-  max-height:95px;
-  width: auto;
-  height: auto;
-  margin-top: 50px;
+  max-width: 200px;
+  max-height: 150px;
+}
+
+div {
+  padding-bottom: 80px;
 }

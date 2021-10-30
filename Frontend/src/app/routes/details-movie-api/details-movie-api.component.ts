@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesApiService } from '../../services/moviesapi.service';
 import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-details-movie-api',
@@ -11,7 +12,7 @@ import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model'
 export class DetailsMovieApiComponent implements OnInit {
 
   constructor(private route:ActivatedRoute, private moviesApiService: MoviesApiService,
-    private router:Router) { }
+    private router:Router,  private location: Location) { }
 
     movies:MovieApiInterface;
     results:ResultInterface[];
@@ -25,13 +26,13 @@ export class DetailsMovieApiComponent implements OnInit {
   }
 
   fetchEntry(){
-    this.moviesApiService.getMarvelListByMovieId(this.id).subscribe( (res: any ) => {
+    this.moviesApiService.getMovieByMovieId(this.id).subscribe( (res: any ) => {
       this.result = res;
-      console.log("movies",this.result);
-      //this.result=this.movies;
-      //console.log("results",this.results);
-
     })
   }
+
+goBack() {
+ this.location.back();
+}
 
 }

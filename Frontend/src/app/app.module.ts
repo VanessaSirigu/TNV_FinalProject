@@ -30,8 +30,6 @@ import { RatingPipePipe } from './pipes/rating-pipe.pipe';
 import { IdUserPipe } from './pipes/ratingPipe/id-user.pipe';
 import { AddMovieRatingComponent } from './routes/add-movie-rating/add-movie-rating.component';
 import { RatingDetailsComponent } from './routes/rating-details/rating-details.component';
-import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-rating.component';
-import { DettagliComponent } from './routes/dettagli/dettagli.component';
 import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
 import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
 import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
@@ -40,8 +38,8 @@ import { EditCommentComponent } from './routes/comments/edit-comment/edit-commen
 import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
 import { MyDashboardComponent } from './routes/my-dashboard/my-dashboard.component';
 import { MyDashComponentComponent } from './components/my-dash-component/my-dash-component.component';
- import { ChartComponent } from './components/chart/chart.component';
- import { ChartsModule } from 'ng2-charts';
+import { ChartComponent } from './components/chart/chart.component';
+import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './routes/home/home.component';
 import { MostPopularFilmsComponent } from './components/most-popular-films/most-popular-films.component';
 import { LatestMovieComponent } from './components/latest-movie/latest-movie.component';
@@ -51,6 +49,14 @@ import { TvSeriesComponent } from './components/tv-series/tv-series.component';
 import { CommonModule } from '@angular/common';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
+import { ChartsComponent } from './components/charts/charts.component';
+import { ChartRatingComponent } from './components/chart-rating/chart-rating.component';
+import { ChartGenreComponent } from './components/chart-genre/chart-genre.component';
+import { ChartTrendComponent } from './components/chart-trend/chart-trend.component';
+import { ChartUserComponent } from './components/chart-user/chart-user.component';
+import { ChartsHeaderComponent } from './components/charts-header/charts-header.component';
+import { EditRatingApiComponent } from './routes/edit-rating-api/edit-rating-api.component';
+
 
 @NgModule({
   declarations: [
@@ -79,8 +85,6 @@ import { RegistrationPageComponent } from './routes/registration-page/registrati
     IdUserPipe,
     AddMovieRatingComponent,
     RatingDetailsComponent,
-    EditMovieRatingComponent,
-    DettagliComponent,
     DetailsMovieApiComponent,
     AddRatingApiComponent,
     AddCommentComponent,
@@ -97,8 +101,16 @@ import { RegistrationPageComponent } from './routes/registration-page/registrati
     PopularPageComponent,
     TvSeriesComponent,
     RegistrationComponent,
-    RegistrationPageComponent
+    RegistrationPageComponent,
+    ChartsComponent,
+    ChartRatingComponent,
+    ChartGenreComponent,
+    ChartTrendComponent,
+    ChartUserComponent,
+    ChartsHeaderComponent,
+    EditRatingApiComponent,
   ],
+
   imports: [
     BrowserModule,
     CommonModule,

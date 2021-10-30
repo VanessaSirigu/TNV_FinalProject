@@ -16,10 +16,11 @@ table, .btn-default {
   font-size: 22px;
   text-align: center;
   margin-top: 50px;
+  justify-items: center;
 }
 
 img {
-  height : 220px;
+  height : 180px;
 }
 
 #title {
@@ -32,7 +33,12 @@ table {
   /* border-top: 2px solid rgb(159, 199, 205); */
 }
 
-td, td {
+td {
   vertical-align: bottom;
   border-top: none;
+  justify-items: center;
+}
+
+tr {
+  justify-items: center;
 }

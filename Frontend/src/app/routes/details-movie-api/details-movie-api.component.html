@@ -1,30 +1,41 @@
-<div *ngIf="result != null " class="container">
+<body>
 
-  <div class="row p-4 my-2 mx-1 border shadow">
-      <button class="btn btn-primary mr-5"[routerLink]="['/dashboard']">Back</button>
-      <h3>Details</h3>
-  </div>
-  <button class="btn btn-primary ml-3" [routerLink]="['/addRatingApi/'+id]">Rating</button>
+  <div *ngIf="result != null " class="container">
 
-  <div class="mt-5 p-4"  >
+    <div>
+      <a (click)="goBack()">
+        <i class="fas fa-backward fa-2x"></i>
+      </a>
+    </div>
+
+    <span id="chartBlock">
+      <span id="chartMediaRating">
+        <app-charts></app-charts>
+      </span>
+      <span id="chartDetailRating">
+        <app-chart-genre></app-chart-genre>
+      </span>
+      <span>
+        <img src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}">
+        <!-- <span id="rating"> -->
+          <app-add-rating-api></app-add-rating-api>
+          <app-edit-rating-api></app-edit-rating-api>
+        <!-- </span> -->
+      </span>
+    </span>
+
+    <span id="scheda">
       <ul class="list-group">
-          <li class="list-group-item">Adult : {{result.adult}}</li>
-          <li class="list-group-item">Backdrop_path : {{result.backdrop_path}}</li>
-          <li class="list-group-item">Id: {{result.id}}</li>
-          <li class="list-group-item">Media_type : {{result.media_type}}</li>
-          <li class="list-group-item">Original_language : {{result.original_language}}</li>
-          <li class="list-group-item">Overview: {{result.overview}}</li>
-          <li class="list-group-item">Popularity : {{result.popularity}}</li>
-          <li class="list-group-item">Release_date : {{result.release_date}}</li>
-          <li class="list-group-item">Title: {{result.title}}</li>
-          <li class="list-group-item">Video: {{result.video}}</li>
-        </ul>
-        <div class="row">
-         <!-- <button class="btn btn-danger ml-5" (click)='delete()'>Delete</button>-->
-         <!-- <button class="btn btn-primary ml-3" [routerLink]="['/editMovieRating/'+ result.id]">Rating</button>-->
-      </div>
+        <li id="title" class="list-group-item">{{result.title}}</li>
+        <li id="movieId" class="list-group-item"># {{result.id}}</li>
+        <li id="overview" class="list-group-item">{{result.overview}}</li>
+        <li class="list-group-item">Language: {{result.original_language}}</li>
+        <li class="list-group-item">Popularity: {{result.popularity}}</li>
+        <li class="list-group-item">Release date : {{result.release_date}}</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+      </ul>
+    </span>
   </div>
-
-
-</div>
-
+  <app-add-comment></app-add-comment>
+</body>

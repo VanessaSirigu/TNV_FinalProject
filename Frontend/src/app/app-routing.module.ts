@@ -1,6 +1,6 @@
 import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
 import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './routes/dashboard/dashboard.component'
 import { AddComponent } from './routes/add/add.component';
@@ -16,12 +16,9 @@ import { AddUserComponent } from './routes/users/add-user/add-user.component';
 import { UserDetailsComponent } from './routes/users/user-details/user-details.component';
 import { EditUserComponent } from './routes/users/edit-user/edit-user.component';
 import { TvSeriesApiComponent } from './routes/tv-series-api/dashboard-series/tv-series-api.component';
-
 import { MovieRatingComponent } from './components/movie-rating/movie-rating.component';
 import { AddMovieRatingComponent } from './routes/add-movie-rating/add-movie-rating.component';
 import { RatingDetailsComponent } from './routes/rating-details/rating-details.component';
-import { EditMovieRatingComponent } from './routes/edit-movie-rating/edit-movie-rating.component';
-import { DettagliComponent } from './routes/dettagli/dettagli.component';
 import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
 import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
 import { MyDashboardComponent } from './routes/my-dashboard/my-dashboard.component';
@@ -30,11 +27,8 @@ import { CommentDetailsComponent } from './routes/comments/comment-details/comme
 import { HomeComponent } from './routes/home/home.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
 import { CommunityComponent } from './routes/community/community.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
-import { RegistrationService } from './services/registration.service';
-import { RegistrationComponent } from './components/registration/registration.component';
 import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
+
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -55,8 +49,6 @@ const routes: Routes = [
   { path: "movieRating",component: MovieRatingComponent},
   { path: "addMovieRating",component:AddMovieRatingComponent},
   { path: "ratingDetails/:id",component:RatingDetailsComponent},
-  { path: "editMovieRating/:id",component:EditMovieRatingComponent},
-  { path: "dettagli/:id", component:DettagliComponent},
   { path: "detailMovieApi/:id",component:DetailsMovieApiComponent},
   { path: "addRatingApi/:id",component:AddRatingApiComponent},
   { path: "tvSeries", component : TvSeriesApiComponent},

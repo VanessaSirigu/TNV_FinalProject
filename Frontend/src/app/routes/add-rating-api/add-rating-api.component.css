@@ -1,0 +1,13 @@
+.submit {
+  width: 80px;
+  font-family: "DK Lemon Yellow Sun";
+  border-radius: 5px;
+  box-sizing: content-box;
+  padding: 10 px;
+  background-color: rgba(240, 197, 116);
+  color: black;
+}
+/*
+#starsAndButton {
+  align-items: center;
+} */

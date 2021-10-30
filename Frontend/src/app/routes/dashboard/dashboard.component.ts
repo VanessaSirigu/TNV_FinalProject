@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './../../services/data.service';
 import { Router } from '@angular/router';
 import { MovieData } from '../../models/data.model';
-import { MovieRatingService } from '../../services/movie-rating.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -33,7 +32,5 @@ export class DashboardComponent implements OnInit {
   goToDetails(id){
     this.router.navigateByUrl('/details/' + id);
   }
-
-
 
 }

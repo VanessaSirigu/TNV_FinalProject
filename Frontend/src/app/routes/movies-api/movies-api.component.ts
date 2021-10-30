@@ -16,11 +16,11 @@ export class MoviesApiComponent implements OnInit {
   constructor(private apiService:MoviesApiService, private router:Router) { }
 
   ngOnInit(): void {
-    this.getMarvelListOnComponent();
+    this.getMovieListOnComponent();
   }
 
-  getMarvelListOnComponent(){
-    this.apiService.getMarvelList().subscribe(
+  getMovieListOnComponent(){
+    this.apiService.getMovieList().subscribe(
       response => {
         //se è andato tutto bene, allora:
         console.log("ho ottenuto i dati!")
@@ -37,6 +37,5 @@ export class MoviesApiComponent implements OnInit {
     this.router.navigateByUrl('/detailMovieApi/'+id);
     console.log("id",id)
   }
-
 
 }

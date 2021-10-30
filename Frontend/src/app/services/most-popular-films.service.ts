@@ -17,4 +17,8 @@ export class MostPopularFilmsService {
     return this.http.get<MovieApiInterface>(this.baseURL+"popular?api_key="+this.apiKey, { responseType : 'json'});
   }
 
+  getDetails (id) {
+    return this.http.get<MovieApiInterface>(this.baseURL+id+"?api_key="+this.apiKey, { responseType : 'json'});
+  }
+
 }

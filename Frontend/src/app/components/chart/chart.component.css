@@ -1,0 +1,11 @@
+p {
+    font-family: "DK Lemon Yellow Sun";
+    font-size: 20px;
+    font-weight: bold;
+    color: rgba(240, 197, 116);
+}
+
+#chartMedia {
+  height: 35%;
+  width: 35%;
+}

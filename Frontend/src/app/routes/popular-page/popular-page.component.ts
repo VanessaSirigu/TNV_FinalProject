@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MostPopularFilmsService } from '../../services/most-popular-films.service';
 import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-popular-page',
@@ -9,7 +10,7 @@ import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model'
 })
 export class PopularPageComponent implements OnInit {
 
-  constructor(private popFilmService : MostPopularFilmsService) { }
+  constructor(private popFilmService : MostPopularFilmsService, private router : Router) { }
 
   popMovies : MovieApiInterface;
   movies : ResultInterface [];
@@ -27,6 +28,10 @@ export class PopularPageComponent implements OnInit {
       },
     error => console.log(error)
     )
+  }
+
+  goToDetails(id){
+    this.router.navigateByUrl('/detailMovieApi/'+id);
   }
 
 }
