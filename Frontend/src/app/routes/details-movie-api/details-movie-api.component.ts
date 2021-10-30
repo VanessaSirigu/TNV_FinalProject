@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MoviesApiService } from '../../services/moviesapi.service';
 import { MovieApiInterface, ResultInterface } from '../../models/apiMovie.model';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-details-movie-api',
@@ -11,28 +11,27 @@ import {Location} from '@angular/common';
 })
 export class DetailsMovieApiComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, private moviesApiService: MoviesApiService,
-    private router:Router,  private location: Location) { }
+  constructor(private route: ActivatedRoute, private moviesApiService: MoviesApiService,
+    private router: Router, private location: Location) { }
 
-    movies:MovieApiInterface;
-    results:ResultInterface[];
-    result:ResultInterface;
-    id:number;
+  movies: MovieApiInterface;
+  results: ResultInterface[];
+  result: ResultInterface;
+  id: number;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log("this.id",this.id);
     this.fetchEntry()
   }
 
-  fetchEntry(){
-    this.moviesApiService.getMovieByMovieId(this.id).subscribe( (res: any ) => {
+  fetchEntry() {
+    this.moviesApiService.getMovieByMovieId(this.id).subscribe((res: any) => {
       this.result = res;
     })
   }
 
-goBack() {
- this.location.back();
-}
+  goBack() {
+    this.location.back();
+  }
 
 }

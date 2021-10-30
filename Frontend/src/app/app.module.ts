@@ -56,7 +56,9 @@ import { ChartTrendComponent } from './components/chart-trend/chart-trend.compon
 import { ChartUserComponent } from './components/chart-user/chart-user.component';
 import { ChartsHeaderComponent } from './components/charts-header/charts-header.component';
 import { EditRatingApiComponent } from './routes/edit-rating-api/edit-rating-api.component';
-
+import { DisplayCommentsForSingleMovieComponent } from './routes/comments/display-comments-for-single-movie/display-comments-for-single-movie.component';
+import { DisplayCommentsForUserComponent } from './routes/comments/display-comments-for-user/display-comments-for-user.component';
+import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +111,9 @@ import { EditRatingApiComponent } from './routes/edit-rating-api/edit-rating-api
     ChartUserComponent,
     ChartsHeaderComponent,
     EditRatingApiComponent,
+    DisplayCommentsForSingleMovieComponent,
+    DisplayCommentsForUserComponent,
+    DetailsTvServiesApiComponent,
   ],
 
   imports: [

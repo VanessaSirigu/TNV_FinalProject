@@ -1,26 +1,25 @@
 <body>
   <div id="container">
 
-    <div class="text-right">
-      <button type="button" style="font-size: 30px" class="btn btn-default" aria-label="Left Align"
-        [routerLink]="['/add']">
-        <span class="fas fa-plus" aria-hidden="true"></span>
-      </button>
-    </div>
-
     <table class="table">
       <thead class="thead-dark">
         <tr>
           <th></th>
-          <th id="title" scope="col">Movie</th>
-          <th id="rating" scope="col">Rating</th>
+          <th id="title" scope="col">Title</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Overview</th>
         </tr>
       </thead>
       <tbody>
         <tr class="pointer" *ngFor="let entry of data ; let i = index" (click)="goToDetails(entry.movie_id)">
           <td>{{i+1}}.</td>
           <td id="title">{{titles[i]}}</td>
-          <td id="rating">{{entry.movie_rating}}</td>
+          <td *ngIf="entry.movie_rating==1"><i class="fas fa-star"></i></td>
+          <td *ngIf="entry.movie_rating==2" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+          <td *ngIf="entry.movie_rating==3" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+          <td *ngIf="entry.movie_rating==4" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+          <td *ngIf="entry.movie_rating==5" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+          <td id="overview">{{overview[i]}}</td>
         </tr>
       </tbody>
     </table>

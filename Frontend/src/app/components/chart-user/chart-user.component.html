@@ -1,7 +1,7 @@
-
-<div style="display: block; width: 20%; margin: 5%;">
-  <p>valutazione media {{media}} su 5 </p>
-  <canvas #myCanvas >
-
+<div [hidden]="!media">
+  <canvas #myCanvas>
   </canvas>
+  <p>valutazione media: {{media}} / 5 </p>
 </div>
+
+<p [hidden]="media">*You haven't left a rating yet*</p>

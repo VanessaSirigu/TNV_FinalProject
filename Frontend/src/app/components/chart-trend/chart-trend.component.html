@@ -1,6 +1,5 @@
-
-
- <div style="display: block; width: 20%; margin: 5%;">Total comment {{totalComment}}
+ <div *ngIf="showChart" style="display: block; width: 20%; margin: 5%;">
+  Total comment {{totalComment}}
   <canvas #myCanvas >
   </canvas>
 </div>

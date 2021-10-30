@@ -1,5 +1,7 @@
-<div style="display: block; width: 20%; margin: 5%;">
+<span [hidden]="!media">
   <canvas #myCanvas >
   </canvas>
-  <p>{{media}} / 5 </p>
-</div>
+  <p>votazione media: {{media}} / 5 </p>
+</span>
+
+  <p [hidden]="media">0 Votes</p>

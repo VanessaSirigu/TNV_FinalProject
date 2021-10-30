@@ -1,4 +1,5 @@
-body, .container {
+body,
+.container {
   background-color: rgb(52, 58, 64);
   min-height: 100%;
   margin-bottom: -1.2%;
@@ -10,8 +11,31 @@ body, .container {
   display: block;
   max-width: 200px;
   max-height: 150px;
+  height: min-content;
+  justify-items: center;
 }
 
-div {
-  padding-bottom: 80px;
+#pieRatingChart {
+  width: 20%;
 }
+
+#barChart {
+  width: 50%;
+}
+
+#hiUser {
+  font-family: 'DK Lemon Yellow Sun';
+  color: rgb(159, 199, 205);
+  width: 200px;
+  margin-right: 0%;
+}
+
+/* p {
+  color : rgb(240, 197, 116);
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 22px;
+  vertical-align: bottom;
+  /* margin-left: auto;
+  text-align: center;
+}
+*/

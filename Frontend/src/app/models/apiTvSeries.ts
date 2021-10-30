@@ -6,6 +6,7 @@ export interface TvSeriesApiInterface{
 }
 
 export interface OneTvShowInterface{
+  poster_path: string;
   backdrop_path: string;
   genre_ids: number[];
   id: number;

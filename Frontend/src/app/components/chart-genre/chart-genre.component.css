@@ -1,5 +1,4 @@
 span {
-  width: 30%;
-  display: block;
-  float: inline-end;
+  width: 100%;
+  display: inline-block;
 }

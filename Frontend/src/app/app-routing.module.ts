@@ -28,7 +28,7 @@ import { HomeComponent } from './routes/home/home.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
 import { CommunityComponent } from './routes/community/community.component';
 import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
-
+import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -61,6 +61,7 @@ const routes: Routes = [
   { path: "popMovies", component : PopularPageComponent},
   { path: "community", component : CommunityComponent},
   { path: "registration", component : RegistrationPageComponent},
+  { path: "detailTvSeriesApi/:id", component : DetailsTvServiesApiComponent}
 ];
 
 @NgModule({

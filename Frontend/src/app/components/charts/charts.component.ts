@@ -74,7 +74,6 @@ export class ChartsComponent implements OnInit {
               'rgb(240, 197, 116)',
               'rgb(240, 197, 116, 0.2)'
             ],
-
           },
           {
             data: []

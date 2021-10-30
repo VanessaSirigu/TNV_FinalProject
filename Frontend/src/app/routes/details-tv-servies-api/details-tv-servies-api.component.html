@@ -1,0 +1,34 @@
+<body>
+
+  <div *ngIf="oneSeries != null " class="container">
+
+    <div>
+      <a (click)="goBack()">
+        <i class="fas fa-backward fa-2x"></i>
+      </a>
+    </div>
+       <img src="https://image.tmdb.org/t/p/original/{{ oneSeries.poster_path}}">
+        <!-- <span id="rating"> -->
+
+        <!-- </span> -->
+    <span id="scheda">
+      <ul class="list-group">
+        <li id="title" class="list-group-item">{{oneSeries.name}}</li>
+        <li id="movieId" class="list-group-item"># {{oneSeries.id}}</li>
+        <li id="overview" class="list-group-item">{{oneSeries.overview}}</li>
+        <li class="list-group-item">Language: {{oneSeries.original_language}}</li>
+        <li class="list-group-item">Popularity: {{oneSeries.popularity}}</li>
+        <li class="list-group-item">Original name : {{oneSeries.original_name}}</li>
+        <li class="list-group-item"></li>
+        <li class="list-group-item"></li>
+      </ul>
+    </span>
+  </div>
+  <app-add-rating-api></app-add-rating-api>
+  <app-edit-rating-api></app-edit-rating-api>
+  <app-add-comment></app-add-comment>
+  <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+
+  <!-- <app-loading-page *ngIf="series == null"></app-loading-page> -->
+
+</body>

@@ -114,9 +114,15 @@ export class ChartRatingComponent implements OnInit {
           display: false
         },
         scales: {
+          xAxes: [{
+            display: false,
+          }],
+          yAxes: [{
+            ticks: { fontSize: 18, fontFamily: "DK Lemon Yellow Sun", fontColor: 'rgb(190, 238, 245, .8)' }
+          }],
           gridLines: {
-            offsetGridLines: true
-          }
+            offsetGridLines: false
+          },
         }
       }
     })

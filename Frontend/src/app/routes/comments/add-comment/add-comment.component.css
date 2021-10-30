@@ -4,7 +4,6 @@ p {
   /* color: rgb(159, 199, 205); */
   color: rgba(240, 197, 116);
   text-align: left;
-  width: 200px;
   box-sizing: unset;
   float: left;
 }
@@ -25,7 +24,7 @@ textarea {
   background-color: rgb(52, 58, 64, 0.6);
   border-color: rgba(240, 197, 116);
   color: rgb(159, 199, 205);
-  height: 80px;
+  height: 100px;
 }
 
 .container {

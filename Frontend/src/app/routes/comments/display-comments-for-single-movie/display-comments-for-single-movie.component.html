@@ -1,0 +1,13 @@
+<div class="container p-5" *ngIf="comments != null">
+
+  <table class="table">
+    <tbody>
+      <tr class="pointer" *ngFor="let entry of comments, let i = index">
+        <th>Comment by <b>{{userNames[i]}}</b>:</th>
+        <td>{{bodies[i]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-loading-page *ngIf="comments==null"></app-loading-page>

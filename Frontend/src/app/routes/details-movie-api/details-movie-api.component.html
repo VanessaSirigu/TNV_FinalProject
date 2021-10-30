@@ -8,34 +8,50 @@
       </a>
     </div>
 
-    <span id="chartBlock">
-      <span id="chartMediaRating">
-        <app-charts></app-charts>
-      </span>
-      <span id="chartDetailRating">
-        <app-chart-genre></app-chart-genre>
-      </span>
-      <span>
-        <img src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}">
-        <!-- <span id="rating"> -->
-          <app-add-rating-api></app-add-rating-api>
-          <app-edit-rating-api></app-edit-rating-api>
-        <!-- </span> -->
-      </span>
-    </span>
+    <div>
+      <div>
+        <div>
+          <img src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}">
+        </div>
 
-    <span id="scheda">
+        <span id="chartMediaRating">
+          <app-charts></app-charts>
+        </span>
+        <span id="chartDetailRating">
+          <app-chart-genre></app-chart-genre>
+        </span>
+      </div>
+
       <ul class="list-group">
         <li id="title" class="list-group-item">{{result.title}}</li>
-        <li id="movieId" class="list-group-item"># {{result.id}}</li>
+        <li id="movieId" class="list-group-item">movie # {{result.id}}</li>
         <li id="overview" class="list-group-item">{{result.overview}}</li>
-        <li class="list-group-item">Language: {{result.original_language}}</li>
-        <li class="list-group-item">Popularity: {{result.popularity}}</li>
-        <li class="list-group-item">Release date : {{result.release_date}}</li>
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
+        <li class="list-group-item">
+          <td>Language: {{result.original_language}}</td>
+          <td>Popularity: {{result.popularity}}</td>
+          <td>Release date : {{result.release_date}}</td>
+        </li>
       </ul>
-    </span>
+
+
+    </div>
   </div>
-  <app-add-comment></app-add-comment>
+
+  <div class="container">
+
+      <div id="stars">
+        <app-add-rating-api></app-add-rating-api>
+      </div>
+      <div id="stars">
+        <app-edit-rating-api></app-edit-rating-api>
+      </div>
+    </div>
+
+
+    <span id="commentBox" style="width: 40%;" class="container">
+      <app-add-comment></app-add-comment>
+    </span>
+
+  <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+
 </body>

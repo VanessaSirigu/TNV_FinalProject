@@ -39,25 +39,24 @@ export class EditRatingApiComponent implements OnInit {
    bool:boolean;
    ids:number
 
-
   ngOnInit(): void {
     this.id = this.route.snapshot.params ['id'];
     this.userName = localStorage.getItem('username');
     this.verifyLog();
     this.getUser();
-
   }
+
   verifyLog() {
     this.logUser = false;
     if (localStorage.getItem('username')) {
     this.logUser = true;
     }
   }
+
   getUser(){
     this.usersApiService.getUserByUsername(this.userName).subscribe((res:any)=>{
       this.userLog=res;
       this.userId=this.userLog.id;
-      console.log("userLog",this.userLog)
       this.getMovieRated()
     })
   }
@@ -68,29 +67,17 @@ export class EditRatingApiComponent implements OnInit {
       this.movieRated=this.movieRate.data
       this.ids=this.movieRated[0].id
       this.movie_rating=this.movieRated[0].movie_rating
-      console.log("moviee rated",this.movieRated)
-      console.log("movie rated id",this.movieRated[0].id)
       this.lenght=this.movieRated.length
       this.bool=true
       if(this.lenght==0){
       this.bool=false
       }
-
-      //this.lenght=this.movieRated.length
     })
   }
 
-
-
   onSubmit(form : NgForm){
     this.rating = form.form.value;
-    console.log("this.rating",this.rating)
-    console.log(form)
-
-
     this.movieRatingService.editMovieRating(this.rating).subscribe(response => {
-      console.log("rating",this.rating);
-      console.log("responce",response);
       window.location.reload();
     },
     (err) => {
@@ -106,8 +93,6 @@ export class EditRatingApiComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
-    //this.router.navigate(['/dashboard']);
-
   }
 
 }

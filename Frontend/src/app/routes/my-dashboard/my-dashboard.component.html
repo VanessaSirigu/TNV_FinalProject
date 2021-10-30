@@ -1,9 +1,29 @@
 <body>
+
   <div class="container">
+
+    <div id="hiUser">
+    <h1>Hi {{username}} !</h1>
+  </div>
     <span>
-      <img id="profilePicture" alt="ProfilePicture" />
+
+      <div>
+
+        <div>
+          <img id="profilePicture" alt="ProfilePicture">
+        </div>
+      </div>
+
+      <span id="barChart">
+        <app-chart-rating></app-chart-rating>
+      </span>
+      <span id="pieRatingChart">
+        <app-chart-user></app-chart-user>
+      </span>
+      <span>
+        <app-my-dash-component></app-my-dash-component>
+      </span>
     </span>
-    <app-chart-rating></app-chart-rating>
-    <app-my-dash-component></app-my-dash-component>
+    <app-display-comments-for-user></app-display-comments-for-user>
   </div>
 </body>

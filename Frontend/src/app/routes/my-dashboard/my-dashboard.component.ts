@@ -9,7 +9,10 @@ export class MyDashboardComponent implements OnInit {
 
   constructor() { }
 
+  username: string;
+
   ngOnInit(): void {
+    this.username = localStorage.getItem('username')
   }
 
 }
