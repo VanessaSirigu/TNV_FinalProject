@@ -42,6 +42,7 @@ export class AddRatingApiComponent implements OnInit {
    this.verifyLog();
    this.getUser();
   console.log(this.userName);
+  console.log(this.userId)
  }
 
  fetchEntry(){

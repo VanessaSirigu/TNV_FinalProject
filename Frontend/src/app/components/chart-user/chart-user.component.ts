@@ -28,7 +28,7 @@ export class ChartUserComponent implements OnInit {
   results: DataInterface[];
   result:DataInterface;
   rating: number[];
-  media: number;
+  media=0;
 
   userLog:UserInterface;
   userId:number;

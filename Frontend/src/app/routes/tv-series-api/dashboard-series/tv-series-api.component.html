@@ -15,9 +15,9 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of oneSeries">
+        <tr class="pointer" *ngFor="let entry of oneSeries" (click)="goToDetails(entry.id)" >
           <td>
-            <img
+             <img
               src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}"
             />
           </td>

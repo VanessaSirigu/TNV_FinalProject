@@ -7,6 +7,8 @@ import { MoviesApiService } from '../../services/moviesapi.service';
 import { UsersManagerApiservice } from '../../services/usersManagerApi.service';
 import { DataInterface, MovieRatingInterface } from '../../models/movieRating.model';
 import { ResultInterface } from '../../models/apiMovie.model';
+import { OneTvShowInterface } from '../../models/apiTvSeries';
+import { TvSeriesApiService } from '../../services/tv-series-api.service';
 
 @Component({
   selector: 'app-my-dash-component',
@@ -17,21 +19,23 @@ export class MyDashComponentComponent implements OnInit {
 
   constructor(private dataService: DataService, private router: Router,
     private ratingService: MovieRatingService, private commentService: CommentsApiService,
-    private movieService: MoviesApiService, private userService: UsersManagerApiservice) { }
+    private movieService: MoviesApiService, private userService: UsersManagerApiservice,
+    private seriesApiService: TvSeriesApiService) { }
 
   //variabili
   userId: number;
   movieRating: MovieRatingInterface;
   data: DataInterface[];
   titles: string[] = [];
+  overview: string[] = [];
   movie: ResultInterface;
+  oneSeries: OneTvShowInterface;
 
   /*Vengono cercati in tutti i db i rating e i commenti relativi
   all'utente loggato in base al suo id*/
   ngOnInit(): void {
     this.checkLog();
     this.getEntryRatingService();
-    // this.getEntryCommentService();
   }
 
   //Mostra i movies della web API
@@ -39,6 +43,7 @@ export class MyDashComponentComponent implements OnInit {
     this.movieService.getMovieByMovieId(id).subscribe((response) => {
       this.movie = response;
       this.titles.push(this.movie.title)
+      this.overview.push(this.movie.overview)
       })
   }
 
@@ -50,16 +55,10 @@ export class MyDashComponentComponent implements OnInit {
       this.data = this.movieRating.data;
       for (let i = 0; i < this.data.length; i++) {
         this.getEntriesMovieApi(this.data[i].movie_id)
-         }
+        this.getEntryTvList(this.data[i].movie_id)
+      }
     })
   }
-
-  // //Mostra i commenti memorizzati dal BE Dotnet - db localhost:5000
-  // getEntryCommentService() {
-  //   this.commentService.getAllCommentsByMovieId(this.userId).subscribe((response: any) => {
-  //     this.comment = response;
-  //   })
-  // }
 
   goToDetails(id) {
     this.router.navigateByUrl('/detailMovieApi/'+ id);
@@ -69,6 +68,14 @@ export class MyDashComponentComponent implements OnInit {
   if (!localStorage.getItem('username')) {
     this.router.navigateByUrl('/login')
   }
+}
+
+getEntryTvList(id){
+  this.seriesApiService.getSerieTvBySerieId(id).subscribe( (res: any ) => {
+    this.oneSeries = res;
+    this.titles.push(this.oneSeries.name)
+    this.overview.push(this.oneSeries.overview)
+  })
 }
 
 }

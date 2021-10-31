@@ -2,6 +2,7 @@ import { TvSeriesApiInterface } from '../../../models/apiTvSeries';
 import { Component, OnInit } from '@angular/core';
 import { TvSeriesApiService } from '../../../services/tv-series-api.service';
 import { OneTvShowInterface } from '../../../models/apiTvSeries';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tv-series-api',
@@ -13,10 +14,11 @@ export class TvSeriesApiComponent implements OnInit {
   series : TvSeriesApiInterface;
   oneSeries : OneTvShowInterface [];
 
-  constructor(private apiService : TvSeriesApiService) { }
+  constructor(private apiService : TvSeriesApiService,private router:Router) { }
 
   ngOnInit(): void {
     this.getTvSeriesOnComponent();
+    console.log(this,this.oneSeries)
   }
 
   getTvSeriesOnComponent(){
@@ -27,5 +29,9 @@ export class TvSeriesApiComponent implements OnInit {
       },
       error => console.log(error)
     )}
+    goToDetails(id){
+      this.router.navigateByUrl('/detailTvSeriesApi/'+id);
+      console.log("id",id)
+    }
 
 }

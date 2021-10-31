@@ -5,33 +5,33 @@ body {
 
 th {
   color: rgb(240, 197, 116) !important;
-  font-size: 26px;
+  font-size: 28px;
   text-align: center;
 }
 
 td, tr {
   color: rgb(159, 199, 205);
   text-align: left;
-  font-size: 22px;
+  font-size: 24px;
 }
 
-table {
+table, tbody {
   font-family: 'DK Lemon Yellow Sun';
   font-size: 18px;
+  padding-bottom: 80px;
 }
 
 #rating {
-  width: 100px;
+  font-size: 22px;
+  text-align: center;
 }
 
 #title {
   text-align: left;
 }
 
-#comment {
-  text-align: right;
-}
-
-#rating {
-  text-align: center;
+#overview {
+  width: 60%;
+  font-family: "Kalam-Regular";
+  font-size: 20px;
 }
