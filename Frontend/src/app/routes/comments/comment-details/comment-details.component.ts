@@ -17,48 +17,40 @@ export class CommentDetailsComponent implements OnInit {
 
     comments: CommentsResultsInterface;
     id: number;
-//    oldComments: CommentsResultsInterface;
-//    comingFromEdit: boolean = history.state;
-//    checkChanges : boolean = true;
+    errorText : string;
 
-  ngOnInit(): void {
+    /**
+     * This is a component which display details of a single comment.
+     * Comment id is given by URL.
+     */
+    ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.fetchEntry();
-    console.log(this.comments);
     }
 
-
-    fetchEntry(){
+    /**
+     * Call a method to get comment datas for this id and assign the observable
+     * to a CommentResultsInterface object.
+     */
+     fetchEntry(){
     this.commentsService.getCommentById(this.id).subscribe( (res: any) => {
       this.comments = res;
-      console.log(this.comments);
-      console.log(this.comments.id);
-      console.log(this.comments.movieId);
-      console.log(this.comments.userId);
-      console.log(this.comments.body);
     })
   }
 
-  /* This function checks if we are coming from the Edit Page, and if we do,
-     it checks if the comments in the database are still the same.
-     
-  checkIfCommentChanged(){
-     if (this.comingFromEdit == true){
-       while(this.comments == this.oldComments){
-         this.checkChanges = false;
-       }
-       this.fetchEntry()
-       this.checkChanges == true;
-     }
-  }*/
-
+  /**
+   * Delete the current comment with parameters submitted by user or
+   * display an error window if needed.
+   * @param id The ID of the comment to be deleted. 
+   */
   deleteComment(id){
     this.commentsService.deleteComment(id)
     .subscribe(data => {
       this.router.navigate(['/commentsManager']);
-    }, (err) =>{
-      console.log(err);
-      this.router.navigate(['/commentsManager']);
+    }, error => {
+      this.errorText = error.error.message;
+      console.log (error)
+      alert(this.errorText)
     });
     
   }

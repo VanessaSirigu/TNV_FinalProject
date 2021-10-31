@@ -14,28 +14,39 @@ export class EditCommentComponent implements OnInit {
 
   commentEntry : CommentsResultsInterface;
   comments: CommentsApiService;
+  errorText : string;
 
+  /**
+   * This is a service page which is accessed by clicking on comment details.
+   * It gets comment ID by the URL
+   */
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
     this.fetchEntry(id);
-    console.log("Qui siamo dentro ngOnInit: ", this.commentEntry)
   }
 
+  /**
+   * Gets a comment by its ID.
+   * @param id The ID of the comment to be read.
+   */
   fetchEntry(id){
     this.commentsService.getCommentById(id).subscribe( (res: any) => {
       this.commentEntry = res;
-      console.log(this.commentEntry)
     })
   }
 
+  /**
+   * Update the current comment with parameters submitted by user or
+   * display an error window if needed.
+   * @param id The ID of the comment to be updated. 
+   */
   onSubmit(id){
-    console.log("Qui siamo in onSubmit: ", this.commentEntry);
     this.commentsService.editComment(this.commentEntry).subscribe (response => {
-      console.log(response);
       this.router.navigate(['/commentDetails', this.commentEntry.id])
-    }), err => {
-      console.log(err);
-    }
-    this.router.navigate(['/commentDetails', this.commentEntry.id])
+    },        error => {
+      this.errorText = error.error.message;
+      console.log (error)
+      alert(this.errorText)
+    })
   }
 }

@@ -14,23 +14,31 @@ export class CommentsManagerPageComponent implements OnInit {
 
   comments : CommentApiInterface;
   results : CommentsResultsInterface[];
-
+  /**
+   * This is a component for developers to manage all the comments in database.
+   * It gets all comments on init.
+   */
   ngOnInit(): void {
     this.getAllCommentsOnComponent();  }
 
+    /**
+     * Call a method to get all comments and assign the observable
+     * to a CommentResultsInterface array.
+     */
     getAllCommentsOnComponent(){
       this.commentsService.allComments().subscribe(
         response => {
           this.comments = response;
-          console.log("ho ottenuto i seguenti dati: ", this.comments)
           this.results = this.comments.commentsResults;
-          console.log("this.comments.commentResults: ", this.comments.commentsResults);
-          console.log("results :", this.results); 
         },
         error => console.log(error)
       )
     }
 
+    /**
+     * Navigate to a comment's details page
+     * @param id Comment id
+     */
     goToCommentDetails (id){
       this.router.navigateByUrl('/commentDetails/' + id);
     }
