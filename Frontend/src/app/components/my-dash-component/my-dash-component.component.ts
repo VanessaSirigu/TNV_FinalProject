@@ -74,6 +74,7 @@ getEntryTvList(id){
   this.seriesApiService.getSerieTvBySerieId(id).subscribe( (res: any ) => {
     this.oneSeries = res;
     this.titles.push(this.oneSeries.name)
+    this.overview.push(this.oneSeries.overview)
   })
 }
 

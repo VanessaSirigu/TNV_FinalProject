@@ -19,3 +19,8 @@ b {
   text-align: center;
   font-family: "DK Lemon Yellow Sun";
 }
+
+td, th {
+  word-wrap: break-word;
+  max-width: 500px;
+}
