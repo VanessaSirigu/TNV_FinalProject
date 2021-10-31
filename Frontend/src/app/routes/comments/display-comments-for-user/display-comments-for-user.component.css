@@ -1,15 +1,20 @@
 th {
-  color: rgb(190, 238, 245);
-  font-family: "Kalam-Regular";
-  font-size: 18px;
-  vertical-align: bottom;
+  color: rgb(240, 197, 116) ;
+  font-family: "DK Lemon Yellow Sun";
+  font-size: 22px;
+  vertical-align: center;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 500px;
 }
 
 td {
   color: rgb(190, 238, 245);
-  font-family: "Kalam-Regular";
+  font-family: "Letters-for-Learners";
   font-size: 22px;
-  vertical-align: bottom;
+  word-wrap: break-word;
+  max-width: 500px;
+  text-align: center;
 }
 
 b {
@@ -18,4 +23,5 @@ b {
   font-size: 22px;
   text-align: center;
   font-family: "DK Lemon Yellow Sun";
+  word-wrap: break-word;
 }

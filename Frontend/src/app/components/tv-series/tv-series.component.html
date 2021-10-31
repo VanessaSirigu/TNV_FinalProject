@@ -8,12 +8,14 @@
       </td>
       <td *ngFor="let entry of oneSeries | slice: 0:3; let i = index">
         <tr>
-          <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+          <a href="/detailTvSeriesApi/{{entry.id}}">
+            <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+          </a>
         </tr>
-        <tr id="title" scope="row">#{{i + 1}}   {{entry.name}}</tr>
+        <tr id="title" scope="row">#{{i + 1}} {{entry.name}}</tr>
       </td>
     </tbody>
   </table>
 
-<app-loading-page *ngIf="series == null"></app-loading-page>
+  <app-loading-page *ngIf="series == null"></app-loading-page>
 </div>

@@ -24,7 +24,7 @@ export class AddRatingApiComponent implements OnInit {
   result: ResultInterface;
   ratedOptions = ['1', '2', '3', '4', '5'];
   rating: DataInterface;
-  movie_rating = 0;
+  movie_rating = 3;
   userName: string;
   userLog: UserInterface;
   userId: number;
@@ -41,6 +41,11 @@ export class AddRatingApiComponent implements OnInit {
     this.userName = localStorage.getItem('username');
     this.verifyLog();
     this.getUser();
+
+    this.userId = Number.parseInt(localStorage.getItem('userId'));
+    console.log(this.userName);
+    console.log(this.userId);
+    console.log(this.id)
   }
 
   fetchEntry() {
@@ -65,6 +70,7 @@ export class AddRatingApiComponent implements OnInit {
         console.log("error")
       }
     )
+
   }
 
   getUser() {
@@ -72,6 +78,7 @@ export class AddRatingApiComponent implements OnInit {
       this.userLog = res;
       this.userId = this.userLog.id;
       this.getMovieRated();
+      console.log(this.userId)
     })
   }
 

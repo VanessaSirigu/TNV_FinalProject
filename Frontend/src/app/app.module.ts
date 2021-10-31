@@ -32,18 +32,16 @@ import { AddMovieRatingComponent } from './routes/add-movie-rating/add-movie-rat
 import { RatingDetailsComponent } from './routes/rating-details/rating-details.component';
 import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
 import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
-import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
+import { AddCommentApiComponent } from './routes/comments/add-comment-api/add-comment-api.component';
 import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
 import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
 import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
 import { MyDashboardComponent } from './routes/my-dashboard/my-dashboard.component';
 import { MyDashComponentComponent } from './components/my-dash-component/my-dash-component.component';
-import { ChartComponent } from './components/chart/chart.component';
 import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './routes/home/home.component';
 import { MostPopularFilmsComponent } from './components/most-popular-films/most-popular-films.component';
 import { LatestMovieComponent } from './components/latest-movie/latest-movie.component';
-import { CommunityComponent } from './components/community/community.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
 import { TvSeriesComponent } from './components/tv-series/tv-series.component';
 import { CommonModule } from '@angular/common';
@@ -54,11 +52,11 @@ import { ChartRatingComponent } from './components/chart-rating/chart-rating.com
 import { ChartGenreComponent } from './components/chart-genre/chart-genre.component';
 import { ChartTrendComponent } from './components/chart-trend/chart-trend.component';
 import { ChartUserComponent } from './components/chart-user/chart-user.component';
-import { ChartsHeaderComponent } from './components/charts-header/charts-header.component';
 import { EditRatingApiComponent } from './routes/edit-rating-api/edit-rating-api.component';
 import { DisplayCommentsForSingleMovieComponent } from './routes/comments/display-comments-for-single-movie/display-comments-for-single-movie.component';
 import { DisplayCommentsForUserComponent } from './routes/comments/display-comments-for-user/display-comments-for-user.component';
 import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
+import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
 
 @NgModule({
   declarations: [
@@ -89,17 +87,15 @@ import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/de
     RatingDetailsComponent,
     DetailsMovieApiComponent,
     AddRatingApiComponent,
-    AddCommentComponent,
+    AddCommentApiComponent,
     EditCommentComponent,
     CommentDetailsComponent,
     CommentsManagerPageComponent,
     MyDashboardComponent,
     MyDashComponentComponent,
-    ChartComponent,
     HomeComponent,
     MostPopularFilmsComponent,
     LatestMovieComponent,
-    CommunityComponent,
     PopularPageComponent,
     TvSeriesComponent,
     RegistrationComponent,
@@ -109,11 +105,12 @@ import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/de
     ChartGenreComponent,
     ChartTrendComponent,
     ChartUserComponent,
-    ChartsHeaderComponent,
     EditRatingApiComponent,
     DisplayCommentsForSingleMovieComponent,
     DisplayCommentsForUserComponent,
     DetailsTvServiesApiComponent,
+    AddCommentApiComponent,
+    AddCommentComponent,
   ],
 
   imports: [

@@ -1,0 +1,42 @@
+<div *ngIf="userId == null" class="container">
+  <p style="float:left">*Login or register to leave your comment and/or rating</p>
+</div>
+
+<div *ngIf="userId != null" class="container">
+  <div class="container p-5">
+    <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
+      <div style="display:none" class="form-group row">
+        <label for="cast" class="col-sm-2 col-form-label">Movie Id</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="movieid" required [ngModel]="id" name="movieid">
+        </div>
+      </div>
+
+      <div style="display:none" class="form-group row">
+        <label for="director" class="col-sm-2 col-form-label">User Id</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="userid" required [ngModel]="userId" name="userid">
+        </div>
+      </div>
+
+
+      <div>
+        <!-- <div id="leaveComment">
+          <p>Leave your comment</p>
+        </div> -->
+        <textarea type="body" style="resize: none;" class="form-control" id="body" required ngModel
+          name="body"></textarea>
+      </div>
+
+      <div id="underTextArea">
+        <span id="leaveComment">
+          <p>Leave your comment</p>
+        </span>
+        <span id="sendComment">
+          <button type="submit" [disabled]="!form.valid" class="submit">Send</button>
+        </span>
+      </div>
+
+    </form>
+  </div>
+</div>

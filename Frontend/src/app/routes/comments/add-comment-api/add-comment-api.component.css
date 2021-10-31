@@ -1,0 +1,49 @@
+p {
+  font-family: "DK Lemon Yellow Sun";
+  font-size: 18px;
+  /* color: rgb(159, 199, 205); */
+  color: rgba(240, 197, 116);
+  text-align: left;
+  margin-left: 0%;
+  box-sizing: unset;
+}
+
+.submit {
+  width: 70px;
+  margin-top: 10px;
+  font-family: "DK Lemon Yellow Sun";
+  border-radius: 5px;
+  box-sizing: content-box;
+  background-color: rgba(240, 197, 116);
+  color: black;
+  float:right;
+}
+
+textarea {
+  margin-top: 150px;
+  background-color: rgb(52, 58, 64, 0.6);
+  border-color: rgba(240, 197, 116);
+  color: rgb(159, 199, 205);
+  height: 150px;
+}
+
+.container {
+  justify-content: center;
+}
+
+form {
+  padding-top: 50px;
+}
+
+#stars {
+  vertical-align: bottom;
+}
+
+.row {
+  justify-content: right;
+  margin-right: 0px;
+}
+
+#leaveComment {
+  float:left;
+}

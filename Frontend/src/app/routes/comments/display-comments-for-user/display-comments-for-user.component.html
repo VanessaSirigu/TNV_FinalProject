@@ -2,11 +2,10 @@
 
   <table class="table">
     <tbody>
-      <tr>
-        <b>Your comments: </b>
-      </tr>
+      <th style="text-align:left">Titles</th>
+      <th>Comments:</th>
       <tr class="pointer" *ngFor="let entry of comments, let i = index">
-        <!-- <th>You wrote: <b>{{movieTitles[i]}}</b></th> -->
+        <td style="text-align:left">{{movieTitles[i]}}</td>
         <td>{{bodies[i]}}</td>
       </tr>
     </tbody>

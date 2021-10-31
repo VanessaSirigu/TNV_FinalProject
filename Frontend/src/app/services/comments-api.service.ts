@@ -1,58 +1,62 @@
 import { CommentApiInterface, CommentsResultsInterface } from 'src/app/models/apiComment.model';
-//import { CommentsApiService } from './comments-api.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { catchError } from 'rxjs/operators'
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class CommentsApiService {
 
-  private baseUrl = "http://localhost:5000/comments"
   private movieUrl = "http://localhost:5000/movie-id"  // URL for method to get comments by Movie ID only
+  private baseUrl = "http://localhost:5000/comments"  // URL for other methods
 
-  constructor(private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   //***************** CREATE *****************
-  addComment = (comment : CommentApiInterface) => {
-    return this.http.post<any>(this.baseUrl+"/", comment)
+  // Add a comment
+  addComment = (comment: CommentApiInterface) => {
+    return this.http.post<any>(this.baseUrl + "/", comment).pipe(catchError(this.handleError));
+  }
+
+  handleError(err) {
+    return throwError(err)
   }
 
   //***************** READ *****************
-  // Richiama uno specifico commento a partire dall'id del commento
-  getCommentById(id : number){
+  // Get a specific commment by comment id
+  getCommentById(id: number) {
     return this.http.get<CommentsResultsInterface>(this.baseUrl + "/" + id);
   }
 
-  // Richiama tutti i commenti che hanno un determinato userId
-  getAllCommentsByUserId(userId : number){
-     return this.http.get<any>(this.baseUrl + "?user-id=" + userId);
+  // Get all comments by a given userId
+  getAllCommentsByUserId(userId: number) {
+    return this.http.get<any>(this.baseUrl + "?user-id=" + userId);
   }
 
-  // Richiama tutti i commenti che hanno un determinato movieId
-  getAllCommentsByMovieId(movieId : number){
+  // Get all comment by given movieId
+  getAllCommentsByMovieId(movieId: number) {
     return this.http.get<CommentApiInterface>(this.movieUrl + "/" + movieId);
- }
+  }
 
-  // Richiama tutti i commenti
-  allComments(){
+  // Get all comments in the database
+  allComments() {
     return this.http.get<CommentApiInterface>(this.baseUrl + "?all");
   }
 
-
-  // Avrei voluto scrivere una funzione per recuperare da movieId, ma
-  // su .NET non è implementata. Da fare.
-
   //***************** UPDATE *****************
-  //modifica il commento corrispondente all'id del commento passato come parametro
-  editComment (comment : CommentsResultsInterface) {
+  // Edit che comment by id passed as a parameter
+  editComment(comment: CommentsResultsInterface) {
     console.log(comment.id)
-    return this.http.put<CommentsResultsInterface>(this.baseUrl+"/"+comment.id, comment, {responseType: 'text' as 'json'});
-   }
+    return this.http.put<CommentsResultsInterface>(this.baseUrl + "/" + comment.id, comment, { responseType: 'text' as 'json' }).pipe(catchError(this.handleError));
+  };
 
   //***************** DELETE ******************
-  //cancella il commento corrispondente all'id passato come parametro
-  deleteComment(id){
-    return this.http.delete<CommentApiInterface>(this.baseUrl+"/"+id);
+  // Delete comment for Id passed as a parameter
+  deleteComment(id) {
+    return this.http.delete<CommentApiInterface>(this.baseUrl + "/" + id).pipe(catchError(this.handleError));
   }
+
 }

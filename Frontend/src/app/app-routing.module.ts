@@ -1,5 +1,5 @@
 import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
-import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
+import { AddCommentApiComponent } from './routes/comments/add-comment-api/add-comment-api.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from './routes/dashboard/dashboard.component'
@@ -26,9 +26,9 @@ import { CommentsManagerPageComponent } from './routes/comments/comments-manager
 import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
-import { CommunityComponent } from './routes/community/community.component';
 import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
 import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
+import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -59,7 +59,6 @@ const routes: Routes = [
   { path: "editComment/:id", component : EditCommentComponent},
   { path: "home", component : HomeComponent},
   { path: "popMovies", component : PopularPageComponent},
-  { path: "community", component : CommunityComponent},
   { path: "registration", component : RegistrationPageComponent},
   { path: "detailTvSeriesApi/:id", component : DetailsTvServiesApiComponent}
 ];

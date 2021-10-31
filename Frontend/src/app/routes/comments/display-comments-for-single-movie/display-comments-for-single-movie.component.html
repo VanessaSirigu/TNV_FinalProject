@@ -3,12 +3,12 @@
   <table class="table">
     <tbody>
       <tr>
-        <th style="text-align: left">user</th>
-        <th style="margin: auto">comment</th>
+        <th>user</th>
+        <th>comment</th>
       </tr>
       <tr class="pointer" *ngFor="let entry of comments, let i = index">
         <td id="username">{{userNames[i]}}</td>
-        <td style="text-align: center">{{bodies[i]}}</td>
+        <td>{{bodies[i]}}</td>
       </tr>
     </tbody>
   </table>
