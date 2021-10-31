@@ -18,5 +18,8 @@ export class TvSeriesApiService {
   getSerieTvBySerieId(id){
     return this.http.get<TvSeriesApiInterface>(this.baseURL+"tv/"+id+"?api_key="+this.apiKey+"&language=en-US&page=1");
   }
+  getImage () {
+    return this.http.get<string>(this.baseURL+"tv/{tv_id}/images?api_key="+this.apiKey+"&language=en-US");
+  }
 
 }

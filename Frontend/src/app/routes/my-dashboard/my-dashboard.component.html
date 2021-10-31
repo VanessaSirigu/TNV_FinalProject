@@ -3,40 +3,27 @@
   <div class="container">
 
     <div id="hiUser">
-      <h1>Welcome back {{username}} !</h1>
-    </div>
+    <h1>Hi {{username}} !</h1>
+  </div>
+    <span>
 
-    <!-- <span>
-        <img id="profilePicture" alt="ProfilePicture">
-        <h1>Hi {{username}} !</h1>
-      </span> -->
+      <div>
 
-    <div id="header">
+        <div>
+          <img id="profilePicture" alt="ProfilePicture">
+        </div>
+      </div>
+
+      <span id="barChart">
+        <app-chart-rating></app-chart-rating>
+      </span>
+      <span id="pieRatingChart">
+        <app-chart-user></app-chart-user>
+      </span>
       <span>
-        <img id="profilePicture" alt="ProfilePicture">
-        <!-- <h1>Hi {{username}} !</h1> -->
+        <app-my-dash-component></app-my-dash-component>
       </span>
-
-
-      <span id="chartsLine">
-        <span id="pieRatingChart">
-          <app-chart-user></app-chart-user>
-        </span>
-        <span id="barChart">
-          <app-chart-rating></app-chart-rating>
-        </span>
-      </span>
-    </div>
-
-    <!-- <div id="hiUser">
-      <h1>Hi {{username}} !</h1>
-    </div> -->
-
-
-    <div id="ratingTable">
-      <app-my-dash-component></app-my-dash-component>
-    </div>
-
+    </span>
     <app-display-comments-for-user></app-display-comments-for-user>
   </div>
 </body>

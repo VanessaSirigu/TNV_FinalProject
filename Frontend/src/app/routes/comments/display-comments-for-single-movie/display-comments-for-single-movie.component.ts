@@ -25,6 +25,7 @@ export class DisplayCommentsForSingleMovieComponent implements OnInit {
   movieId: number;
   userMap = new Map<number, string>();
 
+
   ngOnInit(): void {
     this.movieId = this.route.snapshot.params['id']; // Gets movie ID from route
     this.fetchEntry();
@@ -57,6 +58,7 @@ export class DisplayCommentsForSingleMovieComponent implements OnInit {
         if (x == this.userIds.length) {   // When for loop is at it lasts instance
           for (let userId of this.userIds) {
             this.userNames.push(this.userMap.get(userId)) // Get a username mapped with given user ID and push it in a string array
+
           }
         }
       })

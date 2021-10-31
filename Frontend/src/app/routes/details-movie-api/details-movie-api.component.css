@@ -8,76 +8,93 @@ body {
   font-family: "DK Lemon Yellow Sun";
   font-size: 32px;
   font-weight: bold;
-  text-align: center;
+  width: 250px;
+  text-align: left;
+  display: inline;
 }
 
-ul,
-.list-group-item,
-li {
-  color: rgb(190, 238, 245);
-  background-color: rgb(52, 58, 64);
-  font-family: "Letters-for-Learners";
-  font-size: 22px;
-  border: none;
-  width: 700px;
-  padding-top: 0%;
+#movieId {
+  width: 200px;
+}
+
+li, ul, .list-group-item {
+  width: 750px;
+  float: left;
   text-align: justify;
 }
 
-ul,
-.list-group {
-  margin-right: 100px;
-  float: right;
-  margin-top: -150px;
+ul, .list-group-item {
+  color: rgb(190, 238, 245);
+  background-color: rgb(52, 58, 64);
+  font-family: "Kalam-Regular";
+  font-size: 22px;
+  border: none;
+  align-content: justify;
+  text-justify: auto;
+  vertical-align: top;
 }
 
 img {
   width: 250px;
-  display: inline-block;
+  display: inline;
   margin-right: 5%;
   vertical-align: bottom;
+  float: left;
 }
 
 .fa-backward {
-  margin-top: 30px;
+  margin-left: -50px;
+  margin-top: 20px;
   color: rgb(190, 238, 245);
   padding-bottom: 40px;
 }
 
-#stars {
-  width: 250px;
-  float: right;
-  margin-top: -30px;
-  margin-left: auto;
+#MovieDetails {
+  vertical-align: top;
 }
 
-ul {
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 2px;
-  border-radius: 0%;
-  margin-bottom: 70px;
+#chart {
+  margin-right: 20%;
+}
+
+#chartMediaRating {
+  flex: right;
+  /* margin-left: 100px; */
+}
+
+#chartDetailRating {
+  float: right;
+  margin-right: 10%;
+}
+
+#chartBlock {
+  background-image: url("../../../assets/img/header-jetBlack.jpg");
+  opacity: 0.8;
+  width: 100%;
+  height: auto;
+}
+
+#stars {
+  width: 300px;
+  align-content: auto;
+}
+
+td {
+  padding-right: 85px;
+}
+
+#releaseDate {
+  text-align: right;
+  padding: 0%;
 }
 
 #commentBox,
 textarea {
+  /* float: right; */
   width: 500px;
   margin: auto;
 }
 
-#pieRatingChart {
-  width: 20%;
-  display: inline-block;
-  margin-left: 5%;
-}
-
-#barChart {
-  width: 25%;
-  display: inline-block;
-  margin-left: 12%;
-  clear: right;
-}
-
-#chartsLine {
-  vertical-align: top;
+ul {
+  margin-top: 20px;
 }

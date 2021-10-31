@@ -1,82 +1,71 @@
 body {
   background-color: rgb(52, 58, 64);
   height: 100%;
-  margin-bottom: -1.2%;
+  margin-bottom: -1.2%
 }
 
 #title {
   font-family: "DK Lemon Yellow Sun";
   font-size: 32px;
   font-weight: bold;
-  text-align: center;
 }
 
-ul,
-.list-group-item,
-li {
+#movieId {
+  width: 200px;
+}
+
+.list-group-item {
   color: rgb(190, 238, 245);
   background-color: rgb(52, 58, 64);
-  font-family: "Letters-for-Learners";
   font-size: 22px;
+  font-family: "Kalam-Regular";
   border: none;
-  width: 700px;
-  padding-top: 0%;
-}
-
-ul,
-.list-group {
-  margin-right: 100px;
-  float: right;
-  margin-top: -150px;
+  align-content: justify;
+  padding: 8px;
+  text-justify: auto;
+  width: 600px;
+  vertical-align: top;
+  margin-left: 5%;
 }
 
 img {
-  width: 250px;
-  display: inline-block;
+  width: 230px;
+  float: right;
+  display: inline;
   margin-right: 5%;
   vertical-align: bottom;
 }
 
 .fa-backward {
-  margin-top: 30px;
+  margin-left: -50px;
+  margin-top: 20px;
   color: rgb(190, 238, 245);
-  padding-bottom: 40px;
 }
 
-#stars {
-  width: 250px;
-  float: right;
-  margin-top: -30px;
-  margin-left: auto;
-}
-
-ul {
-  border-top-style: solid;
-  border-bottom-style: solid;
-  border-width: 2px;
-  border-radius: 0%;
-  margin-bottom: 70px;
-}
-
-#commentBox,
-textarea {
-  width: 500px;
-  margin: auto;
-}
-
-#pieRatingChart {
-  width: 20%;
-  display: inline-block;
-  margin-left: 5%;
-}
-
-#barChart {
-  width: 25%;
-  display: inline-block;
-  margin-left: 12%;
-  clear: right;
-}
-
-#chartsLine {
+#MovieDetails{
   vertical-align: top;
+}
+
+.list-group {
+  width: 60%;
+}
+
+#overview {
+  text-justify: distribute;
+  width: 90%;
+}
+
+#chart {
+  margin-right: 20%;
+}
+
+#charMediaRating, #chartDetailRating, img {
+  float: left;
+}
+
+#chartBlock {
+  background-image: url('../../../assets/img/header-jetBlack.jpg');
+  opacity: 0.8;
+  width:100%;
+  height: auto;
 }
