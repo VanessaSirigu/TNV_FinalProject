@@ -42,6 +42,7 @@ export class AddRatingApiComponent implements OnInit {
     this.verifyLog();
     this.getUser();
 
+    this.userId = Number.parseInt(localStorage.getItem('userId'));
     console.log(this.userName);
     console.log(this.userId);
     console.log(this.id)
