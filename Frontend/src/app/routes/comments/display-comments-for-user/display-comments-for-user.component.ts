@@ -25,7 +25,6 @@ export class DisplayCommentsForUserComponent implements OnInit {
   bodies : string [] = [];
   movieTitles : string [] = [];
 
-
   ngOnInit(): void {
     this.username = localStorage.getItem('username');
     this.getAllCommentsByUsername()

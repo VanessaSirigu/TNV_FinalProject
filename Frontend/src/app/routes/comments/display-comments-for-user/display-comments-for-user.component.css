@@ -11,3 +11,11 @@ td {
   font-size: 22px;
   vertical-align: bottom;
 }
+
+b {
+  margin: auto;
+  color: rgb(240, 197, 116) !important;
+  font-size: 22px;
+  text-align: center;
+  font-family: "DK Lemon Yellow Sun";
+}

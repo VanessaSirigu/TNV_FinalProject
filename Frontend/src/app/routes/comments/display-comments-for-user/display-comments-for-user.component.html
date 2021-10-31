@@ -1,13 +1,16 @@
 <div class="container p-5" *ngIf="comments != null">
 
-    <table class="table">
-      <tbody>
-        <tr class="pointer" *ngFor="let entry of comments, let i = index">
-          <th>You wrote: <b>{{movieTitles[i]}}</b></th>
-          <td>{{bodies[i]}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <table class="table">
+    <tbody>
+      <tr>
+        <b>Your comments: </b>
+      </tr>
+      <tr class="pointer" *ngFor="let entry of comments, let i = index">
+        <!-- <th>You wrote: <b>{{movieTitles[i]}}</b></th> -->
+        <td>{{bodies[i]}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-  <app-loading-page *ngIf="comments==null" ></app-loading-page>
+<app-loading-page *ngIf="comments==null"></app-loading-page>

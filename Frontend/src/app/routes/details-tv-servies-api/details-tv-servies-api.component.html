@@ -7,28 +7,47 @@
         <i class="fas fa-backward fa-2x"></i>
       </a>
     </div>
-       <img src="https://image.tmdb.org/t/p/original/{{ oneSeries.poster_path}}">
-        <!-- <span id="rating"> -->
+    <!----------------------------------------------------------------->
+    <div id="infoMovie">
+      <span>
+        <img src="https://image.tmdb.org/t/p/original/{{ oneSeries.poster_path }}">
+      </span>
+      <span>
+        <span id="chartsLine">
 
-        <!-- </span> -->
-    <span id="scheda">
-      <ul class="list-group">
-        <li id="title" class="list-group-item">{{oneSeries.name}}</li>
-        <li id="movieId" class="list-group-item"># {{oneSeries.id}}</li>
-        <li id="overview" class="list-group-item">{{oneSeries.overview}}</li>
-        <li class="list-group-item">Language: {{oneSeries.original_language}}</li>
-        <li class="list-group-item">Popularity: {{oneSeries.popularity}}</li>
-        <li class="list-group-item">Original name : {{oneSeries.original_name}}</li>
-        <li class="list-group-item"></li>
-        <li class="list-group-item"></li>
-      </ul>
+          <span id="pieRatingChart">
+            <app-charts></app-charts>
+          </span>
+          <span id="barChart">
+            <app-chart-genre></app-chart-genre>
+          </span>
+
+          <ul class="list-group">
+            <li id="title" class="list-group-item">{{oneSeries.name}}</li>
+            <li id="movieId" class="list-group-item">movie # {{oneSeries.id}}</li>
+            <li id="overview" class="list-group-item">Overview:</li>
+            <li id="overview" class="list-group-item">{{oneSeries.overview}}</li>
+            <li class="list-group-item" style="display: inline-block" width="230">Language: {{oneSeries.original_language}}</li>
+            <li class="list-group-item" style="display: inline-block" width="230">Popularity: {{oneSeries.popularity}}</li>
+            </ul>
+        </span>
+      </span>
+    </div>
+    <!----------------------------------------------------------------->
+
+    <!-- <div id="commentBox" style="width: 40%;" class="container"> -->
+    <span id="stars">
+      <app-add-rating-api></app-add-rating-api>
+    </span>
+    <span id="stars">
+      <app-edit-rating-api></app-edit-rating-api>
     </span>
   </div>
-  <app-add-rating-api></app-add-rating-api>
-  <app-edit-rating-api></app-edit-rating-api>
-  <app-add-comment></app-add-comment>
-  <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
-
-  <!-- <app-loading-page *ngIf="series == null"></app-loading-page> -->
+  <div id="addComment">
+    <app-add-comment></app-add-comment>
+  </div>
+  <div>
+    <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+  </div>
 
 </body>

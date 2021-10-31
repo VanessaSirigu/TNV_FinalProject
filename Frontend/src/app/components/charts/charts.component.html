@@ -1,7 +1,8 @@
-<span [hidden]="!media">
-  <canvas #myCanvas >
+<div [hidden]="!media">
+  <canvas #myCanvas>
   </canvas>
-  <p>votazione media: {{media}} / 5 </p>
-</span>
+  <p>valutazione media: {{media}} / 5 </p>
+</div>
 
-  <p [hidden]="media">0 Votes</p>
+<p [hidden]="media">*No rating here*</p>
+

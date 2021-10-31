@@ -7,51 +7,49 @@
         <i class="fas fa-backward fa-2x"></i>
       </a>
     </div>
+    <!----------------------------------------------------------------->
+    <div id="infoMovie">
+      <span>
+        <img src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}">
+      </span>
+      <span>
+        <span id="chartsLine">
 
-    <div>
-      <div>
-        <div>
-          <img src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}">
-        </div>
+          <span id="pieRatingChart">
+            <app-charts></app-charts>
+          </span>
+          <span id="barChart">
+            <app-chart-genre></app-chart-genre>
+          </span>
 
-        <span id="chartMediaRating">
-          <app-charts></app-charts>
+          <ul class="list-group">
+            <li id="title" class="list-group-item">{{result.title}}</li>
+            <li id="movieId" class="list-group-item">movie # {{result.id}}</li>
+            <li id="overview" class="list-group-item">Overview:</li>
+            <li id="overview" class="list-group-item">{{result.overview}}</li>
+            <li class="list-group-item" style="display: inline-block" width="230">Language: {{result.original_language}}</li>
+            <li class="list-group-item" style="display: inline-block" width="230">Popularity: {{result.popularity}}</li>
+            <li class="list-group-item" style="display: inline-block" width="230">Release date : {{result.release_date}}
+            </li>
+          </ul>
         </span>
-        <span id="chartDetailRating">
-          <app-chart-genre></app-chart-genre>
-        </span>
-      </div>
-
-      <ul class="list-group">
-        <li id="title" class="list-group-item">{{result.title}}</li>
-        <li id="movieId" class="list-group-item">movie # {{result.id}}</li>
-        <li id="overview" class="list-group-item">{{result.overview}}</li>
-        <li class="list-group-item">
-          <td>Language: {{result.original_language}}</td>
-          <td>Popularity: {{result.popularity}}</td>
-          <td>Release date : {{result.release_date}}</td>
-        </li>
-      </ul>
-
-
+      </span>
     </div>
-  </div>
+    <!----------------------------------------------------------------->
 
-  <div class="container">
-
-      <div id="stars">
-        <app-add-rating-api></app-add-rating-api>
-      </div>
-      <div id="stars">
-        <app-edit-rating-api></app-edit-rating-api>
-      </div>
-    </div>
-
-
-    <span id="commentBox" style="width: 40%;" class="container">
-      <app-add-comment></app-add-comment>
+    <!-- <div id="commentBox" style="width: 40%;" class="container"> -->
+    <span id="stars">
+      <app-add-rating-api></app-add-rating-api>
     </span>
-
-  <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+    <span id="stars">
+      <app-edit-rating-api></app-edit-rating-api>
+    </span>
+  </div>
+  <div id="addComment">
+    <app-add-comment></app-add-comment>
+  </div>
+  <div>
+    <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+  </div>
 
 </body>

@@ -2,9 +2,13 @@
 
   <table class="table">
     <tbody>
+      <tr>
+        <th style="text-align: left">user</th>
+        <th style="margin: auto">comment</th>
+      </tr>
       <tr class="pointer" *ngFor="let entry of comments, let i = index">
-        <th>Comment by <b>{{userNames[i]}}</b>:</th>
-        <td>{{bodies[i]}}</td>
+        <td id="username">{{userNames[i]}}</td>
+        <td style="text-align: center">{{bodies[i]}}</td>
       </tr>
     </tbody>
   </table>

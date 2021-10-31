@@ -1,16 +1,14 @@
 p {
-  font-family: 'DK Lemon Yellow Sun';
+  font-family: "DK Lemon Yellow Sun";
   font-size: 18px;
   /* color: rgb(159, 199, 205); */
   color: rgba(240, 197, 116);
   text-align: left;
+  margin-left: 0%;
   box-sizing: unset;
-  float: left;
 }
 
 .submit {
-  float: right;
-  margin-right: 175px;
   width: 70px;
   margin-top: 10px;
   font-family: "DK Lemon Yellow Sun";
@@ -18,13 +16,15 @@ p {
   box-sizing: content-box;
   background-color: rgba(240, 197, 116);
   color: black;
+  float:right;
 }
 
 textarea {
+  margin-top: 150px;
   background-color: rgb(52, 58, 64, 0.6);
   border-color: rgba(240, 197, 116);
   color: rgb(159, 199, 205);
-  height: 100px;
+  height: 150px;
 }
 
 .container {
@@ -32,5 +32,22 @@ textarea {
 }
 
 form {
-  padding-bottom: 50px;
+  padding-top: 50px;
 }
+
+#stars {
+  vertical-align: bottom;
+}
+
+.row {
+  justify-content: right;
+  margin-right: 0px;
+}
+
+#leaveComment {
+  float:left;
+}
+
+/* #underTextArea {
+  justify-content: ;
+} */
