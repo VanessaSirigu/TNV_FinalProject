@@ -1,9 +1,42 @@
 <body>
+
   <div class="container">
-    <span>
-      <img id="profilePicture" alt="ProfilePicture" />
-    </span>
-    <app-chart-rating></app-chart-rating>
-    <app-my-dash-component></app-my-dash-component>
+
+    <div id="hiUser">
+      <h1>Welcome back {{username}} !</h1>
+    </div>
+
+    <!-- <span>
+        <img id="profilePicture" alt="ProfilePicture">
+        <h1>Hi {{username}} !</h1>
+      </span> -->
+
+    <div id="header">
+      <span>
+        <img id="profilePicture" alt="ProfilePicture">
+        <!-- <h1>Hi {{username}} !</h1> -->
+      </span>
+
+
+      <span id="chartsLine">
+        <span id="pieRatingChart">
+          <app-chart-user></app-chart-user>
+        </span>
+        <span id="barChart">
+          <app-chart-rating></app-chart-rating>
+        </span>
+      </span>
+    </div>
+
+    <!-- <div id="hiUser">
+      <h1>Hi {{username}} !</h1>
+    </div> -->
+
+
+    <div id="ratingTable">
+      <app-my-dash-component></app-my-dash-component>
+    </div>
+
+    <!-- <app-display-comments-for-user></app-display-comments-for-user> -->
   </div>
 </body>

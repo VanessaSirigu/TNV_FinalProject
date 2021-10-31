@@ -21,7 +21,6 @@ export class ChartGenreComponent implements OnInit {
   results: DataInterface[];
   rating: number[];
   movieRating: number;
-  media: number;
   id:number;
 
   username: string;
@@ -41,7 +40,7 @@ export class ChartGenreComponent implements OnInit {
   }
 
   showAllMovieRating() {
-  this.movieRatingService.getMovieRatingsByMovieId(this.id).subscribe(
+    this.movieRatingService.getMovieRatingsByMovieId(this.id).subscribe(
       responce => {
         this.movieRatings = responce;
         this.results = this.movieRatings.data;
@@ -106,9 +105,11 @@ export class ChartGenreComponent implements OnInit {
         },
         scales:{
           xAxes: [{
-            display: false
+            display: false,
           }],
-          gridLines:{
+          yAxes: [{
+            ticks: {fontSize: 18, fontFamily: "DK Lemon Yellow Sun", fontColor: 'rgb(190, 238, 245, .8)'}}],
+            gridLines:{
             offsetGridLines:false
           }
         }
@@ -117,9 +118,3 @@ export class ChartGenreComponent implements OnInit {
   }
 
 }
-
-
-
-
-
-

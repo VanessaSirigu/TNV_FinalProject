@@ -44,6 +44,7 @@ export class MyDashComponentComponent implements OnInit {
       this.movie = response;
       this.titles.push(this.movie.title)
       this.overview.push(this.movie.overview)
+
       })
   }
 
@@ -74,7 +75,8 @@ getEntryTvList(id){
   this.seriesApiService.getSerieTvBySerieId(id).subscribe( (res: any ) => {
     this.oneSeries = res;
     this.titles.push(this.oneSeries.name)
-    this.overview.push(this.oneSeries.overview)
+      this.overview.push(this.oneSeries.overview)
+
   })
 }
 

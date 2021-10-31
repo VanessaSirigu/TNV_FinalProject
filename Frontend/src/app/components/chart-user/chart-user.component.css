@@ -1,0 +1,9 @@
+p {
+  /* color : rgb(240, 197, 116); */
+  margin-top: 10px;
+  color : rgb(190, 238, 245, .8);
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 20px;
+  vertical-align: bottom;
+  text-align: center;
+}
