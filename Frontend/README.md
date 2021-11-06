@@ -1,27 +1,37 @@
-# Frontend
+# TNV-IV-ED-FinalProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
+1. Install nodejs, chart.js mamp and visual code studio. For chart.js:
+  * npm i ng2-charts@2.4.2 --save
+  * npm i chart.js --save
+  
+2. Database configuration: open mamp
+  * click "open webStartPage"
+  * open phpMyAdmin
+  * new database "thenetfish"
+  * new database "prova"
+  * new database "movie_rating"
+  * new database "film_comment_app"
+  * import tab, select "webservice.sql" in root folder
+  * "go"
 
-## Development server
+3. Open visual code studio
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+4. New terminal, run "Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser"
 
-## Code scaffolding
+5. File -> Open folder "frontend"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+6. Run "npm install" in terminal
 
-## Build
+7. Run "ng-serve"
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+8. File -> new terminal in visual studio code, cd ./Backend
 
-## Running unit tests
+9. Run "npm install", then "npm start" to run the backend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+10. Film-comments-service -> new terminal cd .\src\FilmComments.RestAPIs\ and run   "dotnet run"
 
-## Running end-to-end tests
+11. MovieRating -> new terminal and run "php artisan serve"
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+12. SBProject -> Open Spring Boot project with IntelliJ IDEA, build and run
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+13. go to url "localhost:4200" in your browser
