@@ -33,6 +33,7 @@ import { RatingDetailsComponent } from './routes/rating-details/rating-details.c
 import { DetailsMovieApiComponent } from './routes/details-movie-api/details-movie-api.component';
 import { AddRatingApiComponent } from './routes/add-rating-api/add-rating-api.component';
 import { AddCommentComponent } from './routes/comments/add-comment/add-comment.component';
+import { AddCommentApiComponent } from './routes/comments/add-comment-api/add-comment-api.component';
 import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
 import { EditCommentComponent } from './routes/comments/edit-comment/edit-comment.component';
 import { CommentsManagerPageComponent } from './routes/comments/comments-manager-page/comments-manager-page.component';
@@ -90,6 +91,7 @@ import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/de
     DetailsMovieApiComponent,
     AddRatingApiComponent,
     AddCommentComponent,
+    AddCommentApiComponent,
     EditCommentComponent,
     CommentDetailsComponent,
     CommentsManagerPageComponent,
