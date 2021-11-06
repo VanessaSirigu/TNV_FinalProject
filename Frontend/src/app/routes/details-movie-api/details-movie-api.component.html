@@ -32,21 +32,24 @@
             <li class="list-group-item" style="display: inline-block" width="230"><b>Release date: </b>{{result.release_date}}
             </li>
           </ul>
-        </span>
+          <p *ngIf="userId == -1">Please log in or register to leave your rating and/or comment about this movie<p>
+          </span>
       </span>
     </div>
     <!----------------------------------------------------------------->
 
     <!-- <div id="commentBox" style="width: 40%;" class="container"> -->
-    <span id="stars">
+      <div *ngIf="userId != -1">
+      <span id="stars">
       <app-add-rating-api></app-add-rating-api>
     </span>
     <span id="stars">
       <app-edit-rating-api></app-edit-rating-api>
     </span>
-  </div>
   <div id="addComment">
     <app-add-comment-api></app-add-comment-api>
+  </div>
+</div>
   </div>
   <div>
     <app-display-comments-for-single-movie></app-display-comments-for-single-movie>

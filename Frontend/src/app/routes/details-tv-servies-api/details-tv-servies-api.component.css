@@ -4,6 +4,11 @@ body {
   margin-bottom: -1.2%;
 }
 
+.separator
+{
+    border: left 20px solid rgb(52, 58, 64);
+}
+
 #title {
   font-family: "DK Lemon Yellow Sun";
   font-size: 32px;

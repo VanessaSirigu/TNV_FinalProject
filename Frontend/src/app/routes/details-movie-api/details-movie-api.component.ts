@@ -22,10 +22,8 @@ export class DetailsMovieApiComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log(this.userId)
     this.userId = Number.parseInt(localStorage.getItem('userId'));
     if (Number.isNaN(this.userId)){ this.userId = -1}
-    console.log(this.userId)
     this.fetchEntry()
   }
 

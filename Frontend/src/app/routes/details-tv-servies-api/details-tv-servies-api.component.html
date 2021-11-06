@@ -1,7 +1,5 @@
 <body>
-
-  <div *ngIf="oneSeries != null " class="container">
-
+  <div *ngIf="oneSeries != null" class="container">
     <div>
       <a (click)="goBack()">
         <i class="fas fa-backward fa-2x"></i>
@@ -10,11 +8,12 @@
     <!----------------------------------------------------------------->
     <div id="infoMovie">
       <span>
-        <img src="https://image.tmdb.org/t/p/original/{{ oneSeries.poster_path }}">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ oneSeries.poster_path }}"
+        />
       </span>
       <span>
         <span id="chartsLine">
-
           <span id="pieRatingChart">
             <app-charts></app-charts>
           </span>
@@ -23,31 +22,56 @@
           </span>
 
           <ul class="list-group">
-            <li id="title" class="list-group-item">{{oneSeries.name}}</li>
-            <li id="movieId" class="list-group-item"><b>movie # </b>{{oneSeries.id}}</li>
+            <li id="title" class="list-group-item">{{ oneSeries.name }}</li>
+            <li id="movieId" class="list-group-item">
+              <b>movie # </b>{{ oneSeries.id }}
+            </li>
             <li id="overview" class="list-group-item"><b>Overview: </b></li>
-            <li id="overview" class="list-group-item">{{oneSeries.overview}}</li>
-            <li class="list-group-item" style="display: inline-block" width="230"><b>Language: </b>{{oneSeries.original_language}}</li>
-            <li class="list-group-item" style="display: inline-block" width="230"><b>Popularity: </b>{{oneSeries.popularity}}</li>
-            </ul>
-        </span>
+            <li id="overview" class="list-group-item">
+              {{ oneSeries.overview }}
+            </li>
+            <li
+              class="list-group-item"
+              style="display: inline-block"
+              width="230"
+            >
+              <b>Language: </b>{{ oneSeries.original_language }}
+            </li>
+            <li
+              class="list-group-item"
+              style="display: inline-block"
+              width="230"
+            >
+              <b>Popularity: </b>{{ oneSeries.popularity }}
+            </li>
+          </ul>
+          <p *ngIf="userId == -1">
+            Please log in or register to leave your rating and/or comment about
+            this movie
+          </p>
+          <p></p
+        ></span>
       </span>
     </div>
     <!----------------------------------------------------------------->
 
     <!-- <div id="commentBox" style="width: 40%;" class="container"> -->
-    <span id="stars">
-      <app-add-rating-api></app-add-rating-api>
-    </span>
-    <span id="stars">
-      <app-edit-rating-api></app-edit-rating-api>
-    </span>
-  </div>
-  <div id="addComment">
-    <app-add-comment></app-add-comment>
-  </div>
-  <div>
-    <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+
+    <div *ngIf="userId != -1">
+      <span id="stars">
+        <app-add-rating-api></app-add-rating-api>
+      </span>
+      <span id="stars">
+        <app-edit-rating-api></app-edit-rating-api>
+      </span>
   </div>
 
+  <div class="separator"></div>
+  </div>
+  <div>
+    <div *ngIf="userId != -1" id="addComment">
+      <app-add-comment-api></app-add-comment-api>
+    </div>
+    <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
+  </div>
 </body>

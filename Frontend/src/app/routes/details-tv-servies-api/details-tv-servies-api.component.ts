@@ -20,10 +20,12 @@ export class DetailsTvServiesApiComponent implements OnInit {
   id:number;
   series : TvSeriesApiInterface;
   oneSeries : OneTvShowInterface;
+  userId : number;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
-    console.log("this.id",this.id);
+    this.userId = Number.parseInt(localStorage.getItem('userId'));
+    if (Number.isNaN(this.userId)){ this.userId = -1}
     this.fetchEntry()
   }
   fetchEntry(){
