@@ -29,13 +29,13 @@ thead {
 }
 
 #overview {
-  font-family: 'Kalam-Regular';
+  font-family: 'LettersForLearners';
 }
 
 table, .btn-default {
   color: rgb(159, 199, 205);
   font-family: 'DK Lemon Yellow Sun';
-  font-size: 18px;
+  font-size: 22px;
   text-align: justify;
 }
 

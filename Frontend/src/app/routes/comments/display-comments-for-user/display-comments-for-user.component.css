@@ -1,15 +1,15 @@
 th {
   color: rgb(190, 238, 245);
-  font-family: "Kalam-Regular";
-  font-size: 18px;
+  font-family: "LettersForLearners";
+  font-size: 22px;
   vertical-align: bottom;
 }
 
 td {
   color: rgb(190, 238, 245);
-  font-family: "Kalam-Regular";
+  font-family: "LettersForLearners";
   font-size: 22px;
-  vertical-align: bottom;
+  vertical-align: middle;
 }
 
 b {
