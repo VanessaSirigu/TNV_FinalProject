@@ -1,7 +1,7 @@
 <div [hidden]="!media">
   <canvas #myCanvas>
   </canvas>
-  <p>valutazione media: {{media}} / 5 </p>
+  <p>valutazione media: {{media | number : '1.0-1'}} / 5 </p>
 </div>
 
 <p [hidden]="media">*No rating here*</p>
