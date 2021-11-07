@@ -65,12 +65,9 @@ export class CommunityComponent implements OnInit {
         for (let movieId of movieIds){
         this.movieService.getMovieByMovieId(movieId).subscribe((response) => {
           this.movie = response;
-          console.log ("this.movie: ", this.movie.title)
           this.titleMap.set(movieId, this.movie.title);
           x++;
-          console.log("x = ", x)
           if (x == movieIds.length){
-            console.log(this.movieIds.length)
             for (let movieId of this.movieIds) {
               if ((this.titleMap.get(movieId))!= undefined){
               this.titles.push(this.titleMap.get(movieId))
@@ -82,7 +79,6 @@ export class CommunityComponent implements OnInit {
         }, error => {
           this.titleMap.set(movieId, "(unknown movie)");
           x++;
-          console.log("err x =", x)
           if (x == movieIds.length){
             for (let movieId of this.movieIds) {
               if ((this.titleMap.get(movieId))!= undefined){
@@ -103,8 +99,7 @@ export class CommunityComponent implements OnInit {
         this.userService.getUserById(userId).subscribe((res: any) => {
           x++; // Increase counter
           this.user = res;
-          console.log("this.user:" , this.user)
-          if (this.user.username != null){
+          if (this.user != null){
             this.userMap.set(userId, this.user.username);
           } else {
             this.userMap.set(userId, "(unknown user)");

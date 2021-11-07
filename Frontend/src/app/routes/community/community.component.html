@@ -10,10 +10,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="pointer" *ngFor="let entry of datas ; let i = index" (click)="goToDetails(entry.movie_id)">
-          <td id="titles">{{titles[i]}}</td>
-          <td id="ratings"><li> {{ratings[i]}} </li>
+        <tr class="pointer" *ngFor="let entry of datas, let i = index">
+          <td>
+              {{titles[i]}}
           </td>
-          <td id="usernames">{{userNames[i]}}</td>
+          <td>
+            <li> {{ratings[i]}} </li>
+          </td>
+          <td>{{userNames[i]}}</td>
           <td></td>
         </tr>
