@@ -10,13 +10,14 @@ import { ResultInterface } from '../../models/apiMovie.model';
 import { UserInterface } from '../../models/apiUsers.model';
 import { OneTvShowInterface } from '../../models/apiTvSeries';
 import { TvSeriesApiService } from '../../services/tv-series-api.service';
+import { CommentsResultsInterface, CommentApiInterface } from '../../models/apiComment.model';
 
 @Component({
-  selector: 'app-community-ratings',
-  templateUrl: './community-ratings.component.html',
-  styleUrls: ['./community-ratings.component.css']
+  selector: 'app-community-comments',
+  templateUrl: './community-comments.component.html',
+  styleUrls: ['./community-comments.component.css']
 })
-export class CommunityRatingsComponent implements OnInit {
+export class CommunityCommentsComponent implements OnInit {
 
   userId: number;
   movieRatings: MovieRatingInterface;
@@ -26,6 +27,9 @@ export class CommunityRatingsComponent implements OnInit {
   titles: string[] = [];
   userNames: string[] = [];
   ratings: number[] = [];
+  commentsApiResults: CommentApiInterface;
+  commentsResults: CommentsResultsInterface [];
+  commentsBodies: string[] = [];
   movie: ResultInterface;
   userIds: number[] = [];
   movieIds: number[] = [];
@@ -47,16 +51,16 @@ export class CommunityRatingsComponent implements OnInit {
 
   //Mostra i rating memorizzati dal BE Laravel - db localhost:8000
   getEntryRatingService() {
-    this.ratingService.getMovieRating().subscribe((res: any) => {
-      this.movieRatings = res;
-      this.datas = this.movieRatings.data;
-      this.userIds = this.datas.map(a => a.user_id)
-      this.movieIds = this.datas.map(b => b.movie_id)
-      this.ratings = this.datas.map(c => c.movie_rating)
+    this.commentService.allComments().subscribe((res: any) => {
+      this.commentsResults = res;
+      console.log(this.commentsResults)
+      this.userIds = this.commentsResults.map(a => a.userId)
+      this.movieIds = this.commentsResults.map(b => b.movieId)
+      this.commentsBodies = this.commentsResults.map(c => c.body)
       console.log(this.datas)
       console.log("this.userIds: ", this.userIds)
       console.log("this.movieIds: ", this.movieIds)
-      console.log("this.ratings: ", this.ratings)
+      console.log("this.commentsBodies: ", this.commentsBodies)
       this.getMovieTitles(this.movieIds);
     }
     )
@@ -136,13 +140,6 @@ export class CommunityRatingsComponent implements OnInit {
       })
     }
   }
-
-  // //Mostra i commenti memorizzati dal BE Dotnet - db localhost:5000
-  // getEntryCommentService() {
-  //   this.commentService.getAllCommentsByMovieId(this.userId).subscribe((response: any) => {
-  //     this.comment = response;
-  //   })
-  // }
 
   goToDetails(id) {
     this.router.navigateByUrl('/detailMovieApi/' + id);

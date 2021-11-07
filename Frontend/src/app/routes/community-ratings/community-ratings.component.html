@@ -1,21 +1,25 @@
-<div class="container p-5" *ngIf="datas != null">
-
+<body>
+  <div class="container p-5" *ngIf="displayPage == true">
     <table class="table">
       <tbody>
         <tr>
-          <th style="text-align: left">user</th>
-          <th style="margin: auto">titles</th>
-          <th style="text-align: right">ratings</th>
-
+          <th style="text-align: left">User Name</th>
+          <th style="text-align :center">Movie Title</th>
+          <th style="text-align: right">Rating</th>
         </tr>
-        <tr class="pointer" *ngFor="let entry of datas, let i = index">
-          <td id="username">{{userNames[i]}}</td>
-          <td style="text-align: center">{{titles[i]}}</td>
-          <td style="text-align: right">{{ratings[i]}}</td>
+        <tr class="pointer" *ngFor="let entry of datas; let i = index" (click)="goToDetails(movieIds[i])">
+          <td id="username">{{ userNames[i] }}</td>
+          <td style="text-align: center">{{ titles[i] }}</td>
+          <td *ngIf="ratings[i]==1"><i class="fas fa-star"></i></td>
+          <td *ngIf="ratings[i]==2" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+          <td *ngIf="ratings[i]==3" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i> <i class="fas fa-star"></i></td>
+          <td *ngIf="ratings[i]==4" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+          <td *ngIf="ratings[i]==5" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
+
         </tr>
       </tbody>
     </table>
   </div>
-  
-  <app-loading-page *ngIf="userNames==null"></app-loading-page>
-  
+</body>
+
+<app-loading-page *ngIf="displayPage == false"></app-loading-page>

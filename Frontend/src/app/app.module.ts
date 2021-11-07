@@ -61,6 +61,7 @@ import { DisplayCommentsForSingleMovieComponent } from './routes/comments/displa
 import { DisplayCommentsForUserComponent } from './routes/comments/display-comments-for-user/display-comments-for-user.component';
 import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
 import { CommunityRatingsComponent } from './routes/community-ratings/community-ratings.component';
+import { CommunityCommentsComponent } from './routes/community-comments/community-comments.component';
 
 @NgModule({
   declarations: [
@@ -118,6 +119,7 @@ import { CommunityRatingsComponent } from './routes/community-ratings/community-
     DisplayCommentsForUserComponent,
     DetailsTvServiesApiComponent,
     CommunityRatingsComponent,
+    CommunityCommentsComponent,
   ],
 
   imports: [

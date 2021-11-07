@@ -30,6 +30,7 @@ import { CommunityComponent } from './routes/community/community.component';
 import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
 import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
 import { CommunityRatingsComponent } from './routes/community-ratings/community-ratings.component';
+import { CommunityCommentsComponent } from './routes/community-comments/community-comments.component';
 
 const routes: Routes = [
   { path: "", redirectTo : '/welcome', pathMatch: 'full' },
@@ -62,6 +63,7 @@ const routes: Routes = [
   { path: "popMovies", component : PopularPageComponent},
   { path: "community", component : CommunityComponent},
   { path: "communityRatings", component : CommunityRatingsComponent},
+  { path: "communityComments", component: CommunityCommentsComponent},
   { path: "registration", component : RegistrationPageComponent},
   { path: "detailTvSeriesApi/:id", component : DetailsTvServiesApiComponent}
 ];

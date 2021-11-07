@@ -53,7 +53,11 @@ export class DisplayCommentsForSingleMovieComponent implements OnInit {
       this.usersService.getUserById(userId).subscribe((res: any) => {
         x++; // Increase counter
         this.user = res;
+        if(this.user != null){
         this.userMap.set(userId, this.user.username);
+        } else {
+          this.userMap.set(userId, "(unknown user)");
+        }
         if (x == this.userIds.length) {   // When for loop is at it lasts instance
           for (let userId of this.userIds) {
             this.userNames.push(this.userMap.get(userId)) // Get a username mapped with given user ID and push it in a string array
