@@ -68,17 +68,30 @@ export class CommunityComponent implements OnInit {
           console.log ("this.movie: ", this.movie.title)
           this.titleMap.set(movieId, this.movie.title);
           x++;
+          console.log("x = ", x)
           if (x == movieIds.length){
-            console.log(this.titleMap)
+            console.log(this.movieIds.length)
             for (let movieId of this.movieIds) {
-              this.titles.push(this.titleMap.get(movieId)) // Get a movie title mapped with given movie ID and push it in a string array
-              console.log("Titles: ", this.titles)
-              this.getUsernames(this.userIds);
+              if ((this.titleMap.get(movieId))!= undefined){
+              this.titles.push(this.titleMap.get(movieId))
+              } // Get a movie title mapped with given movie ID and push it in a string array
             }
+            console.log("Titles finali:", this.titles)
+            this.getUsernames(this.userIds);
           }
         }, error => {
-          this.titles.push("(unknown movie)")
+          this.titleMap.set(movieId, "(unknown movie)");
           x++;
+          console.log("err x =", x)
+          if (x == movieIds.length){
+            for (let movieId of this.movieIds) {
+              if ((this.titleMap.get(movieId))!= undefined){
+              this.titles.push(this.titleMap.get(movieId))
+              } // Get a movie title mapped with given movie ID and push it in a string array
+            }
+            console.log("Titles:", this.titles)
+            this.getUsernames(this.userIds);
+          }
         })
       }
     }
@@ -90,16 +103,21 @@ export class CommunityComponent implements OnInit {
         this.userService.getUserById(userId).subscribe((res: any) => {
           x++; // Increase counter
           this.user = res;
-          this.userMap.set(userId, this.user.username);
+          console.log("this.user:" , this.user)
+          if (this.user.username != null){
+            this.userMap.set(userId, this.user.username);
+          } else {
+            this.userMap.set(userId, "(unknown user)");
+          }
           if (x == this.userIds.length) {   // When for loop is at it lasts instance
             for (let userId of this.userIds) {
               if (this.userMap.get(userId) != undefined){
               this.userNames.push(this.userMap.get(userId)) // Get a username mapped with given user ID and push it in a string array
-              console.log("Usernames: ", this.userNames)
               } else {
                 this.userNames.push("(unknown user)")
               }
             }
+            console.log("Usernames: ", this.userNames)
           }
         })
         }
