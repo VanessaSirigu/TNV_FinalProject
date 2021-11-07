@@ -29,6 +29,8 @@ textarea {
 
 .container {
   justify-content: center;
+  padding-left: 10px;
+  padding-block-start: 5%;
 }
 
 form {

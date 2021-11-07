@@ -46,12 +46,13 @@
     <span id="stars">
       <app-edit-rating-api></app-edit-rating-api>
     </span>
-  <div id="addComment">
-    <app-add-comment-api></app-add-comment-api>
-  </div>
 </div>
   </div>
-  <div>
+  
+  <div class="commentBox">
+    <div *ngIf="userId != -1" id="addComment">
+      <app-add-comment-api></app-add-comment-api>
+    </div>  
     <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
   </div>
 

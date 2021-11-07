@@ -92,3 +92,7 @@ textarea {
 #chartsLine {
   vertical-align: top;
 }
+
+.commentBox {
+  padding-left: 5%;
+}
