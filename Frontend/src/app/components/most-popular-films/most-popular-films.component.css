@@ -20,8 +20,24 @@ table, .btn-default {
 }
 
 img {
-  height : 180px;
+  height: 180px;
+  align-self: baseline;
+  filter: drop-shadow(13px 13px 5px #000000);
+  transition: height 1s;
 }
+
+img:hover {
+  height: 200px;
+  transition: height 1s;
+  cursor : pointer;
+}
+
+.image {
+  height : 240px;
+  width : 160px;
+  text-align: center;
+}
+
 
 #title {
   text-align: left;

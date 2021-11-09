@@ -9,10 +9,12 @@
       <td *ngFor="let entry of oneSeries | slice: 0:3; let i = index">
         <tr>
           <a href="/detailTvSeriesApi/{{entry.id}}">
-            <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+            <div class="image">
+              <img src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}" />
+            </div>
           </a>
         </tr>
-        <tr id="title" scope="row">#{{i + 1}} {{entry.name}}</tr>
+        <tr class="clickable" id="title" scope="row">#{{i + 1}} {{entry.name}}</tr>
       </td>
     </tbody>
   </table>

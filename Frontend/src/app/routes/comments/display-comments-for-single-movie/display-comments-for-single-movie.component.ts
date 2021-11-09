@@ -12,20 +12,24 @@ import { CommentsResultsInterface } from '../../../models/apiComment.model';
 })
 export class DisplayCommentsForSingleMovieComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
+  constructor( private route: ActivatedRoute,
+    private router : Router,
     private commentsService: CommentsApiService,
     private usersService: UsersManagerApiservice) { }
 
   comments: CommentsResultsInterface[];
+  commentIds : number [] = [];
   user: UserInterface;
   userId: number;
   userIds: number[] = [];
   bodies: string[] = [];
+  username: string;
   userNames: string[] = [];
   movieId: number;
   userMap = new Map<number, string>();
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('username');
     this.movieId = this.route.snapshot.params['id']; // Gets movie ID from route
     this.fetchEntry();
   }
@@ -36,6 +40,7 @@ export class DisplayCommentsForSingleMovieComponent implements OnInit {
   fetchEntry() {
     this.commentsService.getAllCommentsByMovieId(this.movieId).subscribe((res: any) => {
       this.comments = res;
+      this.commentIds = this.comments.map(a => a.id);
       this.userIds = this.comments.map(a => a.userId); // get userId array
       this.bodies = this.comments.map(a => a.body); // get comment body array
       this.getUsernameArray(this.userIds);
@@ -65,6 +70,23 @@ export class DisplayCommentsForSingleMovieComponent implements OnInit {
         }
       })
     }
+  }
+
+  /**
+   * Get the id of the table row and use it to get the comment id.
+   * Then delete the comment with that id and reload page.
+   * @param i The serial id of the row.
+   */
+  deleteComment(i){
+    var commentId = this.commentIds[i];
+    this.commentsService.deleteComment(commentId)
+    .subscribe(data => {
+      window.location.reload();
+    }, (err) =>{
+      console.log(err);
+      window.location.reload();
+    });
+;
   }
 
 }

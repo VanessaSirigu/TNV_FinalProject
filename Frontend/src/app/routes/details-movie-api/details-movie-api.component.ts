@@ -20,6 +20,10 @@ export class DetailsMovieApiComponent implements OnInit {
   id: number;
   userId : number;
 
+  /**
+   * Get movie id by url.
+   * Get user id by localStorage, if it is null set userId variable as -1
+   */
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
     this.userId = Number.parseInt(localStorage.getItem('userId'));
@@ -27,6 +31,9 @@ export class DetailsMovieApiComponent implements OnInit {
     this.fetchEntry()
   }
 
+  /**
+   * Get a movie by movieId.
+   */
   fetchEntry() {
     this.moviesApiService.getMovieByMovieId(this.id).subscribe((res: any) => {
       this.result = res;

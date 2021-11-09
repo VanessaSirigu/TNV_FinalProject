@@ -4,9 +4,16 @@ body {
   margin-bottom: -1.2%;
 }
 
-.separator
-{
-    border: left 20px solid rgb(52, 58, 64);
+p {
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 18px;
+  background-color: rgb(52, 58, 64);
+  /* color: rgb(159, 199, 205); */
+  color: rgba(240, 197, 116);
+  text-align: left;
+  padding-inline-start: 30%;
+  box-sizing: unset;
+  float: left;
 }
 
 #title {
@@ -88,5 +95,4 @@ textarea {
 
 .commentBox {
   padding-left: 5%;
-  padding-top: 10%
 }

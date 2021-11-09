@@ -1,20 +1,19 @@
 <body>
-
-  <div *ngIf="result != null " class="container">
-
+  <div *ngIf="result != null" class="container">
     <div>
-      <a (click)="goBack()">
-        <i class="fas fa-backward fa-2x"></i>
+      <a class="shadow" (click)="goBack()">
+        <i class="fas fa-backward fa-2x clickable"></i>
       </a>
     </div>
     <!----------------------------------------------------------------->
     <div id="infoMovie">
       <span>
-        <img src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}">
+        <img
+          src="https://image.tmdb.org/t/p/original/{{ result.poster_path }}"
+        />
       </span>
       <span>
         <span id="chartsLine">
-
           <span id="pieRatingChart">
             <app-charts></app-charts>
           </span>
@@ -23,37 +22,59 @@
           </span>
 
           <ul class="list-group">
-            <li id="title" class="list-group-item">{{result.title}}</li>
-            <li id="movieId" class="list-group-item"><b>movie # </b>{{result.id}}</li>
+            <li id="title" class="list-group-item">{{ result.title }}</li>
+            <li id="movieId" class="list-group-item">
+              <b>movie # </b>{{ result.id }}
+            </li>
             <li id="overview" class="list-group-item"><b>Overview: </b></li>
-            <li id="overview" class="list-group-item">{{result.overview}}</li>
-            <li class="list-group-item" style="display: inline-block" width="230"><b>Language: </b>{{result.original_language}}</li>
-            <li class="list-group-item" style="display: inline-block" width="230"><b>Popularity: </b>{{result.popularity}}</li>
-            <li class="list-group-item" style="display: inline-block" width="230"><b>Release date: </b>{{result.release_date}}
+            <li id="overview" class="list-group-item">{{ result.overview }}</li>
+            <li
+              class="list-group-item"
+              style="display: inline-block"
+              width="230"
+            >
+              <b>Language: </b>{{ result.original_language }}
+            </li>
+            <li
+              class="list-group-item"
+              style="display: inline-block"
+              width="230"
+            >
+              <b>Popularity: </b>{{ result.popularity }}
+            </li>
+            <li
+              class="list-group-item"
+              style="display: inline-block"
+              width="230"
+            >
+              <b>Release date: </b>{{ result.release_date }}
             </li>
           </ul>
-          <p *ngIf="userId == -1">Please log in or register to leave your rating and/or comment about this movie<p>
-          </span>
+          <p *ngIf="userId == -1">
+            Please log in or register to leave your rating and/or comment about
+            this movie
+          </p>
+          <p></p
+        ></span>
       </span>
     </div>
     <!----------------------------------------------------------------->
 
     <!-- <div id="commentBox" style="width: 40%;" class="container"> -->
-      <div *ngIf="userId != -1">
+    <div *ngIf="userId != -1">
       <span id="stars">
-      <app-add-rating-api></app-add-rating-api>
-    </span>
-    <span id="stars">
-      <app-edit-rating-api></app-edit-rating-api>
-    </span>
-</div>
+        <app-add-rating-api></app-add-rating-api>
+      </span>
+      <span id="stars">
+        <app-edit-rating-api></app-edit-rating-api>
+      </span>
+    </div>
   </div>
-  
+
   <div class="commentBox">
     <div *ngIf="userId != -1" id="addComment">
       <app-add-comment-api></app-add-comment-api>
-    </div>  
+    </div>
     <app-display-comments-for-single-movie></app-display-comments-for-single-movie>
   </div>
-
 </body>

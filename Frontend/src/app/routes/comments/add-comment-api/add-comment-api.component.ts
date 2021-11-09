@@ -16,58 +16,75 @@ import { UserInterface } from 'src/app/models/apiUsers.model';
 })
 export class AddCommentApiComponent implements OnInit {
 
-    constructor(private commentsService : CommentsApiService,
-      private router:Router,
-      private route:ActivatedRoute,
-      private moviesApiService:MoviesApiService,
-      private usersApiService:UsersManagerApiservice,
-      private shared: SharedService) { }
+  constructor(private commentsService: CommentsApiService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private moviesApiService: MoviesApiService,
+    private usersApiService: UsersManagerApiservice,
+    private shared: SharedService) { }
 
-  id:number;
-  result:ResultInterface;
-  userName:string;
-  userLog:UserInterface;
-  userId:number;
-  commentEntry : CommentApiInterface;
-  errorText : string;
-  errorOccurred : boolean;
+  id: number;
+  result: ResultInterface;
+  userName: string;
+  userLog: UserInterface;
+  userId: number;
+  commentEntry: CommentApiInterface;
+  errorText: string;
+  errorOccurred: boolean;
 
-    ngOnInit(): void {
-      this.id = this.route.snapshot.params['id'];
-      this.fetchEntry()
-      this.userName = localStorage.getItem('username')
-      this.getUser();
-      console.log(this.userId)
-    }
+  /**
+   * Get id by url, get movie datas, get username by 
+   * local storage and get user datas.
+   */
+  ngOnInit(): void {
+    this.id = this.route.snapshot.params['id'];
+    this.fetchEntry()
+    this.userName = localStorage.getItem('username')
+    this.getUser();
+    console.log(this.userId)
+  }
 
-    fetchEntry(){
-      this.moviesApiService.getMovieByMovieId(this.id).subscribe( (res: any ) => {
-        this.result = res;
-      })
-    }
+  /**
+   * Get a movie by movie id.
+   */
+  fetchEntry() {
+    this.moviesApiService.getMovieByMovieId(this.id).subscribe((res: any) => {
+      this.result = res;
+    })
+  }
 
-  onSubmit(form : NgForm){
+  /**
+   * Insert comments data, if they are not null.
+   * In case of error, store error message in a string
+   * and set boolean errorOccurre as true.
+   * @param form Form filled by user
+   */
+  onSubmit(form: NgForm) {
     this.commentEntry = form.form.value;
-    if(this.commentEntry!=null){
-      this.commentsService.addComment(this.commentEntry).subscribe(response =>{
+    if (this.commentEntry != null) {
+      this.commentsService.addComment(this.commentEntry).subscribe(response => {
         window.location.reload();
         this.errorOccurred = false;
       },
         error => {
           this.errorText = error.error.message;
           this.errorOccurred = true;
-          console.log (error)
+          console.log(error)
         }
       )
     }
   }
 
-  getUser(){
-    this.usersApiService.getUserByUsername(this.userName).subscribe((res:any)=>{
-      this.userLog=res;
-      if (this.userLog != null){
-      this.userId=this.userLog.id;
-      } else { console.log("No user logged")}
+  /**
+   * Get a user by its username. If it is not null,
+   * store its id in userId variable.
+   */
+  getUser() {
+    this.usersApiService.getUserByUsername(this.userName).subscribe((res: any) => {
+      this.userLog = res;
+      if (this.userLog != null) {
+        this.userId = this.userLog.id;
+      } else { console.log("No user logged") }
     })
   }
 

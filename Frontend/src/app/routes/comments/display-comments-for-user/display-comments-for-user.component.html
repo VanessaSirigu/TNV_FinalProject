@@ -8,6 +8,7 @@
       <tr class="pointer" *ngFor="let entry of comments, let i = index">
         <th>{{movieTitles[i]}}</th>
         <td>{{bodies[i]}}</td>
+        <td><button type="submit" class="submit" (click)="deleteComment(i)">Delete</button></td>
       </tr>
     </tbody>
   </table>

@@ -26,7 +26,6 @@ import { CommentsManagerPageComponent } from './routes/comments/comments-manager
 import { CommentDetailsComponent } from './routes/comments/comment-details/comment-details.component';
 import { HomeComponent } from './routes/home/home.component';
 import { PopularPageComponent } from './routes/popular-page/popular-page.component';
-import { CommunityComponent } from './routes/community/community.component';
 import { RegistrationPageComponent } from './routes/registration-page/registration-page.component';
 import { DetailsTvServiesApiComponent } from './routes/details-tv-servies-api/details-tv-servies-api.component';
 import { CommunityRatingsComponent } from './routes/community-ratings/community-ratings.component';
@@ -61,7 +60,6 @@ const routes: Routes = [
   { path: "editComment/:id", component : EditCommentComponent},
   { path: "home", component : HomeComponent},
   { path: "popMovies", component : PopularPageComponent},
-  { path: "community", component : CommunityComponent},
   { path: "communityRatings", component : CommunityRatingsComponent},
   { path: "communityComments", component: CommunityCommentsComponent},
   { path: "registration", component : RegistrationPageComponent},

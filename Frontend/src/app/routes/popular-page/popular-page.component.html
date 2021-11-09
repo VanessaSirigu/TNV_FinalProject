@@ -17,9 +17,9 @@
       <tbody>
         <tr class="pointer" *ngFor="let entry of movies" (click)="goToDetails(entry.id)">
           <td>
-            <img
+            <div class="image"><img
               src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}"
-            />
+            /></div>
           </td>
           <td id="title">{{ entry.title }}</td>
           <td id="overwiev">{{ entry.overview }}</td>

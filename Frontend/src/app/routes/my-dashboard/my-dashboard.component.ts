@@ -11,6 +11,9 @@ export class MyDashboardComponent implements OnInit {
 
   username: string;
 
+  /**
+   * Get username by local storage
+   */
   ngOnInit(): void {
     this.username = localStorage.getItem('username')
   }

@@ -17,13 +17,15 @@
       <tbody>
         <tr class="pointer" *ngFor="let entry of oneSeries" (click)="goToDetails(entry.id)" >
           <td>
-             <img
+            <div class="image">
+             <img class="clickable"
               src="https://image.tmdb.org/t/p/original/{{ entry.poster_path }}"
             />
+          </div>
           </td>
-          <td id="title">{{ entry.name }}</td>
-          <td id="overview">{{ entry.overview }}</td>
-          <td id="popularity">{{ entry.popularity }}</td>
+          <td class="clickable" id="title">{{ entry.name }}</td>
+          <td class="clickable" id="overview">{{ entry.overview }}</td>
+          <td class="clickable" id="popularity">{{ entry.popularity }}</td>
           <td id="votes">{{ entry.vote_count }}</td>
         </tr>
       </tbody>

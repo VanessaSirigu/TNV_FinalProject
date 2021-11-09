@@ -30,5 +30,7 @@
             </div>
         </div>
 
+
+      <div *ngIf="errorOccurred == true" ><i class="fas fa-exclamation-triangle">&nbsp;</i>{{errorText}}</div>
         <button type="submit" [disabled]="!form.valid" class="btn btn-success">Submit</button>
     </form>

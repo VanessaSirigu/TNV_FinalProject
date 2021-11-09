@@ -1,45 +1,62 @@
-#pageLink {
-  font-family: 'DK Lemon Yellow Sun';
+.container-p5 {
+  max-width: 95%;
+}
+
+a {
+  font-family: "DK Lemon Yellow Sun";
   font-size: 35px;
   color: rgb(159, 199, 205);
-  justify-items: left;
+  text-align: left;
   vertical-align: bottom;
 }
 
-#label {
-    border-bottom: rgb(240, 197, 116);
-    border-width: 2px;
-    border-bottom-style: solid;
-}
-
-table, .btn-default {
+table,
+.btn-default {
   color: rgb(159, 199, 205);
-  font-family: 'DK Lemon Yellow Sun';
+  font-family: "DK Lemon Yellow Sun";
   font-size: 22px;
   text-align: center;
-  border-top: none;
+  margin-top: 50px;
+  justify-items: center;
 }
 
 img {
-  height : 180px;
+  height: 180px;
+  align-self: baseline;
+  filter: drop-shadow(13px 13px 5px #000000);
+  transition: height 1s;
+}
+
+img:hover {
+  height: 200px;
+  transition: height 1s;
+  cursor : pointer;
+}
+
+.image {
+  height : 240px;
+  width : 160px;
+  text-align: center;
 }
 
 #title {
   text-align: left;
+  padding-left: 0%;
 }
 
 table {
+  height: 200px;
+
   border-bottom: 2px solid rgb(159, 199, 205);
   /* border-top: 2px solid rgb(159, 199, 205); */
-  border-top: none;
 }
 
 td {
   vertical-align: bottom;
   border-top: none;
+  justify-items: center;
 }
 
 tr {
-  justify-content: left;
-  border-top: none;
+  justify-items: center;
 }

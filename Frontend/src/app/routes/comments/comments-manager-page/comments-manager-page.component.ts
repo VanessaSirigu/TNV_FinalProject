@@ -18,19 +18,23 @@ export class CommentsManagerPageComponent implements OnInit {
   ngOnInit(): void {
     this.getAllCommentsOnComponent();  }
 
+    /**
+     * Get all comments
+     */
     getAllCommentsOnComponent(){
       this.commentsService.allComments().subscribe(
         response => {
           this.comments = response;
-          console.log("ho ottenuto i seguenti dati: ", this.comments)
           this.results = this.comments.commentsResults;
-          console.log("this.comments.commentResults: ", this.comments.commentsResults);
-          console.log("results :", this.results); 
         },
         error => console.log(error)
       )
     }
 
+    /**
+     * Go to a page with details of a specific comment
+     * @param id comment id
+     */
     goToCommentDetails (id){
       this.router.navigateByUrl('/commentDetails/' + id);
     }
