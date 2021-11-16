@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.usersService.getUserByUsername(this.usernameInput).subscribe (
       response => {
         this.results = response
-        if (this.results != null && this.results.password==this.passwordInput){
+        if (this.results != null && this.results.password==btoa(this.passwordInput)){
           this.validLogin = true;
           //se la verifica ha successo, l'utente viene autenticato
           this.doLogin();
@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
           this.shared.sendData(this.user)
           localStorage.setItem('userId', this.results.id.toString());
           localStorage.setItem('username', this.results.username);
+          this.shared.isUserLoggedIn.next(true);
           this.router.navigate(['/myBoard']);
         } else {
           this.loginError = true;

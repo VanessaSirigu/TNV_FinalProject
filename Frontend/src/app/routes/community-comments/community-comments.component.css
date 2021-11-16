@@ -3,32 +3,27 @@ body {
     height: 100%;
     margin-bottom: -1.2%;
   }
-  
+
   td {
     color: rgb(159, 199, 205);
     font-family: "LettersForLearners";
     font-size: 24px;
     vertical-align: middle;
   }
-  
+
   th {
     color: rgb(240, 197, 116);
     font-size: 22px;
     text-align: center;
     font-family: "DK Lemon Yellow Sun";
   }
-  
+
   #username {
     font-weight: bold;
   }
-  
+
   td,
   th {
     word-wrap: break-word;
     max-width: 500px;
-  }
-  
-  rating {
-      font-size: xx-large; 
-      color: rgba(240, 197, 116);
   }

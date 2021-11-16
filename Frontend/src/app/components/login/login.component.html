@@ -21,7 +21,6 @@
         <span>
           <button type="submit" (click)="verifyByUsername()" class="submit">
             Login
-            <i class="fas fa-times fa-3x" *ngIf="loginError"></i>
           </button>
         </span>
         <div>
@@ -29,11 +28,11 @@
           <span>
             <button type="submit" (click)="doLogout()" class="submit">Logout</button>
           </span>
-          <span *ngIf="validLogin">
-            <i class="far fa-check-circle fa-3x"></i>
-          </span>
         </div>
       </ul>
+      <span id="error" *ngIf="loginError">
+        <p>wrong username and/or password</p>
+      </span>
       <div>
         <a [routerLink]='["/registration"]'>
           <p>

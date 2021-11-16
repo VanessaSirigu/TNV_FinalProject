@@ -1,0 +1,127 @@
+body {
+    background-color: rgb(52, 58, 64);
+    height: 100%;
+    min-height: 100%;
+    margin-bottom: -1.2%;
+    padding-bottom: 15%;
+  }
+
+  p {
+    font-family: 'DK Lemon Yellow Sun';
+    font-size: 18px;
+    background-color: rgb(52, 58, 64);
+    /* color: rgb(159, 199, 205); */
+    color: rgba(240, 197, 116);
+    text-align: left;
+    padding-inline-start: 30%;
+    box-sizing: unset;
+    float: left;
+  }
+
+  #title {
+    font-family: "DK Lemon Yellow Sun";
+    color: rgb(190, 238, 245);
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  ul,
+  .list-group-item,
+  li {
+    color: rgb(190, 238, 245);
+    background-color: rgb(52, 58, 64);
+    font-family: "LettersForLearners";
+    font-size: 24px;
+    border: none;
+    width: 700px;
+    padding-top: 0%;
+  }
+
+  ul,
+  .list-group {
+    margin-right: 100px;
+    float: right;
+    margin-top: -150px;
+  }
+
+  img {
+    width: 250px;
+    display: inline-block;
+    margin-right: 5%;
+    vertical-align: bottom;
+  }
+
+  .fa-backward {
+    margin-top: 30px;
+    color: rgb(190, 238, 245);
+    padding-bottom: 40px;
+  }
+
+  /* #stars {
+    width: 250px;
+    float: right;
+    margin-top: -30px;
+    margin-left: auto;
+  } */
+
+  ul {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 2px;
+    border-radius: 0%;
+    margin-bottom: 70px;
+  }
+
+  #commentBox,
+  textarea {
+    margin-left: 10%;
+  }
+
+  #pieRatingChart {
+    width: 20%;
+    display: inline-block;
+    margin-left: 5%;
+  }
+
+  #barChart {
+    width: 25%;
+    display: inline-block;
+    margin-left: 12%;
+    clear: right;
+  }
+
+  #chartsLine {
+    vertical-align: top;
+  }
+
+  textarea {
+    background-color: rgb(52, 58, 64, 0.6);
+    border-color: rgba(240, 197, 116);
+    color: rgb(159, 199, 205);
+    height: 100px;
+  }
+
+  .shadow {
+    transition: text-shadow 500ms;
+  }
+
+  .shadow:hover {
+    text-shadow: 0px 0px 5px  rgb(190, 238, 245);
+    transition: text-shadow 500ms;
+  }
+
+  .hidden {
+      display : none;
+  }
+
+  .submit {
+    width: 80px;
+    font-family: "DK Lemon Yellow Sun";
+    border-radius: 5px;
+    box-sizing: content-box;
+    padding: 10 px;
+    background-color: rgba(240, 197, 116);
+    color: black;
+    margin-left: 15%;
+  }

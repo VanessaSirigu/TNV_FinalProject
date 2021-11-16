@@ -112,4 +112,16 @@ export class DisplayCommentsForUserComponent implements OnInit {
         window.location.reload();
       });
   }
+/*
+  editComment(i) {
+    var commentId = this.commentIds[i];
+    this.commentsService.editComment(commentId)
+      .subscribe(data => {
+        window.location.reload();
+      }, (err) => {
+        console.log("Comment #", commentId, " is not present in the database.");
+        window.location.reload();
+      });
+  }
+*/
 }

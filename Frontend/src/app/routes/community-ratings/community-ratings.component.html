@@ -10,7 +10,7 @@
         <tr class="pointer" *ngFor="let entry of datas; let i = index" (click)="goToDetails(movieIds[i])">
           <td id="username">{{ userNames[i] }}</td>
           <td style="text-align: center">{{ titles[i] }}</td>
-          <td *ngIf="ratings[i]==1"><i class="fas fa-star"></i></td>
+          <td *ngIf="ratings[i]==1" id="rating"><i class="fas fa-star"></i></td>
           <td *ngIf="ratings[i]==2" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i> </td>
           <td *ngIf="ratings[i]==3" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i> <i class="fas fa-star"></i></td>
           <td *ngIf="ratings[i]==4" id="rating"> <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i> </td>

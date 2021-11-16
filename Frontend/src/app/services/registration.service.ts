@@ -16,11 +16,11 @@ export class RegistrationService {
               'Content-Type':    'application/json',
               Authorization : 'Basic '+ btoa(username+":"+password)});    //btoa= binari to ask
           return this.http.post<UserInterface>(this.baseURL +"/", JSON.stringify({
-          "first_name": newUser.first_name,
-          "last_name": newUser.last_name,
+          "name": newUser.name,
+          "surname": newUser.surname,
           "username": newUser.username,
-          "password": newUser.password,
-           "email": newUser.email,
+          "password": btoa(newUser.password),
+          "email": newUser.email,
           "enabled": newUser.enabled,
           }),{headers})
 

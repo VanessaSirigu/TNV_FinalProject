@@ -10,9 +10,9 @@ p {
 
 .submit {
   float: right;
-  margin-right: 175px;
+  margin-right: 5px;
   width: 70px;
-  margin-top: 10px;
+  margin-top: -12px;
   font-family: "DK Lemon Yellow Sun";
   border-radius: 5px;
   box-sizing: content-box;
@@ -25,6 +25,7 @@ textarea {
   border-color: rgba(240, 197, 116);
   color: rgb(159, 199, 205);
   height: 100px;
+  width: 122%
 }
 
 .container {
@@ -37,7 +38,7 @@ form {
   padding-bottom: 50px;
 }
 
-.error{ 
+.error{
   font-family: "DK Lemon Yellow Sun";
   font-size: 18px;
   color: #ff3737;

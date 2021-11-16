@@ -4,18 +4,18 @@
         <tbody>
           <tr>
             <th style="text-align: left">User Name</th>
-            <th style="text-align :center">Movie Title</th>
-            <th style="text-align: right">Comment</th>
+            <th style="text-align: center">Movie Title</th>
+            <th style="text-align: center">Comment</th>
           </tr>
           <tr class="pointer" *ngFor="let entry of commentsResults; let i = index" (click)="goToDetails(movieIds[i])">
             <td id="username">{{ userNames[i] }}</td>
             <td style="text-align: center">{{ titles[i] }}</td>
             <td style="text-align: center">{{ commentsBodies[i] }}</td>
-  
+
           </tr>
         </tbody>
       </table>
     </div>
   </body>
-  
+
   <app-loading-page *ngIf="displayPage == false"></app-loading-page>

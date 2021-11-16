@@ -8,3 +8,11 @@ h1 {
   font-family: 'DK Lemon Yellow Sun';
   color: rgb(240, 197, 116)
 }
+
+a {
+  font-family: 'DK Lemon Yellow Sun';
+  font-size: 35px;
+  color: rgb(159, 199, 205);
+  text-align: left;
+  vertical-align: bottom;
+}

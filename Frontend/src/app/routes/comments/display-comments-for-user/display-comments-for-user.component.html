@@ -7,8 +7,8 @@
       </tr>
       <tr class="pointer" *ngFor="let entry of comments, let i = index">
         <th>{{movieTitles[i]}}</th>
-        <td>{{bodies[i]}}</td>
-        <td><button type="submit" class="submit" (click)="deleteComment(i)">Delete</button></td>
+        <td id="comment">{{bodies[i]}}</td>
+        <td id="editAndDelete"><button class="edit clickable" [routerLink]='["/editCommentApi/"+commentIds[i]]'>Edit</button>/<button class="delete clickable" (click)="deleteComment(i)">Delete</button></td>
       </tr>
     </tbody>
   </table>

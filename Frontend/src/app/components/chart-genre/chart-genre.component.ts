@@ -82,7 +82,7 @@ export class ChartGenreComponent implements OnInit {
     new Chart(this.elemento.nativeElement, {
       type: 'horizontalBar',
       data: {
-        labels: ['', '1', '2', '3', '4', '5'],
+        labels: ['', '1 \u2605', '2 \u2605', '3 \u2605', '4 \u2605', '5 \u2605'],
         datasets: [
           {
             data: [this.colonna, this.stella1, this.stella2, this.stella3, this.stella4, this.stella5],

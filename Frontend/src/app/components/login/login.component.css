@@ -19,7 +19,7 @@ label {
 
   /*form username + psw + bottoni*/
   .form-group {
-    height: 250px;
+    height: max-content;
     width: max-content;
     padding-right: 35px;
     margin-top: 40px;
@@ -76,4 +76,8 @@ p, a {
   font-family: "DK Lemon Yellow Sun";
   text-align: right;
   margin-right: 45px;
+}
+
+#error {
+  font-size: 22px;
 }

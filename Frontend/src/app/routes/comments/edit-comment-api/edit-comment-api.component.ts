@@ -1,18 +1,22 @@
-import { CommentsApiService } from 'src/app/services/comments-api.service';
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { CommentsApiService } from 'src/app/services/comments-api.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommentsResultsInterface } from 'src/app/models/apiComment.model';
 
-@Component({
-  selector: 'app-edit-comment',
-  templateUrl: './edit-comment.component.html',
-  styleUrls: ['./edit-comment.component.css']
-})
-export class EditCommentComponent implements OnInit {
 
-    constructor(private route : ActivatedRoute, 
+@Component({
+  selector: 'app-edit-comment-api',
+  templateUrl: './edit-comment-api.component.html',
+  styleUrls: ['./edit-comment-api.component.css']
+})
+export class EditCommentApiComponent implements OnInit {
+
+    constructor( 
+      private route : ActivatedRoute, 
       private commentsService : CommentsApiService, 
-      private router : Router) {  }
+      private router : Router,
+      private location : Location) {  }
 
   commentEntry : CommentsResultsInterface;
   comments: CommentsApiService;
@@ -44,10 +48,14 @@ export class EditCommentComponent implements OnInit {
    */
   onSubmit(id){
     this.commentsService.editComment(this.commentEntry).subscribe (response => {
-      this.router.navigate(['/commentDetails', this.commentEntry.id])
+      this.location.back();
     },         error => {
       this.errorText = error.error.message;
       this.errorOccurred = true;
     })
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

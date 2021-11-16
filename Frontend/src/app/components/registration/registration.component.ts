@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RegistrationService } from '../../services/registration.service';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { UsersApiInterface, UserInterface } from '../../models/apiUsers.model';
+import { UserInterface } from '../../models/apiUsers.model';
 
 @Component({
   selector: 'app-registration',

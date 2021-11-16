@@ -4,8 +4,8 @@ export interface UsersApiInterface{
 
 export interface UserInterface{
   id: number;
-  first_name: string;
-  last_name: string;
+  name: string;
+  surname: string;
   username: string;
   password: string;
   email: string;
