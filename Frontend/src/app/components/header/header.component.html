@@ -33,13 +33,13 @@
             </a>
           </li>
           <li>
-            <a *ngIf="!logged" [routerLink]="['/login']" class="nav-link">
+            <a *ngIf="!isUserLoggedIn" [routerLink]="['/login']" class="nav-link">
               <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
               Login
             </a>
           </li>
-          <li>
-            <a *ngIf="logged" class="nav-link" (click)="doLogout()">
+          <li id="logout">
+            <a *ngIf="isUserLoggedIn" class="nav-link" (click)="doLogout()">
             <svg class="bi d-block mx-auto mb-1" width="24" height="24"></svg>
               Logout
             </a>

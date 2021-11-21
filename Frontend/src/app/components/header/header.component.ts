@@ -8,18 +8,22 @@ import { SharedService } from '../../services/shared.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private shared : SharedService) { }
+  isUserLoggedIn : boolean;
 
-  logged: boolean;
+  constructor(private shared : SharedService) {
+    this.shared.isUserLoggedIn.subscribe( value => {
+      this.isUserLoggedIn = value;
+  });
+  }
 
   ngOnInit(): void {
     this.checkLogin();
   }
 
   checkLogin() {
-    this.logged = false;
+    this.isUserLoggedIn = false;
     if (localStorage.getItem('username')) {
-      this.logged = true;
+      this.isUserLoggedIn = true;
     }
   }
 

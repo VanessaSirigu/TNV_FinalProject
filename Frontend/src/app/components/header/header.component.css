@@ -21,7 +21,7 @@ header {
     margin-left: 10px;
   }
 
-  /*scritte + icona menu sulla destra*/
+  /*nav*/
   #menuDX {
     font-family: 'DK Lemon Yellow Sun';
     font-size: 20px;
@@ -71,4 +71,8 @@ header {
   a:hover {
     text-shadow: 0px 0px 5px rgb(240, 197, 116);
     transition: text-shadow 500ms;
+  }
+
+  #logout {
+    margin-right: 15px;
   }
