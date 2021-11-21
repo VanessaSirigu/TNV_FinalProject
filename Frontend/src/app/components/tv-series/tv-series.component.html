@@ -14,7 +14,11 @@
             </div>
           </a>
         </tr>
-        <tr class="clickable" id="title" scope="row">#{{i + 1}} {{entry.name}}</tr>
+        <tr class="clickable" id="title" scope="row">
+          <a id="title" href="/detailTvSeriesApi/{{entry.id}}">
+            #{{i + 1}} {{entry.name}}
+          </a>
+        </tr>
       </td>
     </tbody>
   </table>

@@ -28,6 +28,7 @@ label {
     border-style: solid;
     border-color:  rgb(159, 199, 205);
     border-width: 3px;
+    padding-bottom: 30px;
   }
 
   /*riga input*/
@@ -74,10 +75,15 @@ body, html {
 p, a {
   color: rgba(240, 197, 116);
   font-family: "DK Lemon Yellow Sun";
-  text-align: right;
-  margin-right: 45px;
+  float: right;
+  margin-top: 8px;
+  vertical-align: text-bottom;
 }
 
 #error {
   font-size: 22px;
+}
+
+#register {
+ margin-right: 10px;
 }

@@ -22,24 +22,23 @@
           <button type="submit" (click)="verifyByUsername()" class="submit">
             Login
           </button>
+          <a [routerLink]='["/registration"]' id="register">
+            <p>
+            Register Now /
+          </p>
+        </a>
         </span>
-        <div>
-          <div></div>
-          <span>
-            <button type="submit" (click)="doLogout()" class="submit">Logout</button>
-          </span>
-        </div>
       </ul>
       <span id="error" *ngIf="loginError">
         <p>wrong username and/or password</p>
       </span>
-      <div>
+      <!-- <div>
         <a [routerLink]='["/registration"]'>
           <p>
           Register Now
         </p>
       </a>
-      </div>
+      </div> -->
     </form>
   </div>
 </body>
