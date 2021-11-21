@@ -1,6 +1,6 @@
 <form class="pt-5" (ngSubmit)="onSubmit(form)" #form="ngForm">
 
-  <div id="starsAndButton" *ngIf="bool">
+  <div id="starsAndButton" *ngIf="bool" style="width: 250px;">
 
     <div style="font-size: xx-large; color: rgba(240, 197, 116);">
       <ngb-rating [max]="5" [(rate)]="movie_rating"></ngb-rating>
@@ -14,6 +14,9 @@
 
   <div *ngIf="changedSuccessfully" class="alert alert-success" role="alert">
     Rating changed successfully!
+  </div>
+  <div *ngIf="deleteSuccessfully"  class="alert alert-success" role="alert">
+    Rating delete successfully!
   </div>
 
   <div class="form-group row" style="display: none">

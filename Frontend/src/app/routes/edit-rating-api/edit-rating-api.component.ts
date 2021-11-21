@@ -39,6 +39,7 @@ export class EditRatingApiComponent implements OnInit {
    bool:boolean;
    ids:number
    changedSuccessfully : boolean;
+   deleteSuccessfully : boolean;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params ['id'];
@@ -90,8 +91,10 @@ export class EditRatingApiComponent implements OnInit {
   }
 
   delete(){
+    this.changedSuccessfully = false;
     this.movieRatingService.deleteMovieRating(this.movieRated[0].id)
     .subscribe(data => {
+      this.deleteSuccessfully = true;
       window.location.reload();
     }, (err) => {
       console.log(err);
