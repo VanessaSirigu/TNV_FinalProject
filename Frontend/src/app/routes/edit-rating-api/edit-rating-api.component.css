@@ -15,3 +15,14 @@
   background-color: rgba(52, 58, 64);
   border-style: none;
 }
+
+.alert-success {
+  margin-top: 10px;
+  color: rgba(240, 197, 116);
+  font-family: "DK Lemon Yellow Sun";
+  width: 195px;
+  background-color: rgb(52, 58, 64);
+  border-color: rgba(240, 197, 116);
+  transition-duration: 3s;
+  margin-left: -15px;
+}

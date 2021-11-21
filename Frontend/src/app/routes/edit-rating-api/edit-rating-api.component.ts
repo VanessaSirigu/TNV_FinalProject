@@ -38,6 +38,7 @@ export class EditRatingApiComponent implements OnInit {
    lenght:number;
    bool:boolean;
    ids:number
+   changedSuccessfully : boolean;
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params ['id'];
@@ -76,9 +77,11 @@ export class EditRatingApiComponent implements OnInit {
   }
 
   onSubmit(form : NgForm){
+    this.changedSuccessfully = false;
     this.rating = form.form.value;
     this.movieRatingService.editMovieRating(this.rating).subscribe(response => {
-      window.location.reload();
+            this.changedSuccessfully = true;
+            window.location.reload();
     },
     (err) => {
       console.log("error")
